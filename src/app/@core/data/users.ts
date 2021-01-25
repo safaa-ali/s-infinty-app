@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 
 export interface User {
   name: string;
-  picture: string;
+  token: string;
 }
 
 export interface Contacts {
