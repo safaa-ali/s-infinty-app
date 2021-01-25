@@ -150,5 +150,8 @@
       "style": "scss"
     },
     "@schematics/angular:directive": {}
+  },
+  "cli": {
+    "analytics": "b09b105c-bd4f-4a83-ac80-a9544e6f57bd"
   }
 }

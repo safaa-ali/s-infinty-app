@@ -34,11 +34,13 @@ import {
   OneColumnLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
+
 } from './layouts';
 import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
 import { CORPORATE_THEME } from './styles/theme.corporate';
 import { DARK_THEME } from './styles/theme.dark';
+import { SInfintyLayoutComponent } from './layouts/s-infinity-b/s-infinty-layout/s-infinty-layout.component';
 
 const NB_MODULES = [
   NbLayoutModule,
@@ -63,6 +65,7 @@ const COMPONENTS = [
   OneColumnLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
+  SInfintyLayoutComponent
 ];
 const PIPES = [
   CapitalizePipe,
@@ -75,7 +78,7 @@ const PIPES = [
 @NgModule({
   imports: [CommonModule, ...NB_MODULES],
   exports: [CommonModule, ...PIPES, ...COMPONENTS],
-  declarations: [...COMPONENTS, ...PIPES],
+  declarations: [...COMPONENTS, ...PIPES, SInfintyLayoutComponent],
 })
 export class ThemeModule {
   static forRoot(): ModuleWithProviders<ThemeModule> {

@@ -1,0 +1,54 @@
+nb-sidebar {
+  background-color: #3e65ee;
+  border-radius: 0px 80px 0 0;
+  width: 13rem;
+}
+
+.menu-sidebar ::ng-deep .scrollable {
+  padding: 0;
+  nb-menu {
+    min-height: calc(100% - 440px);
+    margin: 0;
+    ul.menu-items {
+      padding-top: 45%;
+      width: 80%;
+      .menu-item {
+        border-bottom: 0;
+        transition: 0.4s ease-in-out;
+        padding-left: 26px;
+
+        a {
+          text-transform: capitalize;
+          font-size: 20px !important;
+          font-weight: 400;
+          line-height: 25px;
+          border-left: solid 8px transparent;
+          background-color: transparent;
+          padding-left: 0;
+        }
+        .menu-icon {
+          margin: 0;
+          margin-right: 10px !important;
+          font-size: 32px;
+        }
+      }
+
+      .menu-title {
+        color: #c9c9c9;
+      }
+      .menu-item:hover {
+        background-color: #7089e45b;
+        // border-right: 4px solid #f98341;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+        a .menu-title,
+        .menu-icon {
+          color: #fff;
+        }
+      }
+
+    }
+  }
+}
+
+
