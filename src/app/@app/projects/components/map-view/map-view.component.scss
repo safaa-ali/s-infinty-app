@@ -1,15 +1,21 @@
 @import "~@nebular/theme/styles/themes";
 :host ::ng-deep {
-   .nb-theme-default .map-view nb-layout .layout .layout-container nb-sidebar .main-container-fixed{
-     top: 10px !important;
-   }
+  .nb-theme-default
+    .map-view
+    nb-layout
+    .layout
+    .layout-container
+    nb-sidebar
+    .main-container-fixed {
+    top: 10px !important;
+  }
   .nb-theme-default {
-      .map-view {
-        nb-sidebar.w-adjust {
-          width: unset;
-        }
+    .map-view {
+      nb-sidebar.w-adjust {
+        width: unset;
       }
-    
+    }
+
     nb-layout-column {
       padding: 0px !important;
     }

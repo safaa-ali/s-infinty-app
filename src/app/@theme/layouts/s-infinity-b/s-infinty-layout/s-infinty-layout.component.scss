@@ -1,103 +1,100 @@
- 
-  nb-sidebar.menu-sidebar{
-    
-    background-color: #3e65ee;
-    border-radius: 0px 80px 0 0;
-    width: 13rem;
-    ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      position: relative;
-      right: 24px;
-      top: 50px;
+nb-sidebar.menu-sidebar {
+  background-color: #3e65ee;
+  border-radius: 0px 80px 0 0;
+  width: 13rem;
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    right: 24px;
+    top: 50px;
 
-      li {
-        color: #fff;
-        cursor: pointer;
-        font-size: 20px;
-        a {
-          .menu-bar-icon {
-            font-size: 24px;
-            position: relative;
-            right: 30px;
-          }
+    li {
+      color: #fff;
+      cursor: pointer;
+      font-size: 20px;
+      a {
+        .menu-bar-icon {
+          font-size: 24px;
+          position: relative;
+          right: 30px;
         }
       }
     }
   }
+}
 
-  nb-layout nb-layout-column {
-    background-color: #ebebeb;
-  }
+nb-layout nb-layout-column {
+  background-color: #ebebeb;
+}
 
-  .menu-sidebar ::ng-deep .scrollable {
-    padding: 0;
-    nb-menu {
-      margin: 0;
-      ul.menu-items {
-        padding-top: 20%;
-        width: 80%;
-        .menu-item {
-          border-bottom: 0;
-          transition: 0.4s ease-in-out;
-          padding-left: 26px;
+.menu-sidebar ::ng-deep .scrollable {
+  padding: 0;
+  nb-menu {
+    margin: 0;
+    ul.menu-items {
+      padding-top: 20%;
+      width: 80%;
+      .menu-item {
+        border-bottom: 0;
+        transition: 0.4s ease-in-out;
+        padding-left: 26px;
 
-          a {
-            text-transform: capitalize;
-            font-size: 20px !important;
-            font-weight: 400;
-            line-height: 25px;
-            border-left: solid 8px transparent;
-            background-color: transparent;
-            padding-left: 0;
-          }
-          .menu-icon {
-            margin: 0;
-            margin-right: 10px !important;
-            font-size: 32px;
-            color: #c9c9c9;
-          }
+        a {
+          text-transform: capitalize;
+          font-size: 20px !important;
+          font-weight: 400;
+          line-height: 25px;
+          border-left: solid 8px transparent;
+          background-color: transparent;
+          padding-left: 0;
         }
-
-        .menu-title {
+        .menu-icon {
+          margin: 0;
+          margin-right: 10px !important;
+          font-size: 32px;
           color: #c9c9c9;
         }
-        .menu-item:hover {
-          background-color: #7089e45b;
-          // border-right: 4px solid #f98341;
-          // border-top-right-radius: 6px;
-          // border-bottom-right-radius: 6px;
-          a .menu-title,
-          .menu-icon {
-            color: #fff;
-          }
+      }
+
+      .menu-title {
+        color: #c9c9c9;
+      }
+      .menu-item:hover {
+        background-color: #7089e45b;
+        // border-right: 4px solid #f98341;
+        // border-top-right-radius: 6px;
+        // border-bottom-right-radius: 6px;
+        a .menu-title,
+        .menu-icon {
+          color: #fff;
         }
       }
     }
   }
-  .compactedButton {
-    display: none;
-    cursor: pointer;
-  }
+}
+.compactedButton {
+  display: none;
+  cursor: pointer;
+}
 
-  ::ng-deep {
-    .nb-theme-default nb-sidebar.compacted {
-      width: 3.5rem;
-      .compactedElement {
-        display: none;
-      }
-      .sidebar-toggle nb-icon {
-        width: 30px;
-        height: auto;
-      }
-      .compactedButton {
-        display: block;
-        text-align: center;
-      }
-      .compactedButton {
-        margin-top: 0;
-      }
+::ng-deep {
+  .nb-theme-default nb-sidebar.compacted {
+    width: 3.5rem;
+    .compactedElement {
+      display: none;
+    }
+    .sidebar-toggle nb-icon {
+      width: 30px;
+      height: auto;
+    }
+    .compactedButton {
+      display: block;
+      text-align: center;
+    }
+    .compactedButton {
+      margin-top: 0;
     }
   }
-
+}
