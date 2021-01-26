@@ -1,6 +1,4 @@
-import { LoginGuardService } from './../../@core/utils/service/login-guard.service';
 import { ForgotPasswordModalComponent } from './forgot-password-modal/forgot-password-modal.component';
-LoginGuardService;
 import { LoginComponent } from './login/login.component';
 import { AuthComponent } from './auth.component';
 import { NgModule } from '@angular/core';

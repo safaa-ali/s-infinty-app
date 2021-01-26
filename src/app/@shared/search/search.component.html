@@ -1,2 +1,6 @@
-<input type="text" class="search-input " nbInput fullWidth fieldSize="giant" placeholder="Search"
-  (input.enter)="onSearchHandler()" (change)="onSearchHandler()" placeholder={{placeholderText}} (paste)="onSearchHandler()" [(ngModel)]="searchValue">
+
+
+  <nb-form-field>
+    <nb-icon nbSuffix icon="search" pack="eva"></nb-icon>
+    <input type="text" fullWidth  [placeholder]="'Search'"  nbInput shape="round"  (input.enter)="onSearchHandler()" (change)="onSearchHandler()" placeholder={{placeholderText}} (paste)="onSearchHandler()" [(ngModel)]="searchValue" />
+  </nb-form-field>

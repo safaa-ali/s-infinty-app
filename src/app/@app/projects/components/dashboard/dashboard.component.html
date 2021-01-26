@@ -3,10 +3,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-6">
-      <!-- <nb-form-field>
-        <nb-icon nbSuffix icon="search" pack="eva"></nb-icon>
-        <input type="text" fullWidth [(ngModel)]="searchText" placeholder="Search" nbInput shape="round" />
-      </nb-form-field> -->
+    <ngx-search-inp   (valueChanged)="changed('search', $event)"></ngx-search-inp>
     </div>
     <div class="col-lg-3">
       <input

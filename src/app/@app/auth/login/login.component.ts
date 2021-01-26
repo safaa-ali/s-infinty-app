@@ -2,8 +2,7 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { AuthService } from '../auth.service';
-AuthService
+import { AuthService } from 'app/@core/utils/auth.service';
 @Component({
   selector: 'login',
   templateUrl: './login.component.html',
@@ -15,7 +14,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
   constructor (private fb: FormBuilder, private router: Router, private http: HttpClient,
-    private _AuthService: AuthService
+    private _authService: AuthService
     ) {
     this.loginForm = this.fb.group({
       username: new FormControl('admin', [Validators.required, Validators.pattern('[a-z]{3,12}')]),
@@ -26,11 +25,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  // checked = false;
 
-  // toggle(checked: boolean) {
-  //   this.checked = checked;
-  // }
   showPassword = true;
 
   getInputType() {
@@ -45,14 +40,14 @@ export class LoginComponent implements OnInit {
   }
   onSubmit(form) {
 
-    this._AuthService.adduser('login', form.value).subscribe(res => {
-      console.log(res);
-      localStorage.setItem('tokenLogin', res['data']['token']);
-      localStorage.setItem('userLogin', res['data']);
+ const username =  form.value.username ;
+ const password =  form.value.password ;
 
+    this._authService.login(username,password).subscribe(res=>{
+      console.log(res);
       this.router.navigate(['/projects']);
 
-    });
+    })
   }
 
 }

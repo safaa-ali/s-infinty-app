@@ -10,6 +10,8 @@ import { UserData } from './data/users';
 import { UserService } from './mock/users.service';
 import { MockDataModule } from './mock/mock-data.module';
 import { FilterPipe } from './utils/filter.pipe';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './utils/auth.interceptor';
 
 const socialLinks = [
   {
@@ -101,6 +103,8 @@ export class CoreModule {
       ngModule: CoreModule,
       providers: [
         ...NB_CORE_PROVIDERS,
+        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor , multi: true },
+
       ],
     };
   }

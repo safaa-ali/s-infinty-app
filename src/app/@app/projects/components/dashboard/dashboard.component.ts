@@ -26,39 +26,21 @@ export class DashboardComponent  implements OnInit {
 
     ) { }
 
-  onSearchHandler() {
-    this.cancelEmit();
-    this.emitIt();
-  }
 
-  emitIt() {
-    this.searchDelay = setTimeout(() => { this.valueChanged.emit(this.searchValue); }, this.delayTime);
-    console.log(this.searchValue);
-
-  }
   ngOnInit() {
     this.getProjeData();
   }
 
-  cancelEmit() {
-    clearTimeout(this.searchDelay);
-  }
-  @ViewChild('dropdownRef', {static: false}) dropdownRef: ElementRef;
-
-  @Output() fillterValueChanged = new EventEmitter<any>();
-  @Input() placeholder: string;
-  @Input() showPlaceholder: boolean;
-  @Input() data;
-  selectedItem: any;
-  isOpened: boolean = false;
-  @Input() selected;
-  emitValue(value) {
-    this.fillterValueChanged.emit(value);
+  changed(type, value) {
+    if (type === 'search') {
+      this.searchValue = value;
+      this.getProjeData();
+    }
+    console.log('test search');
 
   }
 
 getProjeData() {
-
 this._ProjectsService.getProjects().subscribe(res=>{
    this.ProjeData = res;
 

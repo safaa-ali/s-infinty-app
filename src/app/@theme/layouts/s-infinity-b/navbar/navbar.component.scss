@@ -7,11 +7,17 @@
   padding: 8px;
 z-index: 1;
   .header-logout {
-    span {
+    span, .arrow-logout{
       color: #ada8a8;
       position: relative;
       top: 20px;
       right: 50px;
+     }
+     .arrow-logout{
+      right: 46px;
+      top: 23px;
+      font-size: 24px;
+      cursor: pointer;
      }
   }
   img {

@@ -11,5 +11,8 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  items = [
+    { title: 'Profile' },
+    { title: 'Logout' },
+  ];
 }

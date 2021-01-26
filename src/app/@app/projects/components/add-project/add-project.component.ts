@@ -1,6 +1,5 @@
 import { FormControl, FormBuilder , FormGroup, Validators} from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'app/@core/utils/service/auth.service';
 
 @Component({
   selector: 'add-project',
@@ -13,7 +12,7 @@ export class AddProjectComponent {
   selectedItem;
   countryData;
   stateData;
-  constructor(private fb: FormBuilder, private auth: AuthService) {
+  constructor(private fb: FormBuilder) {
 
     this.addprojectForm = this.fb.group({
       name: ['project', [Validators.required]],
@@ -46,10 +45,10 @@ export class AddProjectComponent {
     formdata.append('country_id', proData.country_id);
     formdata.append('state_id', proData.state_id);
     formdata.append('project_type_id', proData.project_type_id);
-    this.auth.getToken('projects?organization_id=43', formdata).subscribe(res => {
-      console.log(res);
+    // this.auth.getToken('projects?organization_id=43', formdata).subscribe(res => {
+    //   console.log(res);
 
-    });
+    // });
 }
 
 
@@ -66,12 +65,12 @@ export class AddProjectComponent {
 
     // get country
     getCountry() {
-      this.auth.getData('countries').subscribe(res => {
+    //   this.auth.getData('countries').subscribe(res => {
 
-    this.countryData = res;
-    console.log(res);
+    // this.countryData = res;
+    // console.log(res);
 
-      });
+    //   });
     }
 
     changeSelect(event) {
@@ -80,12 +79,12 @@ export class AddProjectComponent {
     }
 // get all state of spacfic country id
       getState(id) {
-        this.auth.getData(`states?country_id=${id}`).subscribe(res => {
+      //   this.auth.getData(`states?country_id=${id}`).subscribe(res => {
 
-      this.stateData = res;
-      console.log(this.stateData);
+      // this.stateData = res;
+      // console.log(this.stateData);
 
-        });
+      //   });
     }
 
 }
