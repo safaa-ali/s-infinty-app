@@ -1,14 +1,6 @@
 
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import {
-  NbAuthComponent,
-  NbLoginComponent,
-  NbLogoutComponent,
-  NbRegisterComponent,
-  NbRequestPasswordComponent,
-  NbResetPasswordComponent,
-} from '@nebular/auth';
 import { AuthGuard } from './@core/utils/auth.guard';
 export const routes: Routes = [
   {
@@ -19,7 +11,6 @@ export const routes: Routes = [
   {
     path: 'auth', loadChildren: () => import('./@app/auth/auth.module')
     .then(m => m.AuthModule),
-
   },
 
   {

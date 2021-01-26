@@ -1,4 +1,3 @@
-import { AuthModule } from './@app/auth/auth.module';
 import { SharedModule } from './@shared/shared.module';
 /**
  * @license
@@ -57,7 +56,6 @@ export function HttpLoaderFactory(http: HttpClient) {
       isolate: false,
     }),
     SharedModule,
-    AuthModule,
   ],
   providers: [
 

@@ -47,7 +47,7 @@ nb-layout nb-layout-column {
           font-size: 20px !important;
           font-weight: 400;
           line-height: 25px;
-          border-left: solid 0px transparent;
+          border-left: solid 0 transparent;
           background-color: transparent;
           padding-left: 0;
           width: 68%;
@@ -66,7 +66,7 @@ nb-layout nb-layout-column {
             }
             .menu-icon {
               margin: 0;
-              margin-right: 0px !important;
+              margin-right: 0 !important;
               font-size: 32px;
               color: #c9c9c9;
             }
