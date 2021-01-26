@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'app/@core/utils/service/auth.service';
 
 @Component({
-  selector: 'add-project',
+  selector: 'ngx-add-project',
   templateUrl: './add-project.component.html',
   styleUrls: ['./add-project.component.scss'],
 })
@@ -29,7 +29,7 @@ export class AddProjectComponent {
 
 
     onSubmit(addprojectForm) {
-      console.log(addprojectForm.value);
+      // console.log(addprojectForm.value);
 
  const proData = {
    name: this.addprojectForm.get('name').value,
@@ -47,7 +47,7 @@ export class AddProjectComponent {
     formdata.append('state_id', proData.state_id);
     formdata.append('project_type_id', proData.project_type_id);
     this.auth.getToken('projects?organization_id=43', formdata).subscribe(res => {
-      console.log(res);
+      // console.log(res);
 
     });
 }
@@ -69,7 +69,7 @@ export class AddProjectComponent {
       this.auth.getData('countries').subscribe(res => {
 
     this.countryData = res;
-    console.log(res);
+    // console.log(res);
 
       });
     }
@@ -83,7 +83,7 @@ export class AddProjectComponent {
         this.auth.getData(`states?country_id=${id}`).subscribe(res => {
 
       this.stateData = res;
-      console.log(this.stateData);
+      // console.log(this.stateData);
 
         });
     }

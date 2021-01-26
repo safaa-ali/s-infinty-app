@@ -1,7 +1,7 @@
 import { MENU_ITEMS } from './../../pages/pages-menu';
 import { Component, OnInit } from '@angular/core';
 @Component({
-  selector: 'projects',
+  selector: 'ngx-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
 })

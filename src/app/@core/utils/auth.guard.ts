@@ -23,7 +23,7 @@ export class AuthGuard implements CanLoad {
     }
 
     // not logged in so redirect to login page with the return url
-    console.log(route.path);
+    // console.log(route.path);
 
     this.router.navigate(['/login'], { queryParams: { returnUrl: route.path } });
     return false;

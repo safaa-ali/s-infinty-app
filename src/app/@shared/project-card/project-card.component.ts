@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'ngx-project-card',
   templateUrl: './project-card.component.html',
@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProjectCardComponent implements OnInit {
   description = 'Project Description';
-  constructor () { }
+  constructor (private router: Router) { }
 active = false;
   @Input() projectitem;
 
@@ -19,4 +19,7 @@ active = false;
     { title: 'Edit' },
     { title: 'Delete' },
   ];
+  routeMap() {
+    this.router.navigate(['/projects/map-view']);
+  }
 }
