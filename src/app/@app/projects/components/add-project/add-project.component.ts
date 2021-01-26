@@ -2,7 +2,7 @@ import { FormControl, FormBuilder , FormGroup, Validators} from '@angular/forms'
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'add-project',
+  selector: 'ngx-add-project',
   templateUrl: './add-project.component.html',
   styleUrls: ['./add-project.component.scss'],
 })
@@ -28,7 +28,7 @@ export class AddProjectComponent {
 
 
     onSubmit(addprojectForm) {
-      console.log(addprojectForm.value);
+      // console.log(addprojectForm.value);
 
  const proData = {
    name: this.addprojectForm.get('name').value,

@@ -14,7 +14,6 @@ import { AuthService } from './auth.service';
 export class AuthInterceptor implements HttpInterceptor {
 
   constructor(private _authService: AuthService) {
-    console.log(888888);
 
   }
 

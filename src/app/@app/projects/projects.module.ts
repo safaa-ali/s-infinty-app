@@ -1,5 +1,14 @@
 import { ThemeModule } from './../../@theme/theme.module';
-import { NbMenuModule, NbCardModule, NbIconModule, NbContextMenuModule, NbSelectModule, NbButtonModule, NbInputModule, NbFormFieldModule } from '@nebular/theme';
+import {
+  NbMenuModule,
+  NbCardModule,
+  NbIconModule,
+  NbContextMenuModule,
+  NbSelectModule,
+  NbButtonModule,
+  NbInputModule,
+  NbFormFieldModule,
+} from '@nebular/theme';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectsRoutingModule } from './projects-routing.module';

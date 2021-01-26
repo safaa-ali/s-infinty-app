@@ -5,15 +5,12 @@ input {
   padding: 13px;
 }
 
-
-
 ::ng-deep {
-span.custom-checkbox {
-  margin: 10px 0;
-}
-.nb-theme-default [nbInput].status-basic {
-  background: #fff;
-  padding: 12px;
-}
-
+  span.custom-checkbox {
+    margin: 10px 0;
+  }
+  .nb-theme-default [nbInput].status-basic {
+    background: #fff;
+    padding: 12px;
+  }
 }

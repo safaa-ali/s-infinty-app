@@ -7,12 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor () { }
 
   ngOnInit(): void {
   }
   items = [
-    { title: 'Profile' },
-    { title: 'Logout' },
+    { title: 'Logout',icon:'log-out' , pack:"eva"},
   ];
 }

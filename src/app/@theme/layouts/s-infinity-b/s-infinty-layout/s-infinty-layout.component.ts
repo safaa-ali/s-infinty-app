@@ -1,5 +1,4 @@
 import { LayoutService } from './../../../../@core/utils/layout.service';
-// import { LayoutService } from './../../../../@core/utils/service/layout.service';
 import { Component, OnInit } from '@angular/core';
 import { NbIconLibraries, NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
 @Component({
@@ -9,11 +8,11 @@ import { NbIconLibraries, NbMediaBreakpointsService, NbMenuService, NbSidebarSer
 })
 export class SInfintyLayoutComponent implements OnInit {
 
-  constructor(
-     private sidebarService: NbSidebarService,
-     private layoutService: LayoutService,
+  constructor (
+    private sidebarService: NbSidebarService,
+    private layoutService: LayoutService,
 
-    ) { }
+  ) { }
 
   ngOnInit(): void {
 

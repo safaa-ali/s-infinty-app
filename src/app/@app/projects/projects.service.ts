@@ -1,14 +1,14 @@
 import { HttpConnectionService } from './../../@core/utils/http-connection.service';
 import { Injectable } from '@angular/core';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProjectsService {
 
   constructor(
-    private http:HttpConnectionService
+    private http: HttpConnectionService,
     ) { }
-getProjects(){
-return  this.http.get('projects?organization_id=43')
+getProjects() {
+return  this.http.get('projects?organization_id=43');
 }
 }

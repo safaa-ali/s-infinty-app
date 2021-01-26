@@ -9,7 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // const COMPONENTS = [
 //   ProjectCardComponent
 // ]
-ReactiveFormsModule
+ReactiveFormsModule;
 @NgModule({
   declarations: [
     ProjectCardComponent,

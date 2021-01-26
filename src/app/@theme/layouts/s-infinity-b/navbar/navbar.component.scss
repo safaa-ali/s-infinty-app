@@ -3,33 +3,38 @@
   display: flex;
   justify-content: space-between;
   position: relative;
-    bottom: 36px;
+  bottom: 36px;
   padding: 8px;
-z-index: 1;
+  z-index: 1;
   .header-logout {
-    span, .arrow-logout{
+    span,
+    .arrow-logout {
       color: #ada8a8;
       position: relative;
       top: 20px;
       right: 50px;
-     }
-     .arrow-logout{
+    }
+    .arrow-logout {
       right: 46px;
       top: 23px;
       font-size: 24px;
       cursor: pointer;
-     }
+    }
   }
   img {
     width: 52px;
     height: 60px;
     margin-left: 30px;
-
   }
 }
-::ng-deep{
-  .nb-theme-default nb-layout .layout .layout-container .content .columns nb-layout-column{
+::ng-deep {
+  .nb-theme-default
+    nb-layout
+    .layout
+    .layout-container
+    .content
+    .columns
+    nb-layout-column {
     padding: 2.25rem 0rem 0rem;
-
   }
 }

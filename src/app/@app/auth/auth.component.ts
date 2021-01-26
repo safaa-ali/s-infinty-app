@@ -2,7 +2,7 @@ import { MENU_ITEMS } from './../../pages/pages-menu';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'auth',
+  selector: 'ngx-auth',
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss'],
 })

@@ -1,9 +1,10 @@
-
-  <ngx-navbar></ngx-navbar>
+<ngx-navbar></ngx-navbar>
 <div class="container">
   <div class="row">
     <div class="col-lg-6">
-    <ngx-search-inp   (valueChanged)="changed('search', $event)"></ngx-search-inp>
+      <ngx-search-inp
+        (valueChanged)="changed('search', $event)"
+      ></ngx-search-inp>
     </div>
     <div class="col-lg-3">
       <input
@@ -15,19 +16,18 @@
         fullWidth
       />
     </div>
-    <div class="col-lg-3 ">
-      <button nbButton size="medium" fullWidth shape="round">Add Project</button>
+    <div class="col-lg-3">
+      <button nbButton size="medium" fullWidth shape="round">
+        Add Project
+      </button>
     </div>
   </div>
-   <div class="row card-section">
+  <div class="row card-section">
     <div
       class="col-lg-3 col-md-6 col-sm-12"
-      *ngFor="let item of ProjeData?.data?.items "
+      *ngFor="let item of ProjeData?.data?.items"
     >
-
       <ngx-project-card [projectitem]="item"></ngx-project-card>
     </div>
   </div>
-
-
 </div>

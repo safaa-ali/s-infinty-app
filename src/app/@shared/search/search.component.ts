@@ -13,7 +13,7 @@ export class SearchComponent {
   private searchDelay;
   private delayTime = 1000;
 
-  constructor() { }
+  constructor () { }
 
   onSearchHandler() {
     this.cancelEmit();
@@ -22,7 +22,6 @@ export class SearchComponent {
 
   emitIt() {
     this.searchDelay = setTimeout(() => { this.valueChanged.emit(this.searchValue); }, this.delayTime);
-    console.log(this.searchValue);
 
   }
 

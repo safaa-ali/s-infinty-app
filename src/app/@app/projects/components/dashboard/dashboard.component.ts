@@ -7,11 +7,11 @@ import { EventEmitter } from '@angular/core';
 import { Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 @Component({
-  selector: 'dashboard',
+  selector: 'ngx-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })
-export class DashboardComponent  implements OnInit {
+export class DashboardComponent implements OnInit {
   ProjeData;
   searchText = '';
   @Output() valueChanged = new EventEmitter<string>();
@@ -20,11 +20,11 @@ export class DashboardComponent  implements OnInit {
   private searchDelay;
   private delayTime = 1000;
 
-  constructor(
+  constructor (
     private router: Router,
-    private _ProjectsService:ProjectsService,
+    private _ProjectsService: ProjectsService,
 
-    ) { }
+  ) { }
 
 
   ngOnInit() {
@@ -36,19 +36,19 @@ export class DashboardComponent  implements OnInit {
       this.searchValue = value;
       this.getProjeData();
     }
-    console.log('test search');
+    // console.log('test search');
 
   }
 
-getProjeData() {
-this._ProjectsService.getProjects().subscribe(res=>{
-   this.ProjeData = res;
+  getProjeData() {
+    this._ProjectsService.getProjects().subscribe(res => {
+      this.ProjeData = res;
 
-})
-}
-addProject() {
-  this.router.navigate(['projects/add']);
-}
+    });
   }
+  addProject() {
+    this.router.navigate(['projects/add']);
+  }
+}
 
 
