@@ -39,4 +39,18 @@ nb-icon {
   .nb-theme-default [nbInput].status-basic {
     background: #fff;
   }
+  .nb-theme-default [nbButton].appearance-filled.status-basic{
+    background-color: #fff;
+    border-color: #edf1f7;
+    color: #222b45;
+    font-size: 15px;
+    text-transform: capitalize;
+    padding: 13px;
+    color: #AAAAAA;
+    font-weight: 500;
+font-style: normal;
+font-weight: 500;
+letter-spacing: 0em;
+
+  }
 }

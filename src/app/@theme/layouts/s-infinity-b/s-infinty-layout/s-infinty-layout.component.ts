@@ -1,3 +1,4 @@
+import { LayoutService } from './../../../../@core/utils/service/layout.service';
 import { Component, OnInit } from '@angular/core';
 import { NbIconLibraries, NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
 @Component({
@@ -7,7 +8,10 @@ import { NbIconLibraries, NbMediaBreakpointsService, NbMenuService, NbSidebarSer
 })
 export class SInfintyLayoutComponent implements OnInit {
 
-  constructor(    private sidebarService: NbSidebarService,
+  constructor(
+     private sidebarService: NbSidebarService,
+     private layoutService: LayoutService,
+
     ) { }
 
   ngOnInit(): void {
@@ -15,7 +19,11 @@ export class SInfintyLayoutComponent implements OnInit {
   }
   toggleSidebar(): boolean {
     this.sidebarService.toggle(true, 'menu-sidebar');
-    // this.layoutService.changeLayoutSize();
+    this.layoutService.changeLayoutSize();
     return false;
+  }
+  toggleCompact() {
+    this.sidebarService.toggle(true, 'right');
+
   }
 }

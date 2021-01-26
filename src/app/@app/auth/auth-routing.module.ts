@@ -12,7 +12,7 @@ const routes: Routes = [
     // canActivateChild:[LoginGuardService],
     children: [
       {
-        path: 'login', component: LoginComponent,
+        path: '', component: LoginComponent,
 
       },
       {

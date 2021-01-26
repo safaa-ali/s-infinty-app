@@ -1,0 +1,28 @@
+@import '@theme/styles/themes';
+
+@include nb-install-component() {
+
+  input.search-input {
+    background-color: #fcfcfc !important;
+    color: nb-theme(#434343);
+    background-image: url('assets/icons/shared/search.svg');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 15px);
+    background-size: 15px;
+    padding: 10px;
+    height: 45px;
+    // padding-right: 35px !important;
+    margin-top: 0;
+    &::placeholder {
+      color: #434343 !important;
+    }
+  }
+
+}
+
+
+@media screen and (max-width: 992px) {
+  input.search-input {
+    margin-bottom: 10px;
+  }
+}

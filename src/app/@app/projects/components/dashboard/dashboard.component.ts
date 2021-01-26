@@ -1,3 +1,4 @@
+import { ProjectsService } from './../../projects.service';
 import { Router } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ElementRef, Input } from '@angular/core';
@@ -5,8 +6,6 @@ import { ViewChild } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'app/@core/utils/service/auth.service';
-
 @Component({
   selector: 'dashboard',
   templateUrl: './dashboard.component.html',
@@ -14,6 +13,7 @@ import { AuthService } from 'app/@core/utils/service/auth.service';
 })
 export class DashboardComponent  implements OnInit {
   ProjeData;
+  searchText = '';
   @Output() valueChanged = new EventEmitter<string>();
   searchValue: string = '';
   @Input() placeholderText: string;
@@ -21,8 +21,9 @@ export class DashboardComponent  implements OnInit {
   private delayTime = 1000;
 
   constructor(
-    private auth: AuthService,
     private router: Router,
+    private _ProjectsService:ProjectsService,
+
     ) { }
 
   onSearchHandler() {
@@ -58,16 +59,13 @@ export class DashboardComponent  implements OnInit {
 
 getProjeData() {
 
-this.auth.getData('projects?organization_id=43').subscribe(res => {
-  this.ProjeData = res;
-console.log(this.ProjeData);
+this._ProjectsService.getProjects().subscribe(res=>{
+   this.ProjeData = res;
 
-});
+})
 }
 addProject() {
   this.router.navigate(['projects/add']);
-  console.log(999);
-
 }
   }
 

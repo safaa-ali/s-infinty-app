@@ -8,10 +8,17 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddProjectComponent } from './components/add-project/add-project.component';
 import { SharedModule } from 'app/@shared/shared.module';
+// import { FilterPipe } from 'app/@core/utils/filter.pipe';
 @NgModule({
-  declarations: [ProjectsComponent, DashboardComponent, AddProjectComponent],
+  declarations: [
+    ProjectsComponent,
+    DashboardComponent,
+    AddProjectComponent,
+    // FilterPipe,
+  ],
   imports: [
     CommonModule,
+
     ProjectsRoutingModule,
     NbMenuModule,
     ThemeModule,

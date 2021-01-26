@@ -1,6 +1,10 @@
 .login-page {
+
   .row {
     .cover-content {
+      .img-fluid{
+        height: 100vh;
+      }
       h3 {
         position: absolute;
         color: #fff;

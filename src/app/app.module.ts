@@ -59,7 +59,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     SharedModule,
     AuthModule,
-
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true },
