@@ -8,7 +8,7 @@ describe('SInfintyLayoutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SInfintyLayoutComponent ]
+      declarations: [ SInfintyLayoutComponent ],
     })
     .compileComponents();
   });

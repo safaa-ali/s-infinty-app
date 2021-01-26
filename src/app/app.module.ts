@@ -1,3 +1,6 @@
+import { AuthInterceptorService } from './@core/utils/service/auth-interceptor.service';
+import { AuthModule } from './@app/auth/auth.module';
+import { SharedModule } from './@shared/shared.module';
 /**
  * @license
  * Copyright Akveo. All Rights Reserved.
@@ -6,7 +9,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CoreModule } from './@core/core.module';
 import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
@@ -54,6 +57,12 @@ export function HttpLoaderFactory(http: HttpClient) {
       defaultLanguage: 'en',
       isolate: false,
     }),
+    SharedModule,
+    AuthModule,
+
+  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
   ],
   bootstrap: [AppComponent],
 })

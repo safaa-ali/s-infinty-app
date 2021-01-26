@@ -1,0 +1,22 @@
+.header {
+  background-color: #f3f3f3;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+    bottom: 36px;
+    width: 107%;
+    right: 20px;
+  padding: 8px;
+
+  .header-logout {
+    span {
+      color: #ada8a8;
+      position: relative;
+      top: 20px;
+      right: 50px;    }
+  }
+  img {
+    width: 52px;
+    height: 60px;
+  }
+}

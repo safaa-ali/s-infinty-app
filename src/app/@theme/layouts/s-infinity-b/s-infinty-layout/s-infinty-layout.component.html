@@ -1,9 +1,17 @@
 <nb-layout windowMode>
-  <!-- <nb-layout-header fixed>
-    <ngx-header></ngx-header>
-  </nb-layout-header> -->
 
-  <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive start>
+  <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive start id="nb-sidebar">
+    <ul class="container containeer-menu-title">
+      <li>
+        <a class="sidebar-toggle" (click)="toggleSidebar()">
+            <nb-icon icon="menu" class="menu-bar-icon" ></nb-icon>
+        </a>
+    </li>
+      <li class="title">
+              Menu
+      </li>
+
+  </ul>
     <ng-content select="nb-menu"></ng-content>
   </nb-sidebar>
 
