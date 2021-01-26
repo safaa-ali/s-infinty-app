@@ -5,7 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { ToastrService } from './toastr.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HttpConnectionService {
 
@@ -13,8 +13,8 @@ export class HttpConnectionService {
 
   constructor(
     private _http: HttpClient,
-    private _toastrService: ToastrService
-  ) { };
+    private _toastrService: ToastrService,
+  ) { }
 
   post(url: string, body: any, options?): Observable<any> {
     const fullUrl: string = this.apiUrlPrefix + url;

@@ -4,13 +4,13 @@ import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthGuard implements CanLoad {
 
   constructor(
     private router: Router,
-    private _authService: AuthService
+    private _authService: AuthService,
   ) { }
 
   canLoad(
@@ -24,7 +24,7 @@ export class AuthGuard implements CanLoad {
 
     // not logged in so redirect to login page with the return url
     console.log(route.path);
-    
+
     this.router.navigate(['/login'], { queryParams: { returnUrl: route.path } });
     return false;
   }

@@ -17,13 +17,13 @@ export const routes: Routes = [
       .then(m => m.PagesModule),
   },
   {
-    path:'auth', loadChildren: () => import('./@app/auth/auth.module')
+    path: 'auth', loadChildren: () => import('./@app/auth/auth.module')
     .then(m => m.AuthModule),
 
   },
 
   {
-    path:'projects', loadChildren: () => import('./@app/projects/projects.module')
+    path: 'projects', loadChildren: () => import('./@app/projects/projects.module')
     .then(m => m.ProjectsModule),
     canActivate: [AuthGuard],
   },
