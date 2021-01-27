@@ -27,8 +27,6 @@ export class MapComponent implements OnInit {
     // };
   }
   ngOnInit() {
-     //this.initMap(51.60706364167399, 0.22418975830078128);
-     //this.addMarker();
   }
   initMap(latitude, longitude) {
     this.map = L.map('map').setView([latitude, longitude], 18);
