@@ -10,11 +10,11 @@
 .map-frame {
   height: 100%;
 }
-#map {
-  height: 100% !important;
-}
+// #map {
+//   height: 100% !important;
+// }
 :host ::ng-deep {
-  .leaflet-touch .leaflet-bar a{
+  .leaflet-touch .leaflet-bar a {
     text-decoration: none;
   }
   .leaflet-tile {

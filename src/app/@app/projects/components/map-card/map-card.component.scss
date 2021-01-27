@@ -1,8 +1,7 @@
-
 nb-card {
   min-height: 110px;
   margin-bottom: 1rem;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
   background-color: white;
   .body {
     @media screen and (max-width: 900px) {
@@ -24,15 +23,15 @@ nb-card {
         font-size: 19px;
         line-height: 19px;
         color: #000000;
-        margin-bottom: 0px;
-        margin-top: 0px;
+        margin-bottom: 0;
+        margin-top: 0;
       }
       p {
         font-family: Dosis;
         font-weight: 500;
         font-size: 16px;
         color: #7c7c7c;
-        margin: 4px 0px 10px !important;
+        margin: 4px 0 10px !important;
       }
       span {
         &:nth-child(1) {

@@ -11,24 +11,24 @@ export class MapComponent implements OnInit {
   optionsPopup: any;
   private map;
   constructor() {
-    this.bodyPopup = `
-    <div class="icon"><img src="imagesconn/3.svg"></div>
-    <div class="icon"> <img src="images/3.svg"></div>
-    <div class="icon"> <img src="images/3.svg"></div>
-    <div class="icon"> <img src="images/1.svg"></div>
-    <div class="icon"> <img src="images/1.svg"></div>
-    <div class="icon"> <img src="images/1.svg"></div>
-                `;
-    this.optionsPopup = {
-      maxWidth: '400',
-      width: '200',
-      closeButton: false,
-      className: 'popupCustom',
-    };
+    // this.bodyPopup = `
+    // <div class="icon"><img src="imagesconn/3.svg"></div>
+    // <div class="icon"> <img src="images/3.svg"></div>
+    // <div class="icon"> <img src="images/3.svg"></div>
+    // <div class="icon"> <img src="images/1.svg"></div>
+    // <div class="icon"> <img src="images/1.svg"></div>
+    // <div class="icon"> <img src="images/1.svg"></div>
+    //             `;
+    // this.optionsPopup = {
+    //   maxWidth: '400',
+    //   width: '200',
+    //   closeButton: false,
+    //   className: 'popupCustom',
+    // };
   }
   ngOnInit() {
-    this.initMap(51.60706364167399, 0.22418975830078128);
-    this.addMarker();
+    //this.initMap(51.60706364167399, 0.22418975830078128);
+    //this.addMarker();
   }
   initMap(latitude, longitude) {
     this.map = L.map('map').setView([latitude, longitude], 18);
