@@ -1,4 +1,3 @@
-import { AuthService } from './../../../@core/utils/service/auth.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import {
@@ -8,7 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-
+import { AuthService } from 'app/@core/utils/auth.service';
 @Component({
   selector: 'ngx-login',
   templateUrl: './login.component.html',
@@ -18,11 +17,8 @@ export class LoginComponent implements OnInit {
   userdata;
   loginForm: FormGroup;
 
-  constructor(
-    private fb: FormBuilder,
-    private router: Router,
-    private http: HttpClient,
-    private auth: AuthService,
+  constructor (private fb: FormBuilder, private router: Router, private http: HttpClient,
+    private _authService: AuthService,
   ) {
     this.loginForm = this.fb.group({
       username: new FormControl('admin', [
@@ -36,12 +32,9 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
-  // checked = false;
+  ngOnInit(): void {
+  }
 
-  // toggle(checked: boolean) {
-  //   this.checked = checked;
-  // }
   showPassword = true;
 
   getInputType() {
@@ -55,11 +48,11 @@ export class LoginComponent implements OnInit {
     this.showPassword = !this.showPassword;
   }
   onSubmit(form) {
-    this.auth.getToken('login', form.value).subscribe((res) => {
-      // console.log(res);
-      localStorage.setItem('tokenLogin', res['data']['token']);
-      localStorage.setItem('userLogin', res['data']);
 
+    const username = form.value.username;
+    const password = form.value.password;
+
+    this._authService.login(username, password).subscribe(res => {
       this.router.navigate(['/projects']);
     });
   }

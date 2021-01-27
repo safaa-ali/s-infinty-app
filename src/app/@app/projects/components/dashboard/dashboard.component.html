@@ -1,23 +1,25 @@
 <ngx-navbar></ngx-navbar>
 <div class="container">
   <div class="row">
-    <div class="col-lg-4">
-      <nb-form-field>
-        <nb-icon nbSuffix icon="search" pack="eva"></nb-icon>
-        <input type="text" placeholder="Search" nbInput shape="round" />
-      </nb-form-field>
+    <div class="col-lg-6">
+      <ngx-search-inp
+        (valueChanged)="changed('search', $event)"
+      ></ngx-search-inp>
     </div>
-    <div class="col-lg-2">
+    <div class="col-lg-3">
       <input
         type="text"
         placeholder="Filters"
         nbInput
         shape="round"
         class="text-center"
+        fullWidth
       />
     </div>
-    <div class="col-lg-3 offset-1">
-      <button nbButton size="medium" shape="round">Add Project</button>
+    <div class="col-lg-3">
+      <button nbButton size="medium" fullWidth shape="round">
+        Add Project
+      </button>
     </div>
   </div>
   <div class="row card-section">

@@ -1,19 +1,22 @@
-.map-container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  z-index: 100;
-  overflow: hidden;
-}
-.map-frame {
-  height: 100%;
-}
+// .map-container {
+//   // position: absolute;
+//   // top: 0;
+//   // right: 0;
+//   // left: 0;
+//   // bottom: 0;
+//   // z-index: 100;
+//   // overflow: hidden;
+// }
+// .map-frame {
+//   height: 100%;
+// }
 // #map {
-//   height: 100% !important;
+//   //height: 100% !important;
 // }
 :host ::ng-deep {
+  .leaflet-bottom {
+    display: none;
+  }
   .leaflet-touch .leaflet-bar a {
     text-decoration: none;
   }

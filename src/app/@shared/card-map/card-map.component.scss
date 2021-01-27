@@ -1,0 +1,59 @@
+nb-card {
+    min-height: 110px;
+    margin-bottom: 1rem;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    .body {
+      @media screen and (max-width: 900px) {
+        display: block !important;
+      }
+      .projectContent {
+        position: relative;
+        @media screen and (max-width: 900px) {
+          display: block !important;
+        }
+        img {
+          height: 80px;
+          width: 80px;
+          margin-right: 20px;
+        }
+        h1 {
+          font-family: Dosis;
+          font-weight: 500;
+          font-size: 19px;
+          line-height: 19px;
+          color: #000000;
+          margin-bottom: 0;
+          margin-top: 0;
+        }
+        p {
+          font-family: Dosis;
+          font-weight: 500;
+          font-size: 16px;
+          color: #7c7c7c;
+          margin: 4px 0 10px !important;
+        }
+        span {
+          &:nth-child(1) {
+            font-weight: 500;
+            font-size: 14px;
+            color: #7c7c7c;
+          }
+          &:nth-child(2) {
+            font-weight: 500;
+            font-size: 14px;
+            color: #9c9b9b;
+          }
+        }
+      }
+      .rightPart {
+        nb-icon {
+          font-size: 1.8rem;
+          position: absolute;
+          top: 4px;
+          right: 1rem;
+        }
+      }
+    }
+  }
+  

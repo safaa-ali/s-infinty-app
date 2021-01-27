@@ -1,17 +1,20 @@
-<nb-layout class="s-layout" windowMode>
-
-  <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive start id="nb-sidebar">
-    <ul class="container containeer-menu-title">
-      <li>
+<nb-layout windowMode>
+  <nb-sidebar
+    class="menu-sidebar sidebar"
+    tag="menu-sidebar"
+    responsive
+    start
+    id="nb-sidebar"
+  >
+    <div class="menu-item-collapse">
+      <p>
         <a class="sidebar-toggle" (click)="toggleSidebar()">
-            <nb-icon icon="menu" class="menu-bar-icon" ></nb-icon>
+          <nb-icon icon="menu" class="menu-bar-icon compactedIcon"></nb-icon>
         </a>
-    </li>
-      <li class="title">
-              Menu
-      </li>
+      </p>
+      <p class="title expandedItem">Menu</p>
+    </div>
 
-  </ul>
     <ng-content select="nb-menu"></ng-content>
   </nb-sidebar>
 

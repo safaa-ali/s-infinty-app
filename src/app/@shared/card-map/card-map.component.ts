@@ -1,15 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'ngx-map-card',
-  templateUrl: './map-card.component.html',
-  styleUrls: ['./map-card.component.scss'],
+  selector: 'ngx-card-map',
+  templateUrl: './card-map.component.html',
+  styleUrls: ['./card-map.component.scss'],
 })
-export class MapCardComponent implements OnInit {
+export class CardMapComponent implements OnInit {
+
   toggle: boolean = false;
   @Input() pname: string;
   @Input() description: string;
-  @Input() imageUrl: string;
+  @Input() imgUrl: string;
   @Input() createdAt: any;
   @Input() isActive: boolean = false;
   items = [
@@ -30,4 +32,5 @@ export class MapCardComponent implements OnInit {
      return 'active';
     }
   }
+
 }

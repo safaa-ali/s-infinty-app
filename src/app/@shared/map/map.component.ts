@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ProjectsService } from 'app/@app/projects/projects.service';
 import * as L from 'leaflet';
 
 @Component({
@@ -7,52 +8,55 @@ import * as L from 'leaflet';
   styleUrls: ['./map.component.scss'],
 })
 export class MapComponent implements OnInit {
+  @Input() projectId: number;
   bodyPopup: any;
   optionsPopup: any;
-  private map;
-  constructor() {
-    // this.bodyPopup = `
-    // <div class='icon'><img src='imagesconn/3.svg'></div>
-    // <div class='icon'> <img src='images/3.svg'></div>
-    // <div class='icon'> <img src='images/3.svg'></div>
-    // <div class='icon'> <img src='images/1.svg'></div>
-    // <div class='icon'> <img src='images/1.svg'></div>
-    // <div class='icon'> <img src='images/1.svg'></div>
-    //             `;
-    // this.optionsPopup = {
-    //   maxWidth: '400',
-    //   width: '200',
-    //   closeButton: false,
-    //   className: 'popupCustom',
-    // };
+  stationsLocations: [];
+  mapTile = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+    maxZoom: 23,
+    minZoom: 16,
+    subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+  });
+  map: L.Map;
+  options = {
+    layers: [this.mapTile],
+    zoom: 19,
+    center: L.latLng([51.60706364167399, 0.22418975830078128]),
+  };
+  constructor(private _ProjectsService: ProjectsService) {
+    this.bodyPopup = ` <div class="icon"><img src='assets/images/in'></div>
+                <div class="icon">2</div>
+                <div class="icon">3</div>
+                <div class="icon">4</div>
+                <div class="icon">5</div>
+                <div class="icon">6</div>  `;
+    this.optionsPopup = {
+      maxWidth: '400',
+      width: '200',
+      closeButton: false,
+      className: 'popupCustom',
+    };
+  }
+  createMarker(lat, long) {
+    L.marker(L.latLng(lat, long))
+      .bindPopup(this.bodyPopup, this.optionsPopup)
+      .addTo(this.map);
   }
   ngOnInit() {
+    this.getLocations();
   }
-  initMap(latitude, longitude) {
-    this.map = L.map('map').setView([latitude, longitude], 18);
-    const tiles = L.tileLayer(
-      'http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
-      {
-        maxZoom: 23,
-        minZoom: 16,
-        subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
-      },
-    ).addTo(this.map);
-    L.marker([latitude, longitude])
+  locateStations(map: L.Map) {
+    L.marker([51, 30])
       .addTo(this.map)
       .bindPopup(this.bodyPopup, this.optionsPopup);
-    // L.Icon.Default.mergeOptions({
-    //   iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-    //   iconUrl: require('leaflet/dist/images/marker-icon.png'),
-    //   shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
-    // });
-    tiles.addTo(this.map);
+    // console.log('done');
   }
-  addMarker() {
-    this.map.on('click', (e) => {
-      L.marker([e.latlng.lat, e.latlng.lng])
-        .addTo(this.map)
-        .bindPopup(this.bodyPopup, this.optionsPopup);
+  getLocations() {
+    this._ProjectsService.getStations(this.projectId).subscribe((res) => {
+      this.stationsLocations = res.data.items.filter(
+        (item) => item.assetType === 'stationary',
+      );
+      // console.log(this.stationsLocations);
     });
   }
 }

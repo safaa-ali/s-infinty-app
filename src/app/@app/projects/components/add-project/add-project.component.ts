@@ -1,6 +1,10 @@
-import { FormControl, FormBuilder , FormGroup, Validators} from '@angular/forms';
+import {
+  FormControl,
+  FormBuilder,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'app/@core/utils/service/auth.service';
 
 @Component({
   selector: 'ngx-add-project',
@@ -13,8 +17,7 @@ export class AddProjectComponent {
   selectedItem;
   countryData;
   stateData;
-  constructor(private fb: FormBuilder, private auth: AuthService) {
-
+  constructor(private fb: FormBuilder) {
     this.addprojectForm = this.fb.group({
       name: ['project', [Validators.required]],
       description: ['full project', [Validators.required]],
@@ -25,67 +28,60 @@ export class AddProjectComponent {
       project_type_id: [1, [Validators.required]],
     });
     this.getCountry();
-    }
+  }
 
+  onSubmit(addprojectForm) {
+    // console.log(addprojectForm.value);
 
-    onSubmit(addprojectForm) {
-      // console.log(addprojectForm.value);
-
- const proData = {
-   name: this.addprojectForm.get('name').value,
-   description: this.addprojectForm.get('description').value,
-   image: this.addprojectForm.get('image').value,
-   country_id: this.addprojectForm.get('country_id').value,
-   state_id: this.addprojectForm.get('state_id').value,
-   project_type_id: this.addprojectForm.get('project_type_id').value,
- };
- const formdata = new FormData();
+    const proData = {
+      name: this.addprojectForm.get('name').value,
+      description: this.addprojectForm.get('description').value,
+      image: this.addprojectForm.get('image').value,
+      country_id: this.addprojectForm.get('country_id').value,
+      state_id: this.addprojectForm.get('state_id').value,
+      project_type_id: this.addprojectForm.get('project_type_id').value,
+    };
+    const formdata = new FormData();
     formdata.append('name', proData.name);
     formdata.append('description', proData.description);
     formdata.append('image', proData.image);
     formdata.append('country_id', proData.country_id);
     formdata.append('state_id', proData.state_id);
     formdata.append('project_type_id', proData.project_type_id);
-    this.auth.getToken('projects?organization_id=43', formdata).subscribe(res => {
-      // console.log(res);
+    // this.auth.getToken('projects?organization_id=43', formdata).subscribe(res => {
+    //   console.log(res);
 
-    });
-}
+    // });
+  }
 
+  onImagePicked(event: Event) {
+    const file = (event.target as HTMLInputElement).files[0]; // convert to html input and catch the file
+    this.addprojectForm.patchValue({ image: file }); // call the single property of addprojectForm [image] and assined to file
+    this.addprojectForm.get('image').updateValueAndValidity(); // when change image value will be updated
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.imagePreview = reader.result as string; // url
+    };
+    reader.readAsDataURL(file); // preview url
+  }
 
-    onImagePicked(event: Event) {
-      const file = (event.target as HTMLInputElement).files[0]; // convert to html input and catch the file
-      this.addprojectForm.patchValue({'image': file}); // call the single property of addprojectForm [image] and assined to file
-      this.addprojectForm.get('image').updateValueAndValidity(); // when change image value will be updated
-      const reader = new FileReader();
-      reader.onload = () => {
-        this.imagePreview = (reader.result as string); // url
-      };
-      reader.readAsDataURL(file); // preview url
-    }
-
-    // get country
-    getCountry() {
-      this.auth.getData('countries').subscribe(res => {
-
-    this.countryData = res;
+  // get country
+  getCountry() {
+    //   this.auth.getData('countries').subscribe(res => {
+    // this.countryData = res;
     // console.log(res);
+    //   });
+  }
 
-      });
-    }
-
-    changeSelect(event) {
+  changeSelect(event) {
     //  console.log(event);
     this.getState(event);
-    }
-// get all state of spacfic country id
-      getState(id) {
-        this.auth.getData(`states?country_id=${id}`).subscribe(res => {
-
-      this.stateData = res;
-      // console.log(this.stateData);
-
-        });
-    }
-
+  }
+  // get all state of spacfic country id
+  getState(id) {
+    //   this.auth.getData(`states?country_id=${id}`).subscribe(res => {
+    // this.stateData = res;
+    // console.log(this.stateData);
+    //   });
+  }
 }

@@ -1,5 +1,3 @@
-import { AuthInterceptorService } from './@core/utils/service/auth-interceptor.service';
-import { AuthModule } from './@app/auth/auth.module';
 import { SharedModule } from './@shared/shared.module';
 /**
  * @license
@@ -9,7 +7,7 @@ import { SharedModule } from './@shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './@core/core.module';
 import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
@@ -60,11 +58,9 @@ export function HttpLoaderFactory(http: HttpClient) {
       isolate: false,
     }),
     SharedModule,
-    AuthModule,
-
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true },
+
   ],
   bootstrap: [AppComponent],
 })

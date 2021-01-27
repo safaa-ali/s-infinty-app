@@ -20,18 +20,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddProjectComponent } from './components/add-project/add-project.component';
 import { SharedModule } from 'app/@shared/shared.module';
 import { MapViewComponent } from './components/map-view/map-view.component';
-import { MapCardComponent } from './components/map-card/map-card.component';
-
+// import { FilterPipe } from 'app/@core/utils/filter.pipe';
 @NgModule({
   declarations: [
     ProjectsComponent,
     DashboardComponent,
     AddProjectComponent,
     MapViewComponent,
-    MapCardComponent,
+    // FilterPipe,
   ],
   imports: [
     CommonModule,
+
     ProjectsRoutingModule,
     NbMenuModule,
     ThemeModule,

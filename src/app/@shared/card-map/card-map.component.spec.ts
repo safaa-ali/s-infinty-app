@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MapCardComponent } from './map-card.component';
+import { CardMapComponent } from './card-map.component';
 
-describe('MapCardComponent', () => {
-  let component: MapCardComponent;
-  let fixture: ComponentFixture<MapCardComponent>;
+describe('CardMapComponent', () => {
+  let component: CardMapComponent;
+  let fixture: ComponentFixture<CardMapComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MapCardComponent ],
+      declarations: [ CardMapComponent ],
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MapCardComponent);
+    fixture = TestBed.createComponent(CardMapComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

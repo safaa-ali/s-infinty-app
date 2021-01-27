@@ -3,6 +3,7 @@ import { NbSidebarService } from '@nebular/theme';
 import { AuthService } from 'app/@core/utils/service/auth.service';
 import { DatePipe } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { ProjectsService } from '../../projects.service';
 @Component({
   selector: 'ngx-map-view',
   templateUrl: './map-view.component.html',
@@ -14,27 +15,25 @@ export class MapViewComponent implements OnInit {
   projectId: number;
   constructor(
     private sidebarService: NbSidebarService,
-    private auth: AuthService,
     private datePipe: DatePipe,
     private route: ActivatedRoute,
+    private _ProjectsService: ProjectsService,
   ) {
     this.sub = this.route.params.subscribe((params) => {
       this.projectId = +params['projectId'];
-      // console.log(this.projectId);
-
     });
+    // console.log(this.projectId);
   }
   ngOnInit(): void {
-    this.getProjeData();
+    this.getProjectData();
   }
   toggleCompact() {
     this.sidebarService.toggle(true, 'map-sidebar');
   }
-  getProjeData() {
-    this.auth.getData('projects?organization_id=43').subscribe((res) => {
-      this.ProjectsData = res;
-      this.ProjectsData = this.ProjectsData.data.items;
-      //  console.log(typeof(this.adjustDate(this.ProjectsData[1].createdAt)));
+  getProjectData() {
+    this._ProjectsService.getProjects().subscribe((res) => {
+      this.ProjectsData = res.data.items;
+      // console.log(this.ProjectsData);
     });
   }
   isActive(id) {
