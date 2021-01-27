@@ -42,6 +42,7 @@ import { CORPORATE_THEME } from './styles/theme.corporate';
 import { DARK_THEME } from './styles/theme.dark';
 import { SInfintyLayoutComponent } from './layouts/s-infinity-b/s-infinty-layout/s-infinty-layout.component';
 import { NavbarComponent } from './layouts/s-infinity-b/navbar/navbar.component';
+import { MapViewerComponent } from './layouts/map-viewer/map-viewer.component';
 
 const NB_MODULES = [
   NbLayoutModule,
@@ -80,7 +81,7 @@ const PIPES = [
 @NgModule({
   imports: [CommonModule, ...NB_MODULES],
   exports: [CommonModule, ...PIPES, ...COMPONENTS],
-  declarations: [...COMPONENTS, ...PIPES, SInfintyLayoutComponent, NavbarComponent],
+  declarations: [...COMPONENTS, ...PIPES, SInfintyLayoutComponent, NavbarComponent, MapViewerComponent],
 })
 export class ThemeModule {
   static forRoot(): ModuleWithProviders<ThemeModule> {

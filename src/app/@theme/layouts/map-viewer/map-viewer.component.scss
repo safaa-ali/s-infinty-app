@@ -1,0 +1,22 @@
+.map-viewer nb-sidebar {
+  .scrollable {
+    padding: 0 !important;
+    overflow-y: hidden;
+  }
+  .menu-sidebar {
+    border-top-right-radius: 30px;
+  }
+}
+::ng-deep {
+  .nb-theme-default .map-viewer {
+    nb-sidebar .expanded {
+      width: 30rem;
+    }
+    nb-sidebar .compacted {
+      width: 4rem;
+    }
+    nb-layout .layout .layout-container nb-sidebar .main-container-fixed {
+      width: 30rem;
+    }
+  }
+}

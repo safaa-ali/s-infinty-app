@@ -44,9 +44,6 @@
   }
 }
 .map-view {
-  .fixed {
-    top: 0 !important;
-  }
   .menu-sidebar {
     border-top-right-radius: 30px;
   }
@@ -64,6 +61,7 @@
     .texts {
       span {
         font-family: unset;
+        font-size: 18px;
         &:nth-child(1) {
           font-weight: 700;
           margin-right: 10px;
@@ -76,9 +74,10 @@
       text-transform: none;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
       border-radius: 20px;
-      font-size: 14px;
       nb-icon {
         color: #3e65ee;
+        position: relative;
+        top: -4px;
       }
     }
     .projects-container {
