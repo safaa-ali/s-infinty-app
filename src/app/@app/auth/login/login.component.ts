@@ -1,8 +1,11 @@
+// import { HttpConnectionService } from './../../../@core/utils/http-connection.service';
+import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AuthService } from 'app/@core/utils/auth.service';
+
 @Component({
   selector: 'ngx-login',
   templateUrl: './login.component.html',
@@ -15,6 +18,7 @@ export class LoginComponent implements OnInit {
 
   constructor (private fb: FormBuilder, private router: Router, private http: HttpClient,
     private _authService: AuthService,
+    // private _httpConnectionService:HttpConnectionService
   ) {
     this.loginForm = this.fb.group({
       username: new FormControl('admin', [Validators.required, Validators.pattern('[a-z]{3,12}')]),
@@ -43,10 +47,16 @@ export class LoginComponent implements OnInit {
     const username = form.value.username;
     const password = form.value.password;
 
+
+
     this._authService.login(username, password).subscribe(res => {
       this.router.navigate(['/projects']);
 
     });
+    // this._httpConnectionService.post('login',{username,password}).subscribe(res=>{
+    //   console.log(res);
+
+    // })
   }
 
 }

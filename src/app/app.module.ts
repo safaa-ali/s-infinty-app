@@ -1,4 +1,7 @@
-import { AuthModule } from './@app/auth/auth.module';
+
+import { CoreModule } from './@core/core.module';
+
+
 import { SharedModule } from './@shared/shared.module';
 /**
  * @license
@@ -8,8 +11,7 @@ import { SharedModule } from './@shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { CoreModule } from './@core/core.module';
+import { HttpClient, HttpClientModule} from '@angular/common/http';
 import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -32,6 +34,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    CoreModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
@@ -45,7 +48,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     NbChatModule.forRoot({
       messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
     }),
-    CoreModule.forRoot(),
     ThemeModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
@@ -57,7 +59,6 @@ export function HttpLoaderFactory(http: HttpClient) {
       isolate: false,
     }),
     SharedModule,
-    AuthModule,
   ],
   providers: [
 
