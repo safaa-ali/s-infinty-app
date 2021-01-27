@@ -1,4 +1,7 @@
 <nb-layout windowMode>
+    <nb-layout-header>
+    <ngx-header></ngx-header>
+  </nb-layout-header>
   <nb-sidebar
     class="menu-sidebar sidebar"
     tag="menu-sidebar"
@@ -6,6 +9,7 @@
     start
     id="nb-sidebar"
   >
+
     <div class="menu-item-collapse">
       <p>
         <a class="sidebar-toggle" (click)="toggleSidebar()">

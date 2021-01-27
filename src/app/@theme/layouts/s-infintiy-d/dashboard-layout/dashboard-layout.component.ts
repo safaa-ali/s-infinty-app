@@ -1,12 +1,13 @@
-import { LayoutService } from './../../../../@core/utils/layout.service';
 import { Component, OnInit } from '@angular/core';
-import { NbIconLibraries, NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
+import { NbSidebarService } from '@nebular/theme';
+import { LayoutService } from 'app/@core/utils/layout.service';
+
 @Component({
-  selector: 'ngx-s-infinty-layout',
-  templateUrl: './s-infinty-layout.component.html',
-  styleUrls: ['./s-infinty-layout.component.scss'],
+  selector: 'ngx-dashboard-layout',
+  templateUrl: './dashboard-layout.component.html',
+  styleUrls: ['./dashboard-layout.component.scss']
 })
-export class SInfintyLayoutComponent implements OnInit {
+export class DashboardLayoutComponent implements OnInit {
 
   constructor (
     private sidebarService: NbSidebarService,

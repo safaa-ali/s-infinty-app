@@ -6,7 +6,7 @@ import { AuthService } from './auth.service';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuard implements CanLoad, CanActivate {
+export class AuthGuard implements CanLoad , CanActivate {
 
   constructor (
     private router: Router,
@@ -33,7 +33,7 @@ export class AuthGuard implements CanLoad, CanActivate {
     state: RouterStateSnapshot):
     boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
 
-    if (localStorage.getItem('AuthorizationData')) {
+    if (localStorage.getItem('satellizer_token')) {
       return true;
     }
     this.router.navigate(['./auth/login']);
