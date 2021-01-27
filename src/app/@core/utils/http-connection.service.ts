@@ -45,7 +45,8 @@ export class HttpConnectionService {
   }
 
   errorHandler(error) {
-    this._toastrService.showTranslatedToast('danger', error.error.errorMessage, 'something-went-wrong');
+    this._toastrService.showToast('danger', error.error.errorMessage, 'Something went wrong');
     return throwError(error);
   }
+
 }

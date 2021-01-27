@@ -9,29 +9,27 @@ import { filter, map } from 'rxjs/operators';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(
+  constructor (
     private nbMenuService: NbMenuService,
-     @Inject(NB_WINDOW) private window,
-     private _authService:AuthService
+    @Inject(NB_WINDOW) private window,
+    private _authService: AuthService,
 
 
-    ) {
+  ) {
   }
   ngOnInit() {
     this.nbMenuService
-    .onItemClick()
-    .pipe(
-      // filter(({ tag }) => tag === 'my-context-menu'),
-      map(({ item: { title } }) => title),
-    ).subscribe((title) => {
-      if (title === 'Logout') {
-        //  alert(9999);
-    this._authService.logout()
-      }
-    });
-      }
+      .onItemClick()
+      .pipe(
+        map(({ item: { title } }) => title),
+      ).subscribe((title) => {
+        if (title === 'Logout') {
+          this._authService.logout();
+        }
+      });
+  }
 
   items = [
-    { title: 'Logout',icon:'unlock-outline' , pack:"eva"},
+    { title: 'Logout', icon: 'log-out', pack: 'eva' },
   ];
 }

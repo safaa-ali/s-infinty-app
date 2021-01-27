@@ -4,7 +4,7 @@
 
 @include nb-install-component() {
   ::ng-deep .scrollable {
-    .nb-theme-default nb-layout .layout .layout-container .content .columns nb-layout-column{
+    .nb-theme-default nb-layout .layout .layout-container .content .columns nb-layout-column {
       // padding: 0;
     }
   }

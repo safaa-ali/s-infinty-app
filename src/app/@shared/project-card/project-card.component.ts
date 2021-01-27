@@ -1,5 +1,5 @@
+import { DatePipe } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
-
 @Component({
   selector: 'ngx-project-card',
   templateUrl: './project-card.component.html',
@@ -10,6 +10,7 @@ export class ProjectCardComponent implements OnInit {
   constructor () { }
 active = false;
   @Input() projectitem;
+  @Input() createdAt ;
 
   ngOnInit(): void {
   }
@@ -19,4 +20,5 @@ active = false;
     { title: 'Edit' },
     { title: 'Delete' },
   ];
+
 }

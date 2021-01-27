@@ -10,7 +10,7 @@
     .header-logout {
       span {
         color: #ada8a8;
-        margin: 0px 10px;
+        margin: 0 10px;
       }
     }
     img {
@@ -42,14 +42,12 @@ nb-icon {
   .nb-theme-default [nbButton].appearance-filled.status-basic {
     background-color: #fff;
     border-color: #edf1f7;
-    color: #222b45;
     font-size: 15px;
     text-transform: capitalize;
     padding: 13px;
     color: #aaaaaa;
-    font-weight: 500;
     font-style: normal;
     font-weight: 500;
-    letter-spacing: 0em;
+    letter-spacing: 0;
   }
 }

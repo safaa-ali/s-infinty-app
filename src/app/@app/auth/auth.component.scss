@@ -1,10 +1,9 @@
-::ng-deep{
-  nb-layout nb-layout-column{
+::ng-deep {
+  nb-layout nb-layout-column {
     background-color: #fff;
   }
-  .nb-theme-default nb-layout .layout .layout-container .content .columns nb-layout-column{
+  .nb-theme-default nb-layout .layout .layout-container .content .columns nb-layout-column {
     padding: 0;
-    overflow: hidden;
     height: 100vh;
   }
 }

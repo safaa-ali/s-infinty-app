@@ -1,7 +1,6 @@
 
 import { CoreModule } from './@core/core.module';
 
-
 import { SharedModule } from './@shared/shared.module';
 /**
  * @license
@@ -34,7 +33,6 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    CoreModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
@@ -48,6 +46,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     NbChatModule.forRoot({
       messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
     }),
+    CoreModule.forRoot(),
     ThemeModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
@@ -59,6 +58,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       isolate: false,
     }),
     SharedModule,
+
   ],
   providers: [
 

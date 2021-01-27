@@ -18,11 +18,10 @@ export class LoginComponent implements OnInit {
 
   constructor (private fb: FormBuilder, private router: Router, private http: HttpClient,
     private _authService: AuthService,
-    // private _httpConnectionService:HttpConnectionService
   ) {
     this.loginForm = this.fb.group({
-      username: new FormControl('admin', [Validators.required, Validators.pattern('[a-z]{3,12}')]),
-      password: new FormControl(123456, [Validators.required, Validators.pattern('[1-9]{6,12}')]),
+      username: new FormControl('', [Validators.required, Validators.pattern('[a-z]{3,12}')]),
+      password: new FormControl(null, [Validators.required, Validators.pattern('[1-9]{6,12}')]),
 
     });
   }
@@ -53,10 +52,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/projects']);
 
     });
-    // this._httpConnectionService.post('login',{username,password}).subscribe(res=>{
-    //   console.log(res);
 
-    // })
   }
 
 }

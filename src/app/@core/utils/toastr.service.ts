@@ -9,7 +9,7 @@ export class ToastrService {
 
   constructor(
     private _toastrService: NbToastrService,
-    private _translateService: TranslateService,
+    // private _translateService: TranslateService,
   ) { }
 
   showToast(status: NbComponentStatus, msg, title, customIcon?) {
@@ -23,14 +23,14 @@ export class ToastrService {
     this._toastrService.show(msg, title, config);
   }
 
-  showTranslatedToast(status: NbComponentStatus, msg: string, title: string, customIcon?) {
-    const sub = this._translateService.get(title).subscribe(
-      translation => {
-        this.showToast(status, msg, translation, customIcon);
-      });
-    setTimeout(() => {
-      sub.unsubscribe();
-    }, 1000);
-  }
+  // showTranslatedToast(status: NbComponentStatus, msg: string, title: string, customIcon?) {
+  //   const sub = this._translateService.get(title).subscribe(
+  //     translation => {
+  //       this.showToast(status, msg, translation, customIcon);
+  //     });
+  //   setTimeout(() => {
+  //     sub.unsubscribe();
+  //   }, 1000);
+  // }
 
 }
