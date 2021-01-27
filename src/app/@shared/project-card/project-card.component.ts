@@ -1,3 +1,5 @@
+import { Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 @Component({
@@ -8,9 +10,8 @@ import { Router } from '@angular/router';
 export class ProjectCardComponent implements OnInit {
   description = 'Project Description';
   constructor (private router: Router) { }
-active = false;
+  active = false;
   @Input() projectitem;
-
   ngOnInit(): void {
   }
   menuitems = [
@@ -20,6 +21,8 @@ active = false;
     { title: 'Delete' },
   ];
   routeMap() {
-    this.router.navigate(['/projects/map-view']);
+    this.router.navigate([`/projects/${this.projectitem.id}`]);
   }
+
+
 }

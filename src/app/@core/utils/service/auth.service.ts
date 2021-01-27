@@ -13,7 +13,6 @@ fixApiUrl = 'https://mot-dev-backend.s-infinity-d.com/api/';
     return  this.http.post(this.fixApiUrl + url, body);
   }
   getData(url) {
-
     return  this.http.get(this.fixApiUrl + url);
   }
 }

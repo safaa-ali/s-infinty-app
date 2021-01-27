@@ -15,10 +15,10 @@ const routes: Routes = [
       {
         path: 'add', component: AddProjectComponent,
       },
-      {
-        path: 'map-view', component: MapViewComponent,
-      },
     ],
+  },
+  {
+    path: ':projectId', component: MapViewComponent,
   },
 ];
 

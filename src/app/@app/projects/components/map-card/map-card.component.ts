@@ -10,7 +10,8 @@ export class MapCardComponent implements OnInit {
   @Input() pname: string;
   @Input() description: string;
   @Input() imageUrl: string;
-  @Input() createdAt: string;
+  @Input() createdAt: any;
+  @Input() isActive: boolean = false;
   items = [
     { title: 'IoT Monitoring' },
     { title: 'Data Analytics' },
@@ -23,5 +24,10 @@ export class MapCardComponent implements OnInit {
   ngOnInit() {}
   toggleMenu() {
     this.toggle = !this.toggle;
+  }
+  getClass() {
+    if (this.isActive) {
+     return 'active';
+    }
   }
 }

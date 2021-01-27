@@ -1,4 +1,4 @@
-@import './themes';
+@import "./themes";
 
 @mixin nb-overrides() {
   nb-select.size-medium button {
@@ -13,7 +13,7 @@
     width: 100%;
     text-transform: uppercase;
     margin-bottom: 17px;
-    font-family: 'Dosis', sans-serif;
+    font-family: "Dosis", sans-serif;
     font-weight: normal;
     font-size: 16px;
     max-height: 44px;
@@ -22,25 +22,29 @@
     height: 45px;
     cursor: pointer;
     nb-icon {
-        margin-right: 4px;
-        font-size: 1rem !important;
+      margin-right: 4px;
+      font-size: 1rem !important;
     }
     border-color: transparent !important;
     &:focus {
-        outline: none;
-        box-shadow: none;
+      outline: none;
+      box-shadow: none;
     }
     @media only screen and (max-width: 997px) {
-        font-size: 14px;
-        // width: 80%;
-        //  margin-top: 15px;
+      font-size: 14px;
+      // width: 80%;
+      //  margin-top: 15px;
     }
     @media only screen and (max-width: 699px) {
-        //    width: 90%;
+      //    width: 90%;
     }
     @media only screen and (max-width: 426px) {
-        font-size: 12px;
+      font-size: 12px;
     }
+  }
 }
-
+.nb-theme-default nb-menu .menu-item a {
+  font-weight: 400 !important;
+  font-size: 14px;
+  font-family: Dosis;
 }
