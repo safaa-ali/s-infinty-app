@@ -1,0 +1,29 @@
+<nb-card [class]='getClass()'>
+  <nb-card-body>
+    <div class="d-flex body justify-content-between align-items-end">
+      <div class="d-flex projectContent align-items-end h-100">
+        <img [src]="this.imgUrl" alt="" />
+        <div>
+          <h1>{{this.pname}}</h1>
+          <p>{{this.description}}</p>
+          <div class="assets d-flex">
+            <nb-icon icon="pin-outline" pack="eva"></nb-icon>
+            <span>Asset</span>
+          </div>
+        </div>
+      </div>
+      <div class="rightPart d-flex align-items-end h-100 text-right">
+        <div>
+          <nb-icon
+            icon="more-horizontal-outline"
+            pack="eva"
+            (click)="toggleMenu()"
+            [nbContextMenu]="items"
+            [nbContextMenuPlacement]="'right'"
+          ></nb-icon>
+        </div>
+        <span>{{this.createdAt}}</span>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

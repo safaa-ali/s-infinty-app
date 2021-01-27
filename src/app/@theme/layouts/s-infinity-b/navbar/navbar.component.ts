@@ -30,6 +30,6 @@ export class NavbarComponent implements OnInit {
   }
 
   items = [
-    { title: 'Logout', icon: 'log-out', pack: 'eva' },
+    { title: 'Logout', icon: 'unlock', pack: 'eva' },
   ];
 }

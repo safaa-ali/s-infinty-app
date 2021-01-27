@@ -12,7 +12,6 @@ import { AuthService } from 'app/@core/utils/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-
   userdata;
   loginForm: FormGroup;
 
@@ -50,9 +49,7 @@ export class LoginComponent implements OnInit {
 
     this._authService.login(username, password).subscribe(res => {
       this.router.navigate(['/projects']);
-
     });
 
   }
-
 }

@@ -1,7 +1,6 @@
 import { GlobalService } from './../../../../@core/utils/global.service';
 import { ProjectsService } from './../../projects.service';
 import { Router } from '@angular/router';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ElementRef, Input } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { EventEmitter } from '@angular/core';
@@ -29,7 +28,6 @@ export class DashboardComponent implements OnInit {
     private _globalService: GlobalService,
     private datePipe: DatePipe,
   ) { }
-
 
   ngOnInit() {
     this.getProjeData();

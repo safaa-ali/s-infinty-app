@@ -1,0 +1,74 @@
+// .map-container {
+//   // position: absolute;
+//   // top: 0;
+//   // right: 0;
+//   // left: 0;
+//   // bottom: 0;
+//   // z-index: 100;
+//   // overflow: hidden;
+// }
+// .map-frame {
+//   height: 100%;
+// }
+// #map {
+//   //height: 100% !important;
+// }
+:host ::ng-deep {
+  .leaflet-bottom {
+    display: none;
+  }
+  .leaflet-touch .leaflet-bar a {
+    text-decoration: none;
+  }
+  .leaflet-tile {
+    filter: hue-rotate(35deg) !important;
+  }
+  .leaflet-control-container {
+    position: absolute;
+    right: 56px;
+    bottom: 100px;
+  }
+  .leaflet-fade-anim .leaflet-map-pane .leaflet-popup {
+    bottom: -16px !important;
+  }
+  .leaflet-popup-content-wrapper {
+    background-color: #7b828d;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+  .popupCustom {
+    .icon {
+      position: absolute;
+      border-radius: 50%;
+      &:nth-child(1) {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -20%);
+      }
+      &:nth-child(2) {
+        right: 8px;
+        top: 50%;
+        transform: translateY(-20%);
+      }
+      &:nth-child(3) {
+        left: 8px;
+        top: 50%;
+        transform: translateY(-20%);
+      }
+      &:nth-child(4) {
+        top: 20px;
+        right: 30px;
+      }
+      &:nth-child(5) {
+        top: 20px;
+        left: 30px;
+      }
+      &:nth-child(6) {
+        bottom: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

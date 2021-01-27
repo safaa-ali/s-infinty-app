@@ -8,6 +8,8 @@ import {
   NbButtonModule,
   NbInputModule,
   NbFormFieldModule,
+  NbSidebarModule,
+  NbLayoutModule,
 } from '@nebular/theme';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -17,12 +19,14 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddProjectComponent } from './components/add-project/add-project.component';
 import { SharedModule } from 'app/@shared/shared.module';
+import { MapViewComponent } from './components/map-view/map-view.component';
 // import { FilterPipe } from 'app/@core/utils/filter.pipe';
 @NgModule({
   declarations: [
     ProjectsComponent,
     DashboardComponent,
     AddProjectComponent,
+    MapViewComponent,
     // FilterPipe,
   ],
   imports: [
@@ -33,15 +37,16 @@ import { SharedModule } from 'app/@shared/shared.module';
     ThemeModule,
     NbCardModule,
     NbIconModule,
-    NbContextMenuModule,
     FormsModule,
     NbSelectModule,
     NbButtonModule,
     NbInputModule,
+    NbContextMenuModule,
     ReactiveFormsModule,
     NbFormFieldModule,
     SharedModule,
-
+    NbSidebarModule.forRoot(),
+    NbLayoutModule,
   ],
 })
-export class ProjectsModule { }
+export class ProjectsModule {}

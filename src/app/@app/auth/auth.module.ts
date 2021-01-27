@@ -1,7 +1,6 @@
 import { SharedModule } from 'app/@shared/shared.module';
 import { LoginComponent } from './login/login.component';
 import { ForgotPasswordModalComponent } from './forgot-password-modal/forgot-password-modal.component';
-
 import {
   NbMenuModule,
   NbCardModule,
@@ -20,13 +19,8 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { AuthComponent } from './auth.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
-  declarations: [
-    AuthComponent,
-    ForgotPasswordModalComponent,
-    LoginComponent,
-  ],
+  declarations: [AuthComponent, ForgotPasswordModalComponent, LoginComponent],
   imports: [
-
     CommonModule,
     AuthRoutingModule,
     ThemeModule,
@@ -42,7 +36,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NbFormFieldModule,
     SharedModule,
     NbLayoutModule,
-
   ],
 })
-export class AuthModule { }
+export class AuthModule {}
