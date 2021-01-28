@@ -1,0 +1,7 @@
+<div *ngIf="this.loadMap"
+  style="height: 100vh"
+  leaflet
+  [leafletOptions]="options"
+  (leafletMapReady)="locateStations($event)"
+  [leafletLayers]="markers"
+></div>

@@ -1,3 +1,7 @@
+
+import { CoreModule } from './@core/core.module';
+
+import { SharedModule } from './@shared/shared.module';
 /**
  * @license
  * Copyright Akveo. All Rights Reserved.
@@ -6,8 +10,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { CoreModule } from './@core/core.module';
+import { HttpClient, HttpClientModule} from '@angular/common/http';
 import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,10 +22,11 @@ import {
   NbSidebarModule,
   NbToastrModule,
   NbWindowModule,
+  NbLayoutModule,
 } from '@nebular/theme';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -34,6 +38,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    LeafletModule,
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
     NbDatepickerModule.forRoot(),
@@ -53,6 +58,11 @@ export function HttpLoaderFactory(http: HttpClient) {
       },
       isolate: false,
     }),
+    SharedModule,
+
+  ],
+  providers: [
+
   ],
   bootstrap: [AppComponent],
 })

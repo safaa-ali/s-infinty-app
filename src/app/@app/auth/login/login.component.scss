@@ -1,0 +1,97 @@
+.login-page {
+  .row {
+    .cover-content {
+      .img-fluid {
+        height: 100vh;
+      }
+      h3 {
+        position: absolute;
+        color: #fff;
+        top: 10px;
+
+        left: 30px;
+        img {
+          width: 60px;
+        }
+      }
+    }
+    .form {
+      box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      justify-items: center;
+      align-content: center;
+      position: relative;
+      right: 14px;
+      .form-content {
+        text-align: center;
+        align-self: center;
+
+        h3 {
+          text-transform: capitalize;
+        }
+        input,
+        .cusomize-btn {
+          box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+          margin: 10px;
+          height: 44px;
+        }
+        img {
+          width: 60px;
+        }
+        input {
+          border: 2px solid #e5e5e5;
+          position: relative;
+        }
+        nb-icon {
+          color: #333;
+        }
+        .error-cusomize {
+          color: red;
+          text-transform: capitalize;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+::ng-deep {
+  span.custom-checkbox {
+    margin: 10px 0;
+  }
+  .nb-theme-default [nbInput].status-basic {
+    background: #fff;
+  }
+  .nb-theme-default .nb-form-field-prefix-medium nb-icon.icon,
+  .nb-theme-default .nb-form-field-suffix-medium nb-icon.icon {
+    margin-left: 20px;
+  }
+  .nb-theme-default [nbButton].appearance-ghost.status-basic:active,
+  .nb-theme-default [nbButton].appearance-ghost.status-basic:hover,
+  .nb-theme-default [nbButton].appearance-ghost.status-basic:focus,
+  .nb-theme-default [nbButton].appearance-ghost:focus:not(:hover):not(:active) {
+    background-color: unset;
+    border-color: unset;
+    color: unset;
+    box-shadow: unset;
+    border: none;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    width: 80%;
+    .row {
+      width: 100%;
+      .form {
+        position: static;
+        margin-top: 10px;
+      }
+      .form-content {
+        padding-top: 10px;
+      }
+    }
+  }
+}

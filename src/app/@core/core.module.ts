@@ -9,6 +9,8 @@ import { AnalyticsService, SeoService } from './utils';
 import { UserData } from './data/users';
 import { UserService } from './mock/users.service';
 import { MockDataModule } from './mock/mock-data.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './utils/auth.interceptor';
 
 const socialLinks = [
   {
@@ -88,7 +90,6 @@ export const NB_CORE_PROVIDERS = [
   exports: [
     NbAuthModule,
   ],
-  declarations: [],
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
@@ -100,6 +101,8 @@ export class CoreModule {
       ngModule: CoreModule,
       providers: [
         ...NB_CORE_PROVIDERS,
+        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor , multi: true },
+
       ],
     };
   }

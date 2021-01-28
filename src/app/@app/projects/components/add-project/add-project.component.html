@@ -1,0 +1,67 @@
+<div class="container text-center">
+  <div class="row">
+    <div class="col-lg-6">
+      <h3>Add Project</h3>
+
+      <form [formGroup]="addprojectForm" (ngSubmit)="onSubmit(addprojectForm)">
+        <input
+          type="text"
+          nbInput
+          fullWidth
+          placeholder="name"
+          formControlName="name"
+        />
+        <input
+          type="text"
+          nbInput
+          fullWidth
+          placeholder="description"
+          formControlName="description"
+        />
+        <input type="file" #filePicker (change)="onImagePicked($event)" />
+        <input
+          type="text"
+          nbInput
+          fullWidth
+          placeholder="map_url"
+          formControlName="map_url"
+        />
+        <div class="row">
+          <div class="col-lg-6">
+            <nb-select placeholder="Select Country" (selectedChange)="changeSelect($event)" formControlName="country_id">
+               <nb-option
+                [value]="item.id"
+                *ngFor="let item of countryData?.data?.items"
+                >{{ item?.name }}</nb-option
+              >
+
+            </nb-select>
+          </div>
+          <div class="col-lg-6"
+          *ngIf="stateData"
+          >
+            <nb-select placeholder="Select State" formControlName="state_id">
+                 <nb-option
+                [value]="item.id"
+                *ngFor="let item of stateData?.data?.items"
+                >{{ item.name }}</nb-option
+              >
+              <nb-option value="">x</nb-option>
+            </nb-select>
+          </div>
+        </div>
+
+        <input
+          type="text"
+          nbInput
+          fullWidth
+          placeholder="project_type_id"
+          formControlName="project_type_id"
+        />
+        <button nbButton type="submit" fullWidth status="primary">
+          add project
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+// @import '@theme/styles/themes.scss';
+// @include nb-install-component() {
+    .content-card {
+        padding: 32px 100px 40px;
+        background-color: nb-theme(card-background-color);
+        min-height: calc(100vh - 76px);
+        box-shadow: nb-theme(shadow);
+        overflow-x: hidden;
+        overflow: hidden;
+        margin-top: 0;
+        @media only screen and (max-width: 1199.98px) {
+            padding: 30px 85px 40px;
+        }
+        @media only screen and (max-width: 991.98px) {
+            padding: 30px 40px 40px;
+        }
+        @media only screen and (max-width: 767.98px) {
+            padding: 30px 39px 40px;
+        }
+        @media only screen and (max-width: 575.98px) {
+            padding: 30px;
+        }
+    }
+// }

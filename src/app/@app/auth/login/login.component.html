@@ -1,0 +1,93 @@
+<div class="login-page">
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="cover-content">
+        <h3>S <img src="../../../../assets/images/Vector.png" alt="" /> D</h3>
+        <img
+          src="./assets/images/WhatsApp Image 2021-01-24 at 3.38.50 PM.jpeg"
+          alt=""
+          class="img-fluid coverImg"
+        />
+      </div>
+    </div>
+    <div class="col-lg-4 form">
+      <div class="form-content">
+        <h3>
+          welcome to S
+          <img src="./assets/images/Vector.png" alt="" /> D
+        </h3>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+          <nb-form-field>
+            <nb-icon nbPrefix icon="person" pack="eva" class="icon"></nb-icon>
+            <input
+              type="text"
+              nbInput
+              fullWidth
+              shape="rectangle"
+              placeholder="username"
+              formControlName="username"
+              shape="round"
+            />
+          </nb-form-field>
+          <div
+            *ngIf="
+              loginForm.get('username').hasError('pattern') &&
+              loginForm.controls.username.touched
+            "
+            class="error-cusomize"
+          >
+            username is required
+          </div>
+          <nb-form-field>
+            <nb-icon nbPrefix icon="lock" pack="eva" class="icon"></nb-icon>
+            <input
+              [type]="getInputType()"
+              nbInput
+              fullWidth
+              placeholder="Password"
+              formControlName="password"
+              shape="round"
+            />
+            <button
+              nbSuffix
+              nbButton
+              ghost
+              type="button"
+              (click)="toggleShowPassword()"
+            >
+              <nb-icon
+                class="icon"
+                [icon]="showPassword ? 'eye-outline' : 'eye-off-2-outline'"
+                pack="eva"
+                [attr.aria-label]="
+                  showPassword ? 'hide password' : 'show password'
+                "
+              >
+              </nb-icon>
+            </button>
+          </nb-form-field>
+          <div
+            *ngIf="
+              loginForm.get('password').hasError('pattern') &&
+              loginForm.controls.password.touched
+            "
+            class="error-cusomize"
+          >
+            password is required minmum 6 digits
+          </div>
+          <button
+            nbButton
+            fullWidth
+            status="primary"
+            type="submit"
+            [disabled]="loginForm.invalid"
+            shape="round"
+            class="cusomize-btn"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

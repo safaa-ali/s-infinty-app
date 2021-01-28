@@ -5,22 +5,26 @@
 
 // framework component themes (styles tied to theme variables)
 @import '~@nebular/theme/styles/globals';
+@import '~@nebular/theme/styles/prebuilt/corporate';
 @import '~@nebular/auth/styles/all';
 
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
 @import '~bootstrap/scss/mixins';
 @import '~bootstrap/scss/grid';
-
+@import '~leaflet/dist/leaflet.css';
 // loading progress bar theme
 @import './pace.theme';
 
 @import './layout';
 @import './overrides';
 
+@include nb-install() {
+  @include nb-theme-global();
+  @include nb-auth-global();
+}
 // install the framework and custom global styles
 @include nb-install() {
-
   // framework global styles
   @include nb-theme-global();
   @include nb-auth-global();
@@ -30,4 +34,4 @@
   @include ngx-pace-theme();
 
   @include nb-overrides();
-};
+} ;

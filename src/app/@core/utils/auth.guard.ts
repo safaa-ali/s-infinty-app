@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { CanLoad, Route, UrlSegment, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
+import { CanLoad, Route, UrlSegment, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router, CanActivate } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuard implements CanLoad {
+export class AuthGuard implements CanLoad, CanActivate {
 
   constructor(
     private router: Router,
@@ -23,7 +23,7 @@ export class AuthGuard implements CanLoad {
     }
 
 
-    this.router.navigate(['/login'], { queryParams: { returnUrl: route.path } });
+    this.router.navigate(['auth/login'], { queryParams: { returnUrl: route.path } });
     return false;
   }
 }

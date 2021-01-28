@@ -10,5 +10,5 @@
 
 export const environment = {
   production: false,
-  apiUrlPrefix: '',
+  apiUrlPrefix: 'https://mot-dev-backend.s-infinity-d.com/api/',
 };

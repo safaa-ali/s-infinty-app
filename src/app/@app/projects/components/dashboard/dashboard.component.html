@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <ngx-search
+        (valueChanged)="changed('search', $event)"
+      ></ngx-search>
+    </div>
+    <div class="col-lg-3">
+      <input
+        type="text"
+        placeholder="Filters"
+        nbInput
+        shape="round"
+        class="text-center"
+        fullWidth
+      />
+    </div>
+    <div class="col-lg-3">
+      <button nbButton size="medium" fullWidth shape="round">
+        Add Project
+      </button>
+    </div>
+  </div>
+  <div class="row card-section">
+    <div
+      class="col-lg-3 col-md-6 col-sm-12"
+      *ngFor="let item of ProjeData?.data?.items"
+    >
+      <ngx-project-card [createdAt]="adjustDate(item.createdAt)" [projectitem]="item"></ngx-project-card>
+    </div>
+  </div>
+</div>

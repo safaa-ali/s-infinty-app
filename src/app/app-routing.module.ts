@@ -1,14 +1,7 @@
+
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import {
-  NbAuthComponent,
-  NbLoginComponent,
-  NbLogoutComponent,
-  NbRegisterComponent,
-  NbRequestPasswordComponent,
-  NbResetPasswordComponent,
-} from '@nebular/auth';
-
+import { AuthGuard } from './@core/utils/auth.guard';
 export const routes: Routes = [
   {
     path: 'pages',
@@ -16,37 +9,22 @@ export const routes: Routes = [
       .then(m => m.PagesModule),
   },
   {
-    path: 'auth',
-    component: NbAuthComponent,
-    children: [
-      {
-        path: '',
-        component: NbLoginComponent,
-      },
-      {
-        path: 'login',
-        component: NbLoginComponent,
-      },
-      {
-        path: 'register',
-        component: NbRegisterComponent,
-      },
-      {
-        path: 'logout',
-        component: NbLogoutComponent,
-      },
-      {
-        path: 'request-password',
-        component: NbRequestPasswordComponent,
-      },
-      {
-        path: 'reset-password',
-        component: NbResetPasswordComponent,
-      },
-    ],
+    path: 'auth', loadChildren: () => import('./@app/auth/auth.module')
+    .then(m => m.AuthModule),
   },
-  { path: '', redirectTo: 'pages', pathMatch: 'full' },
-  { path: '**', redirectTo: 'pages' },
+
+  {
+    path: 'projects', loadChildren: () => import('./@app/projects/projects.module')
+    .then(m => m.ProjectsModule),
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'assets', loadChildren: () => import('./@app/map-features/map-features.module')
+    .then(m => m.MapFeaturesModule),
+    canActivate: [AuthGuard],
+  },
+  { path: '', redirectTo: 'auth', pathMatch: 'full' },
+  { path: '**', redirectTo: 'auth' },
 ];
 
 const config: ExtraOptions = {
