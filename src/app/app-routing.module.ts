@@ -16,7 +16,11 @@ export const routes: Routes = [
   {
     path: 'projects', loadChildren: () => import('./@app/projects/projects.module')
     .then(m => m.ProjectsModule),
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
+  },
+  {
+    path: 'charts', loadChildren: () => import('./@app/charts/charts.module')
+    .then(m => m.ChartsModule),
   },
   {
     path: 'assets', loadChildren: () => import('./@app/map-features/map-features.module')

@@ -27,11 +27,9 @@ import { MapViewComponent } from './components/map-view/map-view.component';
     DashboardComponent,
     AddProjectComponent,
     MapViewComponent,
-    // FilterPipe,
   ],
   imports: [
     CommonModule,
-
     ProjectsRoutingModule,
     NbMenuModule,
     ThemeModule,

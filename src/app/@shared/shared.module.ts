@@ -21,7 +21,13 @@ import { DocumentsCardComponent } from './documents-card/documents-card.componen
 // ]
 ReactiveFormsModule;
 @NgModule({
-  declarations: [ProjectCardComponent, ContainerComponent, SearchComponent, MapComponent, CardMapComponent, DocumentsCardComponent],
+  declarations: [
+    ProjectCardComponent,
+    ContainerComponent,
+    SearchComponent,
+    MapComponent,
+    CardMapComponent,
+  ],
   imports: [
     CommonModule,
     NbCardModule,
@@ -36,4 +42,4 @@ ReactiveFormsModule;
   exports: [ProjectCardComponent, ContainerComponent, SearchComponent, MapComponent, CardMapComponent, DocumentsCardComponent],
   entryComponents: [ProjectCardComponent, ContainerComponent, SearchComponent, MapComponent, CardMapComponent, DocumentsCardComponent],
 })
-export class SharedModule {}
+export class SharedModule { }

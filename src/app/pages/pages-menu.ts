@@ -13,5 +13,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/dashboard',
     home: true,
   },
+  {
+    title: 'Charts',
+    icon: 'bar-chart',
+    link: '/charts',
+    home: true,
+  },
 
 ];
