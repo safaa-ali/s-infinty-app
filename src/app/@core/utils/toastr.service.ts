@@ -3,7 +3,7 @@ import { NbComponentStatus, NbToastrConfig, NbToastrService } from '@nebular/the
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ToastrService {
 

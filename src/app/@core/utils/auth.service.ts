@@ -5,7 +5,7 @@ import { User } from '../data/users';
 import { HttpConnectionService } from './http-connection.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
 
@@ -13,12 +13,12 @@ export class AuthService {
   private currentUser: Observable<User> = this._currentUserSubject.asObservable();
   constructor(
     private _httpConnectionService: HttpConnectionService,
-    private router: Router
+    private router: Router,
   ) { }
 
   public get currentUserValue(): User {
     return this._currentUserSubject.value;
-  } 
+  }
 
   login() {
 
