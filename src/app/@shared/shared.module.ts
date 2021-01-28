@@ -20,7 +20,13 @@ import { CardMapComponent } from './card-map/card-map.component';
 // ]
 ReactiveFormsModule;
 @NgModule({
-  declarations: [ProjectCardComponent, ContainerComponent, SearchComponent, MapComponent, CardMapComponent],
+  declarations: [
+    ProjectCardComponent,
+     ContainerComponent,
+     SearchComponent,
+     MapComponent,
+      CardMapComponent,
+    ],
   imports: [
     CommonModule,
     NbCardModule,

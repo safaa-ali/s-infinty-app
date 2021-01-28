@@ -5,7 +5,7 @@ import { LayoutService } from 'app/@core/utils/layout.service';
 @Component({
   selector: 'ngx-dashboard-layout',
   templateUrl: './dashboard-layout.component.html',
-  styleUrls: ['./dashboard-layout.component.scss']
+  styleUrls: ['./dashboard-layout.component.scss'],
 })
 export class DashboardLayoutComponent implements OnInit {
 

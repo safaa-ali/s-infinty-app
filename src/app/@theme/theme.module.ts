@@ -1,5 +1,5 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-HeaderComponent
+HeaderComponent;
 import { CommonModule } from '@angular/common';
 import {
   NbActionsModule,
