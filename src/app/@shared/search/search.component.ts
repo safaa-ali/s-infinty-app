@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'ngx-search-inp',
+  selector: 'ngx-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
 })

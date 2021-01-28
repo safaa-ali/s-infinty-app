@@ -16,7 +16,12 @@ export const routes: Routes = [
   {
     path: 'projects', loadChildren: () => import('./@app/projects/projects.module')
     .then(m => m.ProjectsModule),
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'assets', loadChildren: () => import('./@app/map-features/map-features.module')
+    .then(m => m.MapFeaturesModule),
+    canActivate: [AuthGuard],
   },
   { path: '', redirectTo: 'auth', pathMatch: 'full' },
   { path: '**', redirectTo: 'auth' },

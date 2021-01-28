@@ -1,5 +1,7 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
+HeaderComponent;
 import { CommonModule } from '@angular/common';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import {
   NbActionsModule,
   NbLayoutModule,
@@ -18,10 +20,10 @@ import { NbSecurityModule } from '@nebular/security';
 
 import {
   FooterComponent,
-  HeaderComponent,
   LayoutDirectionSwitcherComponent,
   SearchInputComponent,
   SwitcherComponent,
+  HeaderComponent,
 } from './components';
 import {
   CapitalizePipe,
@@ -40,9 +42,10 @@ import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
 import { CORPORATE_THEME } from './styles/theme.corporate';
 import { DARK_THEME } from './styles/theme.dark';
-import { SInfintyLayoutComponent } from './layouts/s-infinity-b/s-infinty-layout/s-infinty-layout.component';
-import { NavbarComponent } from './layouts/s-infinity-b/navbar/navbar.component';
+// import { SInfintyLayoutComponent } from './layouts/s-infinity-b/s-infinty-layout/s-infinty-layout.component';
+// import { NavbarComponent } from './layouts/s-infinity-b/navbar/navbar.component';
 import { MapViewerComponent } from './layouts/map-viewer/map-viewer.component';
+import { DashboardLayoutComponent } from './layouts/s-infintiy-d/dashboard-layout/dashboard-layout.component';
 
 const NB_MODULES = [
   NbLayoutModule,
@@ -59,16 +62,16 @@ const NB_MODULES = [
   NbEvaIconsModule,
 ];
 const COMPONENTS = [
+  HeaderComponent,
   SwitcherComponent,
   LayoutDirectionSwitcherComponent,
-  HeaderComponent,
   FooterComponent,
   SearchInputComponent,
   OneColumnLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
-  SInfintyLayoutComponent,
-  NavbarComponent,
+  DashboardLayoutComponent,
+  MapViewerComponent,
 ];
 const PIPES = [
   CapitalizePipe,
@@ -79,9 +82,9 @@ const PIPES = [
 ];
 
 @NgModule({
-  imports: [CommonModule, ...NB_MODULES],
+  imports: [CommonModule, ...NB_MODULES, LeafletModule],
   exports: [CommonModule, ...PIPES, ...COMPONENTS],
-  declarations: [...COMPONENTS, ...PIPES, SInfintyLayoutComponent, NavbarComponent, MapViewerComponent],
+  declarations: [...COMPONENTS, ...PIPES, DashboardLayoutComponent, MapViewerComponent],
 })
 export class ThemeModule {
   static forRoot(): ModuleWithProviders<ThemeModule> {

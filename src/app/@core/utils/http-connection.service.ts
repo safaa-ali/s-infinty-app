@@ -48,4 +48,5 @@ export class HttpConnectionService {
     this._toastrService.showToast('danger', error.error.errorMessage, 'Something went wrong');
     return throwError(error);
   }
+
 }

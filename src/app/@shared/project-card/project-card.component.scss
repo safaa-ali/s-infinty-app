@@ -27,6 +27,10 @@ nb-card {
   .project-description {
     font-weight: 400;
     color: #898989;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-clamp: 1;
   }
   nb-card-body {
     img {

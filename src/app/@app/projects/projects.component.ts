@@ -12,5 +12,4 @@ export class ProjectsComponent implements OnInit {
   ngOnInit(): void {
   }
   menu = MENU_ITEMS;
-
 }

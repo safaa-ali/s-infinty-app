@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { CanLoad, Route, UrlSegment, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
+import { CanLoad, Route, UrlSegment, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router, CanActivate } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuard implements CanLoad {
+export class AuthGuard implements CanLoad , CanActivate {
 
-  constructor(
+  constructor (
     private router: Router,
     private _authService: AuthService,
   ) { }
@@ -24,7 +24,19 @@ export class AuthGuard implements CanLoad {
 
     // not logged in so redirect to login page with the return url
 
-    this.router.navigate(['/login'], { queryParams: { returnUrl: route.path } });
+    this.router.navigate(['auth/login'], { queryParams: { returnUrl: route.path } });
+    return false;
+  }
+
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot):
+    boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
+
+    if (localStorage.getItem('satellizer_token')) {
+      return true;
+    }
+    this.router.navigate(['./auth/login']);
     return false;
   }
 }

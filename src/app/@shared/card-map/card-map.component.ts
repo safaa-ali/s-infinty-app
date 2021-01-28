@@ -1,5 +1,6 @@
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-card-map',
@@ -21,7 +22,7 @@ export class CardMapComponent implements OnInit {
     { title: 'Point Cloud' },
     { title: 'Project Management' },
   ];
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
   toggleMenu() {
@@ -31,6 +32,9 @@ export class CardMapComponent implements OnInit {
     if (this.isActive) {
      return 'active';
     }
+  }
+  routerFeatures() {
+    this.router.navigate(['/assets']);
   }
 
 }

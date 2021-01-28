@@ -1,5 +1,3 @@
-import { Output } from '@angular/core';
-import { EventEmitter } from '@angular/core';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 @Component({
@@ -12,6 +10,8 @@ export class ProjectCardComponent implements OnInit {
   constructor (private router: Router) { }
   active = false;
   @Input() projectitem;
+  @Input() createdAt ;
+
   ngOnInit(): void {
   }
   menuitems = [
