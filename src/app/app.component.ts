@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
     private analytics: AnalyticsService,
     private translate: TranslateService,
     private seoService: SeoService,
-    private iconLibraries: NbIconLibraries
+    private iconLibraries: NbIconLibraries,
   ) {
     this.translate.setDefaultLang('en');
     this.translate.use('en');
