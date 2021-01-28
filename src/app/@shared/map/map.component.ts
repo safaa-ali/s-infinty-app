@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { ProjectsService } from 'app/@app/projects/projects.service';
 import * as L from 'leaflet';
 import 'leaflet/dist/images/marker-shadow.png';
@@ -34,7 +34,8 @@ export class MapComponent implements OnInit {
     layers: [this.mapTile],
     zoom: 16,
     center: L.latLng([51, 0.22]),
-  };  constructor(private _ProjectsService: ProjectsService) {
+  };
+  constructor(private _ProjectsService: ProjectsService) {
     this.bodyPopup = `
     <div class="icon"><img src='doc.svg'></div>
     <div class="icon"><img src='hand.svg'></div>
@@ -69,7 +70,10 @@ export class MapComponent implements OnInit {
 
   addMarkers() {
     for (let i = 0; i < this.stationsLocations.length; i++) {
-      this.addMarker(this.stationsLocations[i]['latitude'], this.stationsLocations[i]['longitude']);
+      this.addMarker(
+        this.stationsLocations[i]['latitude'],
+        this.stationsLocations[i]['longitude'],
+      );
       // console.log(this.markers.length);
     }
   }

@@ -34,7 +34,7 @@ export class DashboardComponent implements OnInit {
 
 
   lineChats() {
-    this.route.navigate(['/charts/linecharts']);
+   // this.route.navigate(['/charts/linecharts']);
   }
 
 }

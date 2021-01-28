@@ -14,6 +14,8 @@ import { HttpClient, HttpClientModule} from '@angular/common/http';
 import { ThemeModule } from './@theme/theme.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { GalleryModule } from 'ng-gallery';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import {
   NbChatModule,
   NbDatepickerModule,
@@ -36,6 +38,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    GalleryModule,
+    NgxGalleryModule,
     HttpClientModule,
     AppRoutingModule,
     LeafletModule,

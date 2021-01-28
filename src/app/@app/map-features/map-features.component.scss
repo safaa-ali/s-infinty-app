@@ -2,7 +2,11 @@
   .nb-theme-default .features nb-layout.window-mode .layout nb-layout-header {
     display: none;
   }
+  .features .menu-sidebar .scrollable nb-menu ul.menu-items .menu-item a svg {
+    width: 30px !important;
+  }
   .nb-theme-default
+    .features
     nb-layout
     .layout
     .layout-container
