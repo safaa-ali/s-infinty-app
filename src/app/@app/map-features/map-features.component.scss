@@ -2,8 +2,13 @@
   .nb-theme-default .features nb-layout.window-mode .layout nb-layout-header {
     display: none;
   }
-  .nb-theme-default nb-layout .layout .layout-container nb-sidebar .main-container-fixed{
-    top: 0rem !important;
+  .nb-theme-default
+    nb-layout
+    .layout
+    .layout-container
+    nb-sidebar
+    .main-container-fixed {
+    top: 0 !important;
   }
   .features {
     nb-sidebar.sidebar {

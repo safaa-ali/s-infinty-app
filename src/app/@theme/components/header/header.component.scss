@@ -1,6 +1,6 @@
-@import '~bootstrap/scss/mixins/breakpoints';
-@import '~@nebular/theme/styles/global/breakpoints';
-@import '../../styles/themes';
+@import "~bootstrap/scss/mixins/breakpoints";
+@import "~@nebular/theme/styles/global/breakpoints";
+@import "../../styles/themes";
 
 @include nb-install-component() {
   display: flex;
@@ -11,30 +11,26 @@
     display: flex;
     align-items: center;
     width: calc(#{nb-theme(sidebar-width)} - #{nb-theme(header-padding)});
-    img{
+    img {
       width: 80px;
       margin-top: 5px;
-        }
+    }
   }
 
-
-
   ::ng-deep nb-search button {
-    padding: 0!important;
+    padding: 0 !important;
   }
 
   .header-container {
     display: flex;
     align-items: center;
     width: auto;
-    img.logout-img{
-     width: 40px;
-     margin-left: 10px;
-     cursor: pointer;
+    img.logout-img {
+      width: 40px;
+      margin-left: 10px;
+      cursor: pointer;
     }
   }
-
-
 
   @include media-breakpoint-down(sm) {
     .control-item {
@@ -55,13 +51,18 @@
 }
 
 ::ng-deep {
-  .nb-theme-default nb-layout .layout .layout-container .content .columns nb-layout-column {
+  .nb-theme-default
+    nb-layout
+    .layout
+    .layout-container
+    .content
+    .columns
+    nb-layout-column {
     padding: 2.25rem 0 0;
   }
-  .nb-theme-default nb-layout.window-mode .layout nb-layout-header{
+  .nb-theme-default nb-layout.window-mode .layout nb-layout-header {
     background: #F3F3F3;
     z-index: 33;
-
   }
   // .nb-theme-default nb-layout.window-mode .layout nb-layout-header nav{
   //       margin: 0 auto;
@@ -73,5 +74,3 @@
   //       padding-right: 45px;
   // }
 }
-
-
