@@ -42,9 +42,6 @@ import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
 import { CORPORATE_THEME } from './styles/theme.corporate';
 import { DARK_THEME } from './styles/theme.dark';
-// import { SInfintyLayoutComponent } from './layouts/s-infinity-b/s-infinty-layout/s-infinty-layout.component';
-// import { NavbarComponent } from './layouts/s-infinity-b/navbar/navbar.component';
-import { MapViewerComponent } from './layouts/map-viewer/map-viewer.component';
 import { DashboardLayoutComponent } from './layouts/s-infintiy-d/dashboard-layout/dashboard-layout.component';
 
 const NB_MODULES = [
@@ -71,7 +68,6 @@ const COMPONENTS = [
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
   DashboardLayoutComponent,
-  MapViewerComponent,
 ];
 const PIPES = [
   CapitalizePipe,
@@ -84,7 +80,7 @@ const PIPES = [
 @NgModule({
   imports: [CommonModule, ...NB_MODULES, LeafletModule],
   exports: [CommonModule, ...PIPES, ...COMPONENTS],
-  declarations: [...COMPONENTS, ...PIPES, DashboardLayoutComponent, MapViewerComponent],
+  declarations: [...COMPONENTS, ...PIPES, DashboardLayoutComponent],
 })
 export class ThemeModule {
   static forRoot(): ModuleWithProviders<ThemeModule> {

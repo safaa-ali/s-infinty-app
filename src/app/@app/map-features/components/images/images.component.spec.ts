@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MapViewerComponent } from './map-viewer.component';
+import { ImagesComponent } from './images.component';
 
-describe('MapViewerComponent', () => {
-  let component: MapViewerComponent;
-  let fixture: ComponentFixture<MapViewerComponent>;
+describe('ImagesComponent', () => {
+  let component: ImagesComponent;
+  let fixture: ComponentFixture<ImagesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MapViewerComponent ],
+      declarations: [ ImagesComponent ],
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MapViewerComponent);
+    fixture = TestBed.createComponent(ImagesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

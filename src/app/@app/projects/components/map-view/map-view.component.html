@@ -1,68 +1,67 @@
-<div class="map-view menu-sidebar main-container">
-  <nb-layout class="bg-success" windowMode>
-    <nb-sidebar
-      state="compacted"
-      class="menu-sidebar main-container"
-      tag="map-sidebar"
-    >
-      <div class="Expand">
-        <div class="px-3">
-          <div class="fixedParts">
-            <div
-              class="header mt-2 d-flex justify-content-start align-items-center"
-            >
-              <img src="" alt="" />
-              <h6>MEEG</h6>
-              <div class="text-right ml-auto">
-                <nb-icon
-                  class="toggle"
-                  icon="menu-outline"
-                  pack="eva"
-                  (click)="toggleCompact()"
-                ></nb-icon>
+<nb-layout>
+  <nb-layout-column>
+    <div class="row">
+      <div class="sideBar">
+        <div *ngIf="this.compacted == false" class="Expand">
+          <div class="px-3">
+            <div class="fixedParts">
+              <div class="header d-flex justify-content-start align-items-center">
+                <img src="" alt="" />
+                <h6>MEEG</h6>
+                <div class="text-right ml-auto">
+                  <nb-icon
+                    class="toggle"
+                    icon="menu-outline"
+                    pack="eva"
+                    (click)="toggleCompact()"
+                  ></nb-icon>
+                </div>
+              </div>
+              <div class="row mx-0 mt-4 mb-1">
+                <div class="col-xl-6"><ngx-search></ngx-search></div>
+                <div class="col-xl-3 px-2">
+                  <button class="add-item">
+                    <nb-icon icon="funnel-outline"></nb-icon>Filters
+                  </button>
+                </div>
+                <div class="col-xl-3 px-2">
+                  <button class="add-item">
+                    <nb-icon icon="plus-outline"></nb-icon>Add Project
+                  </button>
+                </div>
+              </div>
+              <div class="d-flex texts mb-3">
+                <span>10 Results</span>
+                <span>in Progress</span>
               </div>
             </div>
-            <div class="row mx-0 mt-4 mb-1">
-              <div class="col-xl-6"><ngx-search></ngx-search></div>
-              <div class="col-xl-3 px-2">
-                <button class="add-item">
-                  <nb-icon icon="funnel-outline"></nb-icon>Filters
-                </button>
+            <div class="projects-container">
+              <div *ngFor="let project of this.ProjectsData">
+                <ngx-card-map
+                  [pname]="project.name"
+                  [description]="project.description"
+                  [createdAt]="this.adjustDate(project.createdAt)"
+                  [imgUrl]="project.imageUrl"
+                ></ngx-card-map>
               </div>
-              <div class="col-xl-3 px-2">
-                <button class="add-item">
-                  <nb-icon icon="plus-outline"></nb-icon>Add Project
-                </button>
-              </div>
-            </div>
-            <div class="d-flex texts mb-3">
-              <span>10 Results</span>
-              <span>in Progress</span>
-            </div>
-          </div>
-          <div class="projects-container">
-            <div *ngFor="let project of this.ProjectsData">
-              <ngx-card-map
-                [pname]="project.name"
-                [description]="project.description"
-                [createdAt]="this.adjustDate(project.createdAt)"
-                [imgUrl]="project.imageUrl"
-              ></ngx-card-map>
             </div>
           </div>
         </div>
+        <div *ngIf="this.compacted == true" class="Collapse text-center">
+          <nb-icon
+            class="toggle"
+            icon="menu-outline"
+            pack="eva"
+            (click)="toggleCompact()"
+          ></nb-icon>
+        </div>
       </div>
-      <div class="Collapse text-center">
-        <nb-icon
-          class="toggle"
-          icon="menu-outline"
-          pack="eva"
-          (click)="toggleCompact()"
-        ></nb-icon>
+      <div>
+        <ngx-map [projectId]="this.projectId"></ngx-map>
       </div>
-    </nb-sidebar>
-    <nb-layout-column>
-      <ngx-map [projectId]="this.projectId"></ngx-map>
-    </nb-layout-column>
-  </nb-layout>
-</div>
+    </div>
+  </nb-layout-column>
+  <!-- <nb-layout-column>
+    <ngx-map [projectId]="this.projectId"></ngx-map>
+  </nb-layout-column> -->
+</nb-layout>

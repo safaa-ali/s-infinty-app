@@ -11,32 +11,33 @@ export class MapFeaturesComponent implements OnInit {
     this.menu = [
       {
         title: 'Documents',
-        icon: 'folder',
+        icon:  { icon: 'doc', pack: 'svg' },
         link: 'documents',
       },
       {
         title: 'Image Gallery',
-        icon: 'person',
+        icon:  { icon: 'img', pack: 'svg' },
+        link: 'images',
       },
       {
         title: 'Video Gallery',
-        icon: 'person',
+        icon:  { icon: 'video', pack: 'svg' },
       },
       {
         title: 'Models',
-        icon: 'person',
+        icon:  { icon: 'cube', pack: 'svg' },
       },
       {
         title: 'Point Cloud',
-        icon: 'person',
+        icon:  { icon: 'forge', pack: 'svg' },
       },
       {
         title: 'Sensors Analysis',
-        icon: 'person',
+        icon:  { icon: 'search', pack: 'svg' },
       },
       {
         title: 'Poi Managment',
-        icon: 'person',
+        icon:  { icon: 'hand', pack: 'svg' },
       },
     ];
   }

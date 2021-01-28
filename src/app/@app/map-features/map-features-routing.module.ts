@@ -1,14 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ImagesComponent } from './components/images/images.component';
 import { DocumentsComponent } from './documents/documents.component';
-import { MapFeatures } from './map-features.component';
+import { MapFeaturesComponent } from './map-features.component';
 
 const routes: Routes = [
   {
-    path: '', component: MapFeatures,
+    path: '', component: MapFeaturesComponent,
     children: [
       {
         path: 'documents', component: DocumentsComponent,
+      },
+      {
+        path: 'images', component: ImagesComponent,
       },
       {
         path: '', redirectTo: 'documents',
