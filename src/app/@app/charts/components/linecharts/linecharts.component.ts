@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { multi } from '../../data';
 @Component({
-  selector: 'linecharts',
+  selector: 'ngx-linecharts',
   templateUrl: './linecharts.component.html',
-  styleUrls: ['./linecharts.component.scss']
+  styleUrls: ['./linecharts.component.scss'],
 })
-export class LinechartsComponent  {
+export class LinechartsComponent {
   multi: any[];
   view: any[] = [700, 300];
 
@@ -22,7 +22,7 @@ export class LinechartsComponent  {
   timeline: boolean = true;
 
   colorScheme = {
-    domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5']
+    domain: ['#5AA454', '#E44D25', '#CFC0BB', '#7aa3e5', '#a8385d', '#aae3f5'],
   };
 
   constructor() {
@@ -30,14 +30,14 @@ export class LinechartsComponent  {
   }
 
   onSelect(data): void {
-    console.log('Item clicked', JSON.parse(JSON.stringify(data)));
+    // console.log('Item clicked', JSON.parse(JSON.stringify(data)));
   }
 
   onActivate(data): void {
-    console.log('Activate', JSON.parse(JSON.stringify(data)));
+    // console.log('Activate', JSON.parse(JSON.stringify(data)));
   }
 
   onDeactivate(data): void {
-    console.log('Deactivate', JSON.parse(JSON.stringify(data)));
+    // console.log('Deactivate', JSON.parse(JSON.stringify(data)));
   }
 }

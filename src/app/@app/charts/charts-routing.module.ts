@@ -6,20 +6,20 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
-    path:'',component:ChartComponent,
-    children:[
+    path: '', component: ChartComponent,
+    children: [
       {
-        path:'',component:DashboardComponent
+        path: '', component: DashboardComponent,
       },
       {
-        path:'linecharts',component:LinechartsComponent
+        path: 'linecharts', component: LinechartsComponent,
       },
-    ]
-  }
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class ChartsRoutingModule { }

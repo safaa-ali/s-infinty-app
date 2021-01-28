@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MENU_ITEMS } from 'app/pages/pages-menu';
 @Component({
-  selector: 'chart',
+  selector: 'ngx-chart',
   templateUrl: './chart.component.html',
-  styleUrls: ['./chart.component.scss']
+  styleUrls: ['./chart.component.scss'],
 })
 export class ChartComponent implements OnInit {
 

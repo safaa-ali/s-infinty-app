@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 
 import { ChartsRoutingModule } from './charts-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { NgxChartsModule }from '@swimlane/ngx-charts';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { LinechartsComponent } from './components/linecharts/linecharts.component';
 
 @NgModule({
@@ -24,6 +24,6 @@ import { LinechartsComponent } from './components/linecharts/linecharts.componen
     NbMenuModule,
     NgxChartsModule,
     NbButtonModule,
-  ]
+  ],
 })
 export class ChartsModule { }
