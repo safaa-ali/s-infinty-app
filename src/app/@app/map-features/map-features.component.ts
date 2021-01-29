@@ -13,5 +13,5 @@ export class MapFeaturesComponent implements OnInit {
 
   }
   ngOnInit(): void {}
-  mapMenu=map_menu
+  mapMenu = map_menu;
 }

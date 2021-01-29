@@ -19,7 +19,7 @@ const routes: Routes = [
         path: '', redirectTo: 'documents',
       },
       {
-        path: 'analises', component:AnalysisComponent
+        path: 'analises', component: AnalysisComponent,
       },
     ],
   },

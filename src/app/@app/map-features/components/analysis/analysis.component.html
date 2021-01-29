@@ -20,13 +20,25 @@
     <div class="col-lg-8 col-md-12">
       <div class="row">
         <div class="col-lg-4">
-          <ngx-anlalysis-card [title]="'Country'" [img]="'./assets/images/eva.png'" [number]="71"></ngx-anlalysis-card>
+          <ngx-anlalysis-card
+            [title]="'Country'"
+            [img]="'./assets/images/eva.png'"
+            [number]="71"
+          ></ngx-anlalysis-card>
         </div>
         <div class="col-lg-4">
-          <ngx-anlalysis-card [title]="'MasterDeg'" [img]="'./assets/images/jack.png'"  [number]="151"></ngx-anlalysis-card>
+          <ngx-anlalysis-card
+            [title]="'MasterDeg'"
+            [img]="'./assets/images/jack.png'"
+            [number]="151"
+          ></ngx-anlalysis-card>
         </div>
         <div class="col-lg-4">
-          <ngx-anlalysis-card [title]="'Configrat'" [img]="'./assets/images/kate.png'"  [number]="56"></ngx-anlalysis-card>
+          <ngx-anlalysis-card
+            [title]="'Configrat'"
+            [img]="'./assets/images/kate.png'"
+            [number]="56"
+          ></ngx-anlalysis-card>
         </div>
       </div>
       <div class="row">
@@ -87,24 +99,23 @@
     </div>
 
     <div class="col-lg-4 col-md-12">
-<nb-card class="charts-background">
-  <nb-card-body>
-    <ngx-charts-pie-chart
-    [view]="[300, 520]"
-    [results]="country"
-    [gradient]="true"
-    [legend]="true"
-    [legendPosition]="true"
-    [labels]="false"
-    [doughnut]="false"
-    (select)="onSelect($event)"
-    (activate)="onActivate($event)"
-    (deactivate)="onDeactivate($event)"
-    >
-  </ngx-charts-pie-chart>
-  </nb-card-body>
-</nb-card>
-
+      <nb-card class="charts-background">
+        <nb-card-body>
+          <ngx-charts-pie-chart
+            [view]="[300, 520]"
+            [results]="country"
+            [gradient]="true"
+            [legend]="true"
+            [legendPosition]="true"
+            [labels]="false"
+            [doughnut]="false"
+            (select)="onSelect($event)"
+            (activate)="onActivate($event)"
+            (deactivate)="onDeactivate($event)"
+          >
+          </ngx-charts-pie-chart>
+        </nb-card-body>
+      </nb-card>
     </div>
   </div>
 </div>

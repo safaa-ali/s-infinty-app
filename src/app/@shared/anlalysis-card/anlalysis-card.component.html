@@ -1,15 +1,15 @@
 <div class="asset-card">
-  <nb-card  (click)="active=!active" [ngClass]="{'active': active}">
-      <nb-card-body>
-          <div class="dashbordCard-content">
-              <div class="dashbordCard-contentIcon">
-                  <img  [src]="img" alt="img" >
-              </div>
-              <div class="dashbordCard-content-item">
-                <p  class="stable-word">{{title}}</p>
-                  <span  class="number-item">{{number}}</span>
-              </div>
-          </div>
-      </nb-card-body>
+  <nb-card (click)="active = !active" [ngClass]="{ active: active }">
+    <nb-card-body>
+      <div class="dashbordCard-content">
+        <div class="dashbordCard-contentIcon">
+          <img [src]="img" alt="img" />
+        </div>
+        <div class="dashbordCard-content-item">
+          <p class="stable-word">{{ title }}</p>
+          <span class="number-item">{{ number }}</span>
+        </div>
+      </div>
+    </nb-card-body>
   </nb-card>
 </div>

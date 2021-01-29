@@ -18,10 +18,7 @@ export const routes: Routes = [
     .then(m => m.ProjectsModule),
     // canActivate: [AuthGuard],
   },
-  {
-    path: 'charts', loadChildren: () => import('./@app/charts/charts.module')
-    .then(m => m.ChartsModule),
-  },
+
   {
     path: 'assets', loadChildren: () => import('./@app/map-features/map-features.module')
     .then(m => m.MapFeaturesModule),

@@ -4,31 +4,31 @@ import { temp } from '../../temp';
 import { state } from '../../pie';
 
 
-import * as shape from 'd3-shape'
+import * as shape from 'd3-shape';
 import { country } from '../../country';
 
 @Component({
-  selector: 'analysis',
+  selector: 'ngx-analysis',
   templateUrl: './analysis.component.html',
-  styleUrls: ['./analysis.component.scss']
+  styleUrls: ['./analysis.component.scss'],
 })
 export class AnalysisComponent implements OnInit {
-  temp:any[];
-  country:any[];
-  state:any[];
+  temp: any[];
+  country: any[];
+  state: any[];
 
 
-randomdata;
-  title ='Degree Of Temprature'
-  constructor() {
+  randomdata;
+  title = 'Degree Of Temprature';
+  constructor () {
     Object.assign(this, { temp });
     Object.assign(this, { country });
     Object.assign(this, { state });
 
-console.log(this.country);
+    // console.log(this.country);
 
-   }
-   curve = shape.curveCardinal.tension(0);
+  }
+  curve = shape.curveCardinal.tension(0);
   ngOnInit(): void {
     // this.randomdata = this.shuffle(this.saleData)
     // const source = interval(1000);
@@ -39,13 +39,13 @@ console.log(this.country);
     //   console.log(this.randomdata);
 
     // });
-  // setInterval(function(){
-  //   this.randomdata
-  //   },1000)
+    // setInterval(function(){
+    //   this.randomdata
+    //   },1000)
   }
 
   colorScheme = {
-    domain: ['blue']
+    domain: ['blue'],
   };
 
   // shuffle(array) {

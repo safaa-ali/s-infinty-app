@@ -27,15 +27,15 @@
     height: 60px;
   }
 }
-.charts-background{
-  background-color: #EEF2FF;
+.charts-background {
+  background-color: #eef2ff;
   box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
-border-radius: 8px;
-justify-content: center;
-nb-card-body{
-  ngx-charts-pie-chart{
-    position: relative;
-    left:40px
+  border-radius: 8px;
+  justify-content: center;
+  nb-card-body {
+    ngx-charts-pie-chart {
+      position: relative;
+      left: 40px;
+    }
   }
-}
 }

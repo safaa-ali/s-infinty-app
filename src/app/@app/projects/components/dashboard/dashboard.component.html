@@ -1,9 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-6">
-      <ngx-search
-        (valueChanged)="changed('search', $event)"
-      ></ngx-search>
+      <ngx-search (valueChanged)="changed('search', $event)"></ngx-search>
     </div>
     <div class="col-lg-3">
       <input
@@ -26,7 +24,10 @@
       class="col-lg-3 col-md-6 col-sm-12"
       *ngFor="let item of ProjeData?.data?.items"
     >
-      <ngx-project-card [createdAt]="adjustDate(item.createdAt)" [projectitem]="item"></ngx-project-card>
+      <ngx-project-card
+        [createdAt]="adjustDate(item.createdAt)"
+        [projectitem]="item"
+      ></ngx-project-card>
     </div>
   </div>
 </div>

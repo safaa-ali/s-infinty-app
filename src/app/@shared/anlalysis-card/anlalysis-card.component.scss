@@ -1,4 +1,4 @@
-nb-card{
+nb-card {
   cursor: pointer;
   border-radius: 20px;
   box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
@@ -6,50 +6,42 @@ nb-card{
     display: flex;
     justify-content: space-between;
     text-transform: capitalize;
-    img{
+    img {
       width: 40%;
       height: 50px;
     }
 
-    .stable-word{
+    .stable-word {
       font-family: Roboto;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 300;
-  letter-spacing: 0em;
-  color: #A8A7A7;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 300;
+      letter-spacing: 0em;
+      color: #a8a7a7;
     }
-    .number-item{
-  color: #3E65EE;
-  font-family: Roboto;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 0em;
-  position: relative;
-  left: 44px;
-}
-
+    .number-item {
+      color: #3e65ee;
+      font-family: Roboto;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      letter-spacing: 0em;
+      position: relative;
+      left: 44px;
+    }
   }
   &.active {
-    background-color: #F66D20;
+    background-color: #f66d20;
     transition: 0.4s ease-in-out;
     transform: translate(-10px, 2%);
     box-shadow: 12px 16px 5px rgb(226, 223, 223);
     .dashbordCard-content {
-    .stable-word{
-
-  color: #fff;
+      .stable-word {
+        color: #fff;
+      }
+      .number-item {
+        color: #fff;
+      }
     }
-    .number-item{
-  color: #fff;
-
-}
-
-  }
-
   }
 }
-
-
-

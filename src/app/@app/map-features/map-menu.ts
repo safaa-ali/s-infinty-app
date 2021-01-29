@@ -24,7 +24,7 @@
   {
     title: 'Sensors Analysis',
     icon:  { icon: 'search', pack: 'svg' },
-    link:'analises'
+    link: 'analises',
   },
   {
     title: 'Poi Managment',
