@@ -1,0 +1,110 @@
+<div class="documents px-5">
+  <div class="row justify-content-between">
+    <div class="col-md-9 row">
+      <div class="col-md-6">
+        <ngx-search></ngx-search>
+      </div>
+      <div class="col-md-2">
+        <button class="add-item">
+          <nb-icon icon="plus-outline"></nb-icon>Add Project
+        </button>
+      </div>
+    </div>
+    <div class="col-md-3 rightIcons d-flex justify-content-end">
+      <img src="assets/images/alert.svg" alt="" />
+      <img src="assets/images/meti.svg" alt="" />
+    </div>
+  </div>
+
+  <div class="row pt-4">
+    <div class="col-lg-8 col-md-12">
+      <div class="row">
+        <div class="col-lg-4">
+          <ngx-anlalysis-card [title]="'Country'" [img]="'./assets/images/eva.png'" [number]="71"></ngx-anlalysis-card>
+        </div>
+        <div class="col-lg-4">
+          <ngx-anlalysis-card [title]="'MasterDeg'" [img]="'./assets/images/jack.png'"  [number]="151"></ngx-anlalysis-card>
+        </div>
+        <div class="col-lg-4">
+          <ngx-anlalysis-card [title]="'Configrat'" [img]="'./assets/images/kate.png'"  [number]="56"></ngx-anlalysis-card>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <nb-card class="charts-background">
+            <nb-card-body>
+              <div class="line">
+                <ngx-charts-bar-vertical
+                  [view]="[700, 300]"
+                  [results]="country"
+                  [xAxisLabel]="'Products'"
+                  [legendTitle]="'Product Sale Chart'"
+                  [yAxisLabel]="'Sale'"
+                  [legend]="false"
+                  [showXAxisLabel]="true"
+                  [showYAxisLabel]="true"
+                  [xAxis]="true"
+                  [yAxis]="true"
+                  [showGridLines]="false"
+                  [gradient]="false"
+                  [barPadding]="80"
+                  [scheme]="colorScheme"
+                  [animations]="true"
+                >
+                </ngx-charts-bar-vertical>
+              </div>
+            </nb-card-body>
+          </nb-card>
+        </div>
+        <div class="col-12">
+          <nb-card class="charts-background">
+            <nb-card-body>
+              <div class="line">
+                <ngx-charts-line-chart
+                  [view]="[700, 240]"
+                  [scheme]="colorScheme"
+                  [legend]="false"
+                  [showXAxisLabel]="true"
+                  [showYAxisLabel]="true"
+                  [xAxisLabel]="title"
+                  [yAxisLabel]="'Temprature'"
+                  [xAxis]="true"
+                  [yAxis]="true"
+                  [showGridLines]="false"
+                  [timeline]="true"
+                  [results]="temp"
+                  (select)="onSelect($event)"
+                  (activate)="onActivate($event)"
+                  (deactivate)="onDeactivate($event)"
+                  [curve]="curve"
+                >
+                </ngx-charts-line-chart>
+              </div>
+            </nb-card-body>
+          </nb-card>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-12">
+<nb-card class="charts-background">
+  <nb-card-body>
+    <ngx-charts-pie-chart
+    [view]="[300, 520]"
+    [results]="country"
+    [gradient]="true"
+    [legend]="true"
+    [legendPosition]="true"
+    [labels]="false"
+    [doughnut]="false"
+    (select)="onSelect($event)"
+    (activate)="onActivate($event)"
+    (deactivate)="onDeactivate($event)"
+    >
+  </ngx-charts-pie-chart>
+  </nb-card-body>
+</nb-card>
+
+    </div>
+  </div>
+</div>

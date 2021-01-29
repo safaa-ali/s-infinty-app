@@ -1,15 +1,15 @@
 import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { ProjectsService } from 'app/@app/projects/projects.service';
 import * as L from 'leaflet';
-import 'leaflet/dist/images/marker-shadow.png';
-import 'leaflet/dist/images/marker-icon.png';
-import 'leaflet/dist/images/cube.svg';
-import 'leaflet/dist/images/hand.svg';
-import 'leaflet/dist/images/doc.svg';
-import 'leaflet/dist/images/img.svg';
-import 'leaflet/dist/images/video.svg';
-import 'leaflet/dist/images/search.svg';
-import 'leaflet/dist/images/x.svg';
+// import 'leaflet/dist/images/marker-shadow.png';
+// import 'leaflet/dist/images/marker-icon.png';
+// import 'leaflet/dist/images/cube.svg';
+// import 'leaflet/dist/images/hand.svg';
+// import 'leaflet/dist/images/doc.svg';
+// import 'leaflet/dist/images/img.svg';
+// import 'leaflet/dist/images/video.svg';
+// import 'leaflet/dist/images/search.svg';
+// import 'leaflet/dist/images/x.svg';
 import { icon, Layer, marker } from 'leaflet';
 
 @Component({

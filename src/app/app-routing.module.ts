@@ -25,7 +25,7 @@ export const routes: Routes = [
   {
     path: 'assets', loadChildren: () => import('./@app/map-features/map-features.module')
     .then(m => m.MapFeaturesModule),
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   { path: '', redirectTo: 'auth', pathMatch: 'full' },
   { path: '**', redirectTo: 'auth' },

@@ -1,0 +1,41 @@
+.add-item {
+  background: #f2f5ff;
+  color: #a8a7a7;
+  text-transform: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  nb-icon {
+    color: #a8a7a7;
+    position: relative;
+    top: -2px;
+    margin-right: 3px;
+  }
+}
+.rightIcons img {
+  &:nth-child(1) {
+    border-style: none;
+    width: 30px;
+    height: 30px;
+    padding: 4px;
+    border-radius: 50%;
+    border: 2px solid #a8a7a7;
+    margin-right: 14px;
+  }
+  &:nth-child(2) {
+    transform: translateY(-25%);
+    width: 60px;
+    height: 60px;
+  }
+}
+.charts-background{
+  background-color: #EEF2FF;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+border-radius: 8px;
+justify-content: center;
+nb-card-body{
+  ngx-charts-pie-chart{
+    position: relative;
+    left:40px
+  }
+}
+}

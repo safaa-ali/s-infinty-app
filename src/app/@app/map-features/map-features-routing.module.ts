@@ -1,3 +1,4 @@
+import { AnalysisComponent } from './components/analysis/analysis.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ImagesComponent } from './components/images/images.component';
@@ -16,6 +17,9 @@ const routes: Routes = [
       },
       {
         path: '', redirectTo: 'documents',
+      },
+      {
+        path: 'analises', component:AnalysisComponent
       },
     ],
   },

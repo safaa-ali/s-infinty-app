@@ -129,7 +129,6 @@
   // bottom: 0;
   border-top-right-radius: 25px;
   width: auto !important;
-  height: 100vh;
   .toggle {
     cursor: pointer;
     color: #3e65ee;
@@ -188,7 +187,7 @@
   }
   .Collapse {
     width: 60px;
-    height: 100vh;
+    // height: 100vh;
     background-color: white;
   }
 }

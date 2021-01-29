@@ -16,9 +16,13 @@ import { SharedModule } from 'app/@shared/shared.module';
 import { MapFeaturesRoutingModule } from './map-features-routing.module';
 import { MapFeaturesComponent } from './map-features.component';
 import { DocumentsComponent } from './documents/documents.component';
+import { NgxChartsModule }from '@swimlane/ngx-charts';
+
 import { ImagesComponent } from './components/images/images.component';
+import { AnalysisComponent } from './components/analysis/analysis.component';
+
 @NgModule({
-  declarations: [MapFeaturesComponent, DocumentsComponent, ImagesComponent],
+  declarations: [MapFeaturesComponent, DocumentsComponent, ImagesComponent, AnalysisComponent],
   imports: [
     CommonModule,
     MapFeaturesRoutingModule,
@@ -31,6 +35,7 @@ import { ImagesComponent } from './components/images/images.component';
     NbContextMenuModule,
     NbFormFieldModule,
     SharedModule,
+    NgxChartsModule,
     NbSidebarModule.forRoot(),
     GalleryModule.withConfig({}),
   ],
