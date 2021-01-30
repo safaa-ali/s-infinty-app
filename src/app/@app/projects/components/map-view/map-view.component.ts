@@ -1,26 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import { NbSidebarService } from '@nebular/theme';
-import { DatePipe } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
-import { ProjectsService } from '../../projects.service';
-
+import { Component, OnInit } from "@angular/core";
+import { NbSidebarService } from "@nebular/theme";
+import { AuthService } from "app/@core/utils/service/auth.service";
+import { DatePipe } from "@angular/common";
+import { ActivatedRoute, Router } from "@angular/router";
+import { ProjectsService } from "../../projects.service";
+import { windowWhen } from "rxjs/operators";
 @Component({
-  selector: 'ngx-map-view',
-  templateUrl: './map-view.component.html',
-  styleUrls: ['./map-view.component.scss'],
+  selector: "ngx-map-view",
+  templateUrl: "./map-view.component.html",
+  styleUrls: ["./map-view.component.scss"],
 })
 export class MapViewComponent implements OnInit {
   compacted: boolean = true;
   ProjectsData: any;
   sub: any;
   projectId: number;
+  assetId: number = 22;
   constructor(
+    private sidebarService: NbSidebarService,
     private datePipe: DatePipe,
     private route: ActivatedRoute,
     private _ProjectsService: ProjectsService,
+    private router: Router
   ) {
     this.sub = this.route.params.subscribe((params) => {
-      this.projectId = +params['projectId'];
+      this.projectId = +params["projectId"];
     });
   }
   ngOnInit(): void {
@@ -29,9 +33,6 @@ export class MapViewComponent implements OnInit {
   toggleCompact() {
     //  this.sidebarService.toggle(true, 'map-sidebar');
     this.compacted = !this.compacted;
-
-    // document.getElementsByClassName("::ng-deep .nb-theme-default nb-layout-column")[0].style.backgroundColor='"red"';
-    // console.log(this.compacted);
   }
   getProjectData() {
     this._ProjectsService.getProjects().subscribe((res) => {
@@ -39,15 +40,16 @@ export class MapViewComponent implements OnInit {
       // console.log(this.ProjectsData);
     });
   }
+  mapFeatures(e) {
+    this.router.navigate([
+      `projects/${this.projectId}/assets/${this.assetId}/${e}`,
+    ]);
+  }
   isActive(id) {
     if (id === this.projectId) {
       return true;
     } else {
       return false;
     }
-  }
-  adjustDate(dateString) {
-    const dateParsed = dateString.split('T')[0];
-    return this.datePipe.transform(dateParsed, 'MM-dd-yyyy');
   }
 }

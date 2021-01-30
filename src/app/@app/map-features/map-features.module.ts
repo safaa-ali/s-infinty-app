@@ -1,5 +1,6 @@
 import { ThemeModule } from './../../@theme/theme.module';
-import { GalleryModule } from 'ng-gallery';
+// import { GalleryModule } from 'ng-gallery';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import {
   NbMenuModule,
   NbCardModule,
@@ -31,9 +32,12 @@ import { ImagesComponent } from './components/images/images.component';
     NbContextMenuModule,
     NbFormFieldModule,
     SharedModule,
+    NgxGalleryModule,
     NbSidebarModule.forRoot(),
-    GalleryModule.withConfig({}),
+    // GalleryModule.withConfig({}),
   ],
 
 })
-export class MapFeaturesModule { }
+export class MapFeaturesModule { 
+ 
+}

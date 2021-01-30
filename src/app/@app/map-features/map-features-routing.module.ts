@@ -9,13 +9,13 @@ const routes: Routes = [
     path: '', component: MapFeaturesComponent,
     children: [
       {
-        path: 'documents', component: DocumentsComponent,
+        path: ':projectId/assets/:assetId/documents', component: DocumentsComponent,
       },
       {
-        path: 'images', component: ImagesComponent,
+        path: ':assetId/images', component: ImagesComponent,
       },
       {
-        path: '', redirectTo: 'documents',
+        path: '', redirectTo: ':projectId/assets/:assetId/documents',
       },
     ],
   },

@@ -40,6 +40,13 @@ export class MapFeaturesComponent implements OnInit {
         icon:  { icon: 'hand', pack: 'svg' },
       },
     ];
+    if (!localStorage.getItem('foo')) { 
+      localStorage.setItem('foo', 'no reload') 
+      window.location.reload() 
+    } else {
+      localStorage.removeItem('foo') 
+    }
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 }
