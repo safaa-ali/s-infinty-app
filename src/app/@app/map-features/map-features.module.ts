@@ -43,6 +43,6 @@ import { AnalysisComponent } from './components/analysis/analysis.component';
   ],
 
 })
-export class MapFeaturesModule { 
- 
+export class MapFeaturesModule {
+
 }

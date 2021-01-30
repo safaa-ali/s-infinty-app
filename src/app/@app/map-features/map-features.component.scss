@@ -16,13 +16,11 @@
   }
   .features {
     nb-sidebar.sidebar {
-      width: 5rem !important;
       .menu-item-collapse {
-        pointer-events: none;
-        width: 30% !important;
+        width: 3rem;
       }
       .scrollable nb-menu ul.menu-items .menu-item {
-        width: 39% !important;
+        // width: 39% !important;
         &:nth-child(1) {
           margin-top: 100px !important;
         }
@@ -39,7 +37,7 @@
       transform: translateX(7px);
       text-align: center;
       // display: none;
-      visibility: hidden;
+      // visibility: hidden;
     }
     .menu-item {
       text-align: center !important;

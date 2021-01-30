@@ -20,10 +20,10 @@ const routes: Routes = [
     path: ':projectId', component: MapViewComponent,
   },
   {
-    path: "",
+    path: '',
     loadChildren: () =>
-      import("../map-features/map-features.module").then(
-        (m) => m.MapFeaturesModule
+      import('../map-features/map-features.module').then(
+        (m) => m.MapFeaturesModule,
       ),
     // canActivate: [AuthGuard],
   },

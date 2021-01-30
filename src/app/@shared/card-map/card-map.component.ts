@@ -15,7 +15,7 @@ export class CardMapComponent implements OnInit {
   // @Input() description: string;
   // @Input() imgUrl: string;
   // @Input() createdAt: any;
-  @Input() cardData:object;
+  @Input() cardData: object;
   @Input() isActive: boolean = false;
   items = [
     { title: 'IoT Monitoring' },
@@ -24,7 +24,7 @@ export class CardMapComponent implements OnInit {
     { title: 'Point Cloud' },
     { title: 'Project Management' },
   ];
-  constructor(private router: Router,private datePipe:DatePipe) {}
+  constructor(private router: Router, private datePipe: DatePipe) {}
 
   ngOnInit() {}
   toggleMenu() {
@@ -39,8 +39,8 @@ export class CardMapComponent implements OnInit {
     this.router.navigate([`/projects/${this.cardData['id']}`]);
   }
   adjustDate(dateString) {
-    const dateParsed = dateString.split("T")[0];
-    return this.datePipe.transform(dateParsed, "MM-dd-yyyy");
+    const dateParsed = dateString.split('T')[0];
+    return this.datePipe.transform(dateParsed, 'MM-dd-yyyy');
   }
 
 }

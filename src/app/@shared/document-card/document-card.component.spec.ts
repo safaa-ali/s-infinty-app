@@ -8,7 +8,7 @@ describe('DocumentCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DocumentCardComponent ]
+      declarations: [ DocumentCardComponent ],
     })
     .compileComponents();
   });

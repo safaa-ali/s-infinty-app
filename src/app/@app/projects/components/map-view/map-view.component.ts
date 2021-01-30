@@ -1,30 +1,30 @@
-import { Component, OnInit } from "@angular/core";
-import { NbSidebarService } from "@nebular/theme";
-import { AuthService } from "app/@core/utils/service/auth.service";
-import { DatePipe } from "@angular/common";
-import { ActivatedRoute, Router } from "@angular/router";
-import { ProjectsService } from "../../projects.service";
-import { windowWhen } from "rxjs/operators";
+import { Component, OnInit } from '@angular/core';
+import { NbSidebarService } from '@nebular/theme';
+import { AuthService } from 'app/@core/utils/service/auth.service';
+import { DatePipe } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ProjectsService } from '../../projects.service';
+import { windowWhen } from 'rxjs/operators';
 @Component({
-  selector: "ngx-map-view",
-  templateUrl: "./map-view.component.html",
-  styleUrls: ["./map-view.component.scss"],
+  selector: 'ngx-map-view',
+  templateUrl: './map-view.component.html',
+  styleUrls: ['./map-view.component.scss'],
 })
 export class MapViewComponent implements OnInit {
   compacted: boolean = true;
   ProjectsData: any;
   sub: any;
   projectId: number;
-  assetId: number = 22;
+  assetId: number = 51;
   constructor(
     private sidebarService: NbSidebarService,
     private datePipe: DatePipe,
     private route: ActivatedRoute,
     private _ProjectsService: ProjectsService,
-    private router: Router
+    private router: Router,
   ) {
     this.sub = this.route.params.subscribe((params) => {
-      this.projectId = +params["projectId"];
+      this.projectId = +params['projectId'];
     });
   }
   ngOnInit(): void {

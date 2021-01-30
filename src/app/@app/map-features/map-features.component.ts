@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NbMenuItem } from '@nebular/theme';
 import { map_menu } from './map-menu';
 
@@ -9,14 +10,19 @@ import { map_menu } from './map-menu';
 })
 export class MapFeaturesComponent implements OnInit {
   menu: NbMenuItem[];
-  constructor() {
-    if (!localStorage.getItem('foo')) { 
-      localStorage.setItem('foo', 'no reload') 
-      window.location.reload() 
+  constructor(private activateroute: ActivatedRoute) {
+    if (!localStorage.getItem('foo')) {
+      localStorage.setItem('foo', 'no reload');
+      window.location.reload();
     } else {
-      localStorage.removeItem('foo') 
+      localStorage.removeItem('foo');
     }
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.activateroute.params.subscribe((params) => {
+      localStorage.setItem('currentProjectId', params['projectId']);
+      localStorage.setItem('currentAssetId', params['assetId']);
+    });
+  }
   mapMenu = map_menu;
 }
