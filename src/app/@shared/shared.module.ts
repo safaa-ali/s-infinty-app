@@ -16,6 +16,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CardMapComponent } from './card-map/card-map.component';
 import { DocumentCardComponent } from './document-card/document-card.component';
+import { AnlalysisCardComponent } from './anlalysis-card/anlalysis-card.component';
 // const COMPONENTS = [
 //   ProjectCardComponent
 // ]
@@ -28,6 +29,7 @@ ReactiveFormsModule;
     MapComponent,
     CardMapComponent,
     DocumentCardComponent,
+    AnlalysisCardComponent,
   ],
   imports: [
     CommonModule,
@@ -40,7 +42,23 @@ ReactiveFormsModule;
     ReactiveFormsModule,
     FormsModule,
   ],
-  exports: [ProjectCardComponent, ContainerComponent, SearchComponent, MapComponent, CardMapComponent,DocumentCardComponent],
-  entryComponents: [ProjectCardComponent, ContainerComponent, SearchComponent, MapComponent, CardMapComponent,DocumentCardComponent],
+  exports: [
+    ProjectCardComponent,
+    ContainerComponent,
+    SearchComponent,
+    MapComponent,
+    CardMapComponent,
+    AnlalysisCardComponent,
+    DocumentCardComponent,
+  ],
+  entryComponents: [
+    ProjectCardComponent,
+    ContainerComponent,
+    SearchComponent,
+    MapComponent,
+    CardMapComponent,
+    AnlalysisCardComponent,
+    DocumentCardComponent,
+  ],
 })
 export class SharedModule { }

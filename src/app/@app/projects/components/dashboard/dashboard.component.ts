@@ -56,8 +56,8 @@ export class DashboardComponent implements OnInit {
   resultSearch() {
     this._globalService.Search(this.searchValue, 'projects?organization_id=43').subscribe((res) => {
 
-        this.ProjeData = res;
-      });
+      this.ProjeData = res;
+    });
   }
   adjustDate(dateString) {
     const dateParsed = dateString.split('T')[0];

@@ -1,3 +1,4 @@
+import { AnalysisComponent } from './components/analysis/analysis.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ImagesComponent } from './components/images/images.component';
@@ -6,16 +7,19 @@ import { MapFeaturesComponent } from './map-features.component';
 
 const routes: Routes = [
   {
-    path: '', component: MapFeaturesComponent,
+    path: ':projectId/assets/:assetId', component: MapFeaturesComponent,
     children: [
       {
-        path: ':projectId/assets/:assetId/documents', component: DocumentsComponent,
+        path: 'documents', component: DocumentsComponent,
       },
       {
-        path: ':assetId/images', component: ImagesComponent,
+        path: 'images', component: ImagesComponent,
       },
       {
-        path: '', redirectTo: ':projectId/assets/:assetId/documents',
+        path: 'analises', component: AnalysisComponent,
+      },
+      {
+        path: '', redirectTo: 'documents',
       },
     ],
   },
