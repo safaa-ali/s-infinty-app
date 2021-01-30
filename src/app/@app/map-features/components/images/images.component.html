@@ -31,7 +31,7 @@
           (click)="oneChoosed()"
         ></nb-icon>
         <nb-icon icon="four" pack="svg" (click)="fourChoosed()"></nb-icon>
-        <nb-icon icon="nine" pack="svg"></nb-icon>
+        <nb-icon icon="nine" pack="svg" (click)="nineChoosed()"></nb-icon>
       </div>
     </div>
   </div>
@@ -50,17 +50,44 @@
     </div>
   </div>
   <div *ngIf="this.chosenFilter == 9" class="row justify-content-center">
-    <!-- <div *ngFor="let image of images" class="p-2">
-      <img [src]="image" alt="" class="img-fluid" />
-    </div> -->
-    <div class="col-md-6">
-      <img [src]="image" alt="" class="img-fluid" />
-    </div>
-    <div class="col-md-3">
-      <img [src]="image" alt="" class="img-fluid" />
-    </div>
-    <div class="col-md-3">
-      <img [src]="image" alt="" class="img-fluid" />
+    <div *ngFor="let image of images" class="p-2">
+      <div class="row">
+        <div class="col-md-6">
+          <img [src]="image" alt="" class="img-fluid" />
+        </div>
+        <div class="col-md-3">
+          <img [src]="image" alt="" class="img-fluid" />
+        </div>
+        <div class="col-md-3">
+          <img [src]="image" alt="" class="img-fluid" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-3">
+              <img [src]="image" alt="" class="img-fluid" />
+            </div>
+            <div class="col-md-6">
+              <img [src]="image" alt="" class="img-fluid" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <img [src]="image" alt="" class="img-fluid" />
+            </div>
+            <div class="col-md-3">
+              <img [src]="image" alt="" class="img-fluid" />
+            </div>
+            <div class="col-md-3">
+              <img [src]="image" alt="" class="img-fluid" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <img [src]="image" alt="" class="img-fluid" />
+        </div>
+      </div>
     </div>
   </div>
 </div>

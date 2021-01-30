@@ -11,7 +11,8 @@ export class ImagesComponent implements OnInit {
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
   images: any;
-  chosenFilter: number = 9;
+  imagesLength:number;
+  chosenFilter: number = 4;
   // images: GalleryItem[];
   constructor() {
     this.images = [
@@ -21,7 +22,11 @@ export class ImagesComponent implements OnInit {
       'assets/images/kitten-corporate.png',
       'assets/images/kitten-corporate.png',
       'assets/images/kitten-corporate.png',
+      'assets/images/kitten-corporate.png',
+      'assets/images/kitten-corporate.png',
+      'assets/images/kitten-corporate.png',
     ];
+    // this.imagesLength=this.images.length;
   }
   ngOnInit() {
     this.galleryOptions = [
@@ -55,13 +60,7 @@ export class ImagesComponent implements OnInit {
   fourChoosed() {
     this.chosenFilter = 4;
   }
+  nineChoosed() {
+    this.chosenFilter = 9;
+  }
 }
-
-// ngOnInit(): void {
-//   // this.images = [
-//   //   new ImageItem({ src: 'assets/images/kitten-dark.png' }),
-//   //   new ImageItem({ src: 'assets/images/kitten-corporate.png'}),
-//   //   new ImageItem({ src: 'assets/images/kitten-corporate.png'}),
-//   //   // ... more items
-//   // ];
-// }

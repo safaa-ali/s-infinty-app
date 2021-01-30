@@ -11,10 +11,7 @@ import { Router } from '@angular/router';
 export class CardMapComponent implements OnInit {
 
   toggle: boolean = false;
-  // @Input() pname: string;
-  // @Input() description: string;
-  // @Input() imgUrl: string;
-  // @Input() createdAt: any;
+  @Input() imgUrl: string;
   @Input() cardData: object;
   @Input() isActive: boolean = false;
   items = [

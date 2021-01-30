@@ -38,6 +38,7 @@
             <div *ngFor="let project of this.ProjectsData">
               <ngx-card-map
                 [cardData]="project"
+                [imgUrl]="project.imageUrl"
                 [isActive]="isActive(project.id)"
               ></ngx-card-map>
             </div>

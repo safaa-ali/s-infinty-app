@@ -18,11 +18,19 @@
     nb-sidebar.sidebar {
       .menu-item-collapse {
         width: 3rem;
+        a.menu-icon {
+          left: 100% !important;
+          // top: -30%;
+          // right: 50%;
+          transform: translateX(-50%);
+        }
       }
       .scrollable nb-menu ul.menu-items .menu-item {
-        // width: 39% !important;
         &:nth-child(1) {
           margin-top: 100px !important;
+          nb-icon {
+            transform: translate(-50%, 10px);
+          }
         }
         height: calc((100vh - 300px) / 7);
         a.active.menu-icon svg {
@@ -33,26 +41,32 @@
   }
   .features .menu-sidebar .scrollable nb-menu ul.menu-items {
     padding-top: 0% !important;
-    .menu-title {
-      transform: translateX(7px);
-      text-align: center;
-      // display: none;
-      // visibility: hidden;
-    }
     .menu-item {
       text-align: center !important;
       position: relative;
-      margin-top: 8px;
-      margin-bottom: 14px;
-      a .menu-icon {
-        position: absolute;
-        top: -30%;
-        right: 50%;
-        transform: translateX(50%);
+      a {
+        padding-right: 0 !important;
+        svg {
+          margin-left: 0 !important;
+        }
+        .menu-icon {
+          // display: none;
+          position: absolute;
+          left: 50%;
+          top: -38px;
+          transform: translateX(-50%);
+        }
       }
     }
   }
-  nb-sidebar.sidebar[_ngcontent-akv-c254] {
-    height: auto !important;
+}
+::ng-deep.nb-theme-default .features {
+  nb-sidebar.compacted  {
+    .menu-item{
+      width: 100% !important;
+    }
+    .menu-item-collapse{
+      width: 100% !important;
+    }
   }
 }
