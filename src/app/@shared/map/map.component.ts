@@ -95,15 +95,15 @@ export class MapComponent implements OnInit {
     })
       .bindPopup(this.bodyPopup, this.optionsPopup)
       .on('popupopen', (e) => {
-        document.querySelector('#doc').addEventListener('click', (e) => {
-          e;
+        document.querySelector('#doc').addEventListener('click', () => {
+
           this.mapAsset.emit('documents');
         });
-        document.querySelector('#img').addEventListener('click', (e) => {
+        document.querySelector('#img').addEventListener('click', () => {
           e;
           this.mapAsset.emit('images');
         });
-        document.querySelector('#video').addEventListener('click', (e) => {
+        document.querySelector('#video').addEventListener('click', () => {
           e;
           this.mapAsset.emit('videos');
         });
