@@ -32,7 +32,7 @@
             transform: translate(-50%, 10px);
           }
         }
-        height: calc((100vh - 300px) / 7);
+        min-height: calc((100vh - 300px) / 7);
         a.active.menu-icon svg {
           color: #fff !important;
         }
@@ -44,6 +44,7 @@
     .menu-item {
       text-align: center !important;
       position: relative;
+      margin-bottom: 20px;
       a {
         padding-right: 0 !important;
         svg {
