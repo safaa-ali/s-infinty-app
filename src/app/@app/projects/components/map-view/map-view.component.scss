@@ -73,17 +73,14 @@
     padding: 10px;
     overflow-y: scroll;
     margin-top: 30px;
-    height: calc(100vh - 180px);
+    height: calc(100vh - 220px);
     @media only screen and (max-width: 997px) {
       height: calc(100vh - 320px);
       margin-top: 100px !important;
     }
   }
   .fixedParts {
-    height: 180px;
-    @media screen and (max-width: 997px) {
-      height: auto;
-    }
+    min-height: 180px;
   }
   .header {
     width: 100%;
@@ -109,22 +106,22 @@
     background-color: white;
   }
 }
-ngx-map {
-  .map1 {
-    left: 60px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-  }
-  .map2 {
-    left: 600px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-  }
-}
+// ngx-map {
+//   .map1 {
+//     left: 60px;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//   }
+//   .map2 {
+//     left: 600px;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//   }
+// }
 .map1 {
   left: 60px;
   position: absolute;
@@ -138,4 +135,11 @@ ngx-map {
   top: 0;
   right: 0;
   bottom: 0;
+}
+.sideBar{
+  .fixedParts{
+    @media only screen and (max-width: 1100px) {
+      min-height: 300px !important;
+    }
+  }
 }

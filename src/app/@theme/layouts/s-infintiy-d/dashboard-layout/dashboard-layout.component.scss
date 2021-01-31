@@ -136,4 +136,9 @@ nb-layout nb-layout-column {
       width: 100%;
     }
   }
+  @media only screen and (max-width: 900px) {
+    nb-sidebar.sidebar {
+      width: 0;
+    }
+  }
 }

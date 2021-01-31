@@ -4,6 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProjectsComponent } from './projects.component';
 import { MapViewComponent } from './components/map-view/map-view.component';
+import { AuthGuard } from 'app/@core/utils/auth.guard';
+
 const routes: Routes = [
   {
     path: '', component: ProjectsComponent,
@@ -18,14 +20,6 @@ const routes: Routes = [
   },
   {
     path: ':projectId', component: MapViewComponent,
-  },
-  {
-    path: '',
-    loadChildren: () =>
-      import('../map-features/map-features.module').then(
-        (m) => m.MapFeaturesModule,
-      ),
-    // canActivate: [AuthGuard],
   },
 ];
 

@@ -7,7 +7,7 @@ import { MapFeaturesComponent } from './map-features.component';
 
 const routes: Routes = [
   {
-    path: ':projectId/assets/:assetId', component: MapFeaturesComponent,
+    path: '', component: MapFeaturesComponent,
     children: [
       {
         path: 'documents', component: DocumentsComponent,
@@ -16,7 +16,7 @@ const routes: Routes = [
         path: 'images', component: ImagesComponent,
       },
       {
-        path: 'analises', component: AnalysisComponent,
+        path: 'analysis', component: AnalysisComponent,
       },
       {
         path: '', redirectTo: 'documents',
