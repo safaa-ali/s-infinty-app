@@ -1,8 +1,61 @@
-.documentsCards {
-  margin-top: 100px;
+.documents {
+  nb-icon{
+    cursor: pointer;
+  }
+  .horizontalLine {
+    margin-bottom: 50px;
+    width: 100%;
+    height: 4px;
+    background-color: #DBDBDB;
+  }
+  .documentsCards {
+    margin-top: 62px;
+  }
+  .add-item {
+    background: #f2f5ff;
+    color: #a8a7a7;
+    text-transform: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    nb-icon {
+      color: #a8a7a7;
+      position: relative;
+      top: -2px;
+      margin-right: 3px;
+    }
+  }
+  .rightIcons img {
+    &:nth-child(1) {
+      border-style: none;
+      width: 30px;
+      height: 30px;
+      padding: 4px;
+      border-radius: 50%;
+      border: 2px solid #a8a7a7;
+      margin-right: 14px;
+    }
+    &:nth-child(2) {
+      // transform: translateY(-25%);
+      width: 60px;
+      height: 60px;
+    }
+  }
+  .numberDocs{
+    nb-icon{
+      font-size: 1.5rem;
+      color: #9E9E9E !important;
+      &:nth-child(1){
+        font-size: 2.5rem;
+        position: relative;
+        transform: translateY(-21%);
+        margin-right: 10px;
+      }
+    }
+  }
 }
+
 ::ng-deep {
-  .nb-theme-default [nbInput].status-basic {
+  .nb-theme-default.documents [nbInput].status-basic {
     background: #f2f5ff !important;
   }
   .nb-theme-default
@@ -13,35 +66,6 @@
     .columns
     nb-layout-column {
     background-color: white !important;
-    // border-top-left-radius: 50px !important;
-  }
-}
-.add-item {
-  background: #f2f5ff;
-  color: #a8a7a7;
-  text-transform: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-  nb-icon {
-    color: #a8a7a7;
-    position: relative;
-    top: -2px;
-    margin-right: 3px;
-  }
-}
-.rightIcons img {
-  &:nth-child(1) {
-    border-style: none;
-    width: 30px;
-    height: 30px;
-    padding: 4px;
-    border-radius: 50%;
-    border: 2px solid #a8a7a7;
-    margin-right: 14px;
-  }
-  &:nth-child(2) {
-    transform: translateY(-25%);
-    width: 60px;
-    height: 60px;
+    padding: 0px;
   }
 }

@@ -11,7 +11,7 @@ export class ImagesComponent implements OnInit {
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
   images: any;
-  imagesLength:number;
+  imagesLength: number;
   chosenFilter: number = 4;
   // images: GalleryItem[];
   constructor() {

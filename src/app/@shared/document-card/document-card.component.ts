@@ -1,3 +1,4 @@
+import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,12 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./document-card.component.scss'],
 })
 export class DocumentCardComponent implements OnInit {
-  constructor() {}
   items = [
     // { icon: { icon: "more-horizontal-outline", pack: "eva" } },
     { title: 'Rename' },
     { title: 'Share' },
     { title: 'Download' },
   ];
+  @Input()documentData: any;
+  // @Input()imgUrl:string;
+  constructor() {}
   ngOnInit(): void {}
 }

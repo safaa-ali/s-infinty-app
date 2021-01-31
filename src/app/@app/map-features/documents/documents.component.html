@@ -1,9 +1,12 @@
 <!-- <ngx-documents-card></ngx-documents-card> -->
 <div class="documents px-5">
-  <div class="ml-auto rightIcons d-flex justify-content-end">
+  <div
+    class="ml-auto rightIcons d-flex align-items-center py-2 justify-content-end"
+  >
     <img src="assets/images/alert.svg" alt="" />
     <img src="assets/images/meti.svg" alt="" />
   </div>
+  <div class="horizontalLine"></div>
   <div class="row">
     <div class="col-md-5">
       <ngx-search></ngx-search>
@@ -14,10 +17,21 @@
       </button>
     </div>
   </div>
-  <div class="row documentsCards">
-    <div class="col-md-3 px-3"><ngx-document-card></ngx-document-card></div>
-    <div class="col-md-3 px-3"><ngx-document-card></ngx-document-card></div>
-    <div class="col-md-3 px-3"><ngx-document-card></ngx-document-card></div>
-    <div class="col-md-3 px-3"><ngx-document-card></ngx-document-card></div>
+  <div class="d-flex justify-content-end numberDocs pr-4">
+    <nb-icon icon="toggle" pack="svg" (click)="oneChoosed()"></nb-icon>
+    <nb-icon icon="four" pack="svg" (click)="fourChoosed()"></nb-icon>
+  </div>
+  <div
+    *ngIf="this.chosenFilter == 4"
+    class="imagesSection row justify-content-center"
+  >
+    <div *ngFor="let doc of documentsData" class="col-md-3 p-2">
+      <ngx-document-card [documentData]="doc"></ngx-document-card>
+    </div>
+  </div>
+  <div *ngIf="this.chosenFilter == 1" class="w-100 text-center">
+    <div *ngFor="let doc of documentsData" class="w-25 mx-auto">
+      <ngx-document-card [documentData]="doc"></ngx-document-card>
+    </div>
   </div>
 </div>

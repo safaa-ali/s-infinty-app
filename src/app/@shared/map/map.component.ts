@@ -1,22 +1,22 @@
-import { Component, Input, OnInit, EventEmitter, Output } from "@angular/core";
-import { ProjectsService } from "app/@app/projects/projects.service";
-import * as L from "leaflet";
-import "leaflet/dist/images/marker-shadow.png";
-import "leaflet/dist/images/marker-icon.png";
-import "leaflet/dist/images/cube.svg";
-import "leaflet/dist/images/hand.svg";
-import "leaflet/dist/images/doc.svg";
-import "leaflet/dist/images/img.svg";
-import "leaflet/dist/images/video.svg";
-import "leaflet/dist/images/search.svg";
-import "leaflet/dist/images/x.svg";
-import { icon, Layer, marker } from "leaflet";
-import { Router } from "@angular/router";
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
+import { ProjectsService } from 'app/@app/projects/projects.service';
+import * as L from 'leaflet';
+import 'leaflet/dist/images/marker-shadow.png';
+import 'leaflet/dist/images/marker-icon.png';
+import 'leaflet/dist/images/cube.svg';
+import 'leaflet/dist/images/hand.svg';
+import 'leaflet/dist/images/doc.svg';
+import 'leaflet/dist/images/img.svg';
+import 'leaflet/dist/images/video.svg';
+import 'leaflet/dist/images/search.svg';
+import 'leaflet/dist/images/x.svg';
+import { icon, Layer, marker } from 'leaflet';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: "ngx-map",
-  templateUrl: "./map.component.html",
-  styleUrls: ["./map.component.scss"],
+  selector: 'ngx-map',
+  templateUrl: './map.component.html',
+  styleUrls: ['./map.component.scss'],
 })
 export class MapComponent implements OnInit {
   @Input() projectId: number;
@@ -24,10 +24,10 @@ export class MapComponent implements OnInit {
   bodyPopup: any;
   optionsPopup: any;
   stationsLocations: [];
-  mapTile = L.tileLayer("http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}", {
+  mapTile = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
     maxZoom: 23,
     minZoom: 19,
-    subdomains: ["mt0", "mt1", "mt2", "mt3"],
+    subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
   });
   map: L.Map;
   loadMap: boolean = false;
@@ -39,7 +39,7 @@ export class MapComponent implements OnInit {
   };
   constructor(
     private router: Router,
-    private _ProjectsService: ProjectsService
+    private _ProjectsService: ProjectsService,
   ) {
     this.bodyPopup = `
     <div class="icon"><img src='doc.svg' id="doc"></div>
@@ -51,23 +51,23 @@ export class MapComponent implements OnInit {
     <div class="icon"><img src='video.svg' id="video"></div>
     `;
     this.optionsPopup = {
-      maxWidth: "400",
-      width: "200",
+      maxWidth: '400',
+      width: '200',
       closeButton: false,
-      className: "popupCustom",
+      className: 'popupCustom',
     };
-    
+
   }
   ngOnInit() {
     this.getLocations();
   }
   locateStations(map: L.Map) {
-     this.addMarker(51,0.22);
+     this.addMarker(51, 0.22);
   }
   getLocations() {
     this._ProjectsService.getStations(this.projectId).subscribe((res) => {
       this.stationsLocations = res.data.items.filter(
-        (item) => item.assetType === "stationary"
+        (item) => item.assetType === 'stationary',
       );
       this.addMarkers();
       this.loadMap = true;
@@ -76,12 +76,12 @@ export class MapComponent implements OnInit {
 
   addMarkers() {
     // console.log(this.stationsLocations.length);
-    
+
     for (let i = 0; i < this.stationsLocations.length; i++) {
-      console.log(this.stationsLocations[i]["latitude"]);
+      // console.log(this.stationsLocations[i]['latitude']);
       this.addMarker(
-        this.stationsLocations[i]["latitude"],
-        this.stationsLocations[i]["longitude"]
+        this.stationsLocations[i]['latitude'],
+        this.stationsLocations[i]['longitude'],
       );
       // console.log(this.markers.length);
     }
@@ -91,23 +91,23 @@ export class MapComponent implements OnInit {
       icon: icon({
         iconSize: [25, 41],
         iconAnchor: [13, 41],
-        iconUrl: "marker-icon.png",
-        iconRetinaUrl: "marker-icon.png",
-        shadowUrl: "marker-shadow.png",
+        iconUrl: 'marker-icon.png',
+        iconRetinaUrl: 'marker-icon.png',
+        shadowUrl: 'marker-shadow.png',
       }),
     })
       .bindPopup(this.bodyPopup, this.optionsPopup)
-      .on("popupopen", (e) => {
-        document.querySelector("#doc").addEventListener("click", () => {
-          this.mapAsset.emit("documents");
+      .on('popupopen', (e) => {
+        document.querySelector('#doc').addEventListener('click', () => {
+          this.mapAsset.emit('documents');
         });
-        document.querySelector("#img").addEventListener("click", () => {
+        document.querySelector('#img').addEventListener('click', () => {
           e;
-          this.mapAsset.emit("images");
+          this.mapAsset.emit('images');
         });
-        document.querySelector("#video").addEventListener("click", () => {
+        document.querySelector('#video').addEventListener('click', () => {
           e;
-          this.mapAsset.emit("videos");
+          this.mapAsset.emit('videos');
         });
       });
     this.markers.push(newMarker);

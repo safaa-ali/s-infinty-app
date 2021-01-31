@@ -1,4 +1,4 @@
-<div class="documents px-5">
+<div class="images px-5 pt-5">
   <div class="row justify-content-between">
     <div class="col-md-9 row">
       <div class="col-md-7">
@@ -6,9 +6,6 @@
       </div>
     </div>
     <div class="col-md-3 rightIcons d-flex justify-content-end">
-      <!-- <button class="add-item">
-        <nb-icon icon="plus-outline"></nb-icon>Add Project
-      </button> -->
       <img src="assets/images/alert.svg" alt="" />
       <img src="assets/images/meti.svg" alt="" />
     </div>
@@ -18,18 +15,14 @@
     <div class="d-flex">
       <div class="d-flex">
         <button class="">
-          <nb-icon icon="plus-outline"></nb-icon><span>Add Photo</span>
+          <nb-icon icon="plus-outline" class="ml-1"></nb-icon><span>Add Photo</span>
         </button>
         <button class="">
-          <nb-icon icon="list-outline"></nb-icon><span>Select</span>
+          <nb-icon icon="list-outline" class="ml-1"></nb-icon><span>Select</span>
         </button>
       </div>
       <div class="d-flex number ml-5">
-        <nb-icon
-          icon="menu-outline"
-          pack="eva"
-          (click)="oneChoosed()"
-        ></nb-icon>
+        <nb-icon icon="toggle" pack="svg" (click)="oneChoosed()"></nb-icon>
         <nb-icon icon="four" pack="svg" (click)="fourChoosed()"></nb-icon>
         <nb-icon icon="nine" pack="svg" (click)="nineChoosed()"></nb-icon>
       </div>
@@ -41,22 +34,22 @@
     class="imagesSection row justify-content-center"
   >
     <div *ngFor="let image of images" class="col-md-3 p-2">
-      <img [src]="image" alt="" class="img-fluid" />
+      <ngx-image-card></ngx-image-card>
     </div>
   </div>
-  <div *ngIf="this.chosenFilter == 1" class="w-100 text-center">
+  <div *ngIf="this.chosenFilter == 1" class="w-25 mx-auto">
     <div *ngFor="let image of images" class="p-2">
-      <img [src]="image" alt="" class="img-fluid" />
+      <ngx-image-card></ngx-image-card>
     </div>
   </div>
-  <div *ngIf="this.chosenFilter == 9" class="row justify-content-center">
+  <!-- <div *ngIf="this.chosenFilter == 9" class="row justify-content-center">
     <div *ngFor="let image of images" class="p-2">
       <div class="row">
         <div class="col-md-6">
-          <img [src]="image" alt="" class="img-fluid" />
+          <ngx-image-card></ngx-image-card>
         </div>
         <div class="col-md-3">
-          <img [src]="image" alt="" class="img-fluid" />
+          <ngx-image-card></ngx-image-card>
         </div>
         <div class="col-md-3">
           <img [src]="image" alt="" class="img-fluid" />
@@ -89,7 +82,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
 <!-- <div class="imagesSection">
     <ngx-gallery
