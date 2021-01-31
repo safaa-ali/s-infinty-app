@@ -29,6 +29,7 @@ import {
 } from '@nebular/theme';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+// import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {

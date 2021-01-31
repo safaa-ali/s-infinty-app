@@ -2,7 +2,6 @@
 import { ContainerComponent } from './container/container.component';
 import { MapComponent } from './map/map.component';
 import { SearchComponent } from './search/search.component';
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import {
   NbCardModule,
   NbContextMenuModule,
@@ -18,6 +17,7 @@ import { CardMapComponent } from './card-map/card-map.component';
 import { DocumentCardComponent } from './document-card/document-card.component';
 import { AnlalysisCardComponent } from './anlalysis-card/anlalysis-card.component';
 import { ImageCardComponent } from './image-card/image-card.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 // const COMPONENTS = [
 //   ProjectCardComponent
 // ]

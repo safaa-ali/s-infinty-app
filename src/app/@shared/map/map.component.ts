@@ -1,15 +1,6 @@
 import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { ProjectsService } from 'app/@app/projects/projects.service';
 import * as L from 'leaflet';
-import 'leaflet/dist/images/marker-shadow.png';
-import 'leaflet/dist/images/marker-icon.png';
-import 'leaflet/dist/images/cube.svg';
-import 'leaflet/dist/images/hand.svg';
-import 'leaflet/dist/images/doc.svg';
-import 'leaflet/dist/images/img.svg';
-import 'leaflet/dist/images/video.svg';
-import 'leaflet/dist/images/search.svg';
-import 'leaflet/dist/images/x.svg';
 import { icon, Layer, marker } from 'leaflet';
 import { Router } from '@angular/router';
 
@@ -42,13 +33,13 @@ export class MapComponent implements OnInit {
     private _ProjectsService: ProjectsService,
   ) {
     this.bodyPopup = `
-    <div class="icon"><img src='doc.svg' id="doc"></div>
-    <div class="icon"><img src='hand.svg' id="hand"></div>
-    <div class="icon"><img src='cube.svg' id="3dmodel"></div>
-    <div class="icon"><img src='x.svg' id="charts"></div>
-    <div class="icon"><img src='img.svg' id="img"></div>
-    <div class="icon"><img src='search.svg' id="search"></div>
-    <div class="icon"><img src='video.svg' id="video"></div>
+    <div class="icon"><img src='./assets/images/doc.svg' id="doc"></div>
+    <div class="icon"><img src='./assets/images/hand.svg' id="hand"></div>
+    <div class="icon"><img src='./assets/images/cube.svg' id="3dmodel"></div>
+    <div class="icon"><img src='./assets/images/x.svg' id="charts"></div>
+    <div class="icon"><img src='./assets/images/img.svg' id="img"></div>
+    <div class="icon"><img src='./assets/images/search.svg' id="search"></div>
+    <div class="icon"><img src='./assets/images/video.svg' id="video"></div>
     `;
     this.optionsPopup = {
       maxWidth: '400',
@@ -69,7 +60,7 @@ export class MapComponent implements OnInit {
       this.stationsLocations = res.data.items.filter(
         (item) => item.assetType === 'stationary',
       );
-      this.addMarkers();
+      // this.addMarkers();
       this.loadMap = true;
     });
   }
@@ -91,9 +82,9 @@ export class MapComponent implements OnInit {
       icon: icon({
         iconSize: [25, 41],
         iconAnchor: [13, 41],
-        iconUrl: 'marker-icon.png',
-        iconRetinaUrl: 'marker-icon.png',
-        shadowUrl: 'marker-shadow.png',
+        iconUrl: './assets/images/marker-icon.png',
+        iconRetinaUrl: './assets/images/marker-icon.png',
+        shadowUrl: './assets/images/marker-shadow.png',
       }),
     })
       .bindPopup(this.bodyPopup, this.optionsPopup)

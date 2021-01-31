@@ -42,6 +42,14 @@
       <ngx-image-card></ngx-image-card>
     </div>
   </div>
+  <div
+  *ngIf="this.chosenFilter == 9"
+  class="imagesSection row justify-content-center"
+>
+  <div *ngFor="let image of images" class="col-md-4 p-2">
+    <ngx-image-card></ngx-image-card>
+  </div>
+</div>
   <!-- <div *ngIf="this.chosenFilter == 9" class="row justify-content-center">
     <div *ngFor="let image of images" class="p-2">
       <div class="row">
