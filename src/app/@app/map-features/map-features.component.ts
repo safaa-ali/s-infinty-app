@@ -22,8 +22,8 @@ export class MapFeaturesComponent implements OnInit {
     this.activateroute.params.subscribe((params) => {
       localStorage.setItem('currentProjectId', params['projectId']);
       localStorage.setItem('currentAssetId', params['assetId']);
-      console.log(params['projectId']);
-      console.log(params['assetId']);
+      // console.log(params['projectId']);
+      // console.log(params['assetId']);
     });
   }
   mapMenu = map_menu;
