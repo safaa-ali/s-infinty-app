@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NbMenuItem } from '@nebular/theme';
+import { NbMenuItem, NbSidebarService } from '@nebular/theme';
 import { map_menu } from './map-menu';
 
 @Component({
@@ -26,5 +26,6 @@ export class MapFeaturesComponent implements OnInit {
       // console.log(params['assetId']);
     });
   }
-  mapMenu = map_menu;
+  Menu = map_menu;
+
 }
