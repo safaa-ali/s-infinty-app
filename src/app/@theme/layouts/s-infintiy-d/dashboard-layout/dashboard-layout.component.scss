@@ -1,46 +1,16 @@
-nb-sidebar.sidebar {
-  // height: 100vh;
-  overflow: hidden;
-  background-color: #3e65ee;
-  z-index: 55555555555;
-  width: 11rem;
-  .menu-item-collapse {
-    list-style: none;
-    display: flex;
-    justify-content: space-evenly;
-
-    margin-bottom: 17px;
-
-    // width: 50%;
-    width: 70%;
-    position: relative;
-    // top: 54px;
-    top: 25px;
-    img {
-      &:nth-child(1) {
-        width: 30px;
-        transform: translateY(10px);
-      }
-    }
-    p {
-      color: #fff;
-      cursor: pointer;
-      font-size: 20px;
-      a {
-        .menu-bar-icon {
-          font-size: 24px;
-        }
-      }
-    }
-  }
-}
-
 nb-layout nb-layout-column {
   background-color: #ebebeb;
   overflow-x: hidden;
 }
 
 .menu-sidebar ::ng-deep .scrollable {
+  .colappase-img-infinty {
+    width: 50px;
+    margin-top: 40px;
+    margin-left: 33%;
+  }
+  background-color: #3e65ee;
+
   overflow: hidden;
 
   padding: 0;
@@ -51,14 +21,11 @@ nb-layout nb-layout-column {
 
       .menu-item {
         border-bottom: 0;
-        // transition: 0.4s ease-in-out;
-        width: 70%;
         a {
           text-transform: capitalize;
           font-size: 20px !important;
           font-weight: 400;
           line-height: 25px;
-          border-left: solid 0 transparent;
           background-color: transparent;
           padding-left: 0;
           svg {
@@ -67,6 +34,8 @@ nb-layout nb-layout-column {
 
           &.active {
             background-color: #c9c9c957;
+            border-left: solid 0 transparent;
+
             span {
               margin-left: 20px;
             }
@@ -85,7 +54,7 @@ nb-layout nb-layout-column {
             .menu-icon {
               filter: grayscale(1);
             }
-            border-left: none;
+            border-left: solid 0 transparent;
             background-color: transparent;
             padding-left: 0;
           }
@@ -104,11 +73,15 @@ nb-layout nb-layout-column {
     }
   }
 }
-
+.compactedItem {
+  display: none;
+}
 ::ng-deep {
   .nb-theme-default nb-sidebar.compacted {
     width: 3.5rem;
-
+    .colappase-img-infinty {
+      margin-left: 6%;
+    }
     .expandedItem {
       display: none;
     }
@@ -117,10 +90,13 @@ nb-layout nb-layout-column {
       position: relative;
       top: 16px;
     }
-    .compactedIcon {
-      font-size: 30px;
-      position: relative;
-      bottom: 30px;
+    .compactedItem {
+      display: block;
+      .compactedItem-img {
+        width: 50px;
+        margin-left: 3px;
+        margin-top: 40px;
+      }
     }
 
     .menu-item a.active {
@@ -140,11 +116,5 @@ nb-layout nb-layout-column {
     nb-sidebar.sidebar {
       width: 0;
     }
-  }
-}
-
-@media only screen and (max-width: 900px) {
-  nb-sidebar.sidebar {
-    width: 0;
   }
 }

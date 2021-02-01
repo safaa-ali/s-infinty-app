@@ -10,14 +10,19 @@
     start
     id="nb-sidebar"
   >
-    <div class="menu-item-collapse">
+  <div class="expandedItem">
+    <p>
+      <a class="sidebar-toggle" (click)="toggleSidebar()">
+        <img class="colappase-img-infinty" src="assets/images/images/infinity.svg" alt="" />
+      </a>
+    </p>
+  </div>
+    <div class="compactedItem">
       <p>
         <a class="sidebar-toggle" (click)="toggleSidebar()">
-          <img src="assets/images/images/infinity.svg" alt="" />
-          <!-- <nb-icon icon="menu" class="menu-bar-icon compactedIcon"></nb-icon> -->
+          <img class="compactedItem-img" src="assets/images/images/infinity.svg" alt="" />
         </a>
       </p>
-      <!-- <p class="title expandedItem">Menu</p> -->
     </div>
 
     <ng-content select="nb-menu"></ng-content>
