@@ -61,7 +61,6 @@ export class DashboardComponent implements OnInit {
   }
   adjustDate(dateString) {
     const dateParsed = dateString.split('T')[0];
-
     return this.datePipe.transform(dateParsed, 'MM-dd-yyyy');
   }
 }

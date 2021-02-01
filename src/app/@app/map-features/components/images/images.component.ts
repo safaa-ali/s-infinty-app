@@ -8,51 +8,54 @@ import { NgxGalleryImage } from '@kolkov/ngx-gallery';
   styleUrls: ['./images.component.scss'],
 })
 export class ImagesComponent implements OnInit {
-  galleryOptions: NgxGalleryOptions[];
-  galleryImages: NgxGalleryImage[];
   images: any;
-  imagesLength: number;
   chosenFilter: number = 4;
-  // images: GalleryItem[];
+  imageItems = [
+    { title: 'Rename' },
+    { title: 'Share' },
+    { title: 'Download' },
+    { title: 'Delete' },
+  ];
   constructor() {
     this.images = [
-      'assets/images/kitten-corporate.png',
-      'assets/images/kitten-corporate.png',
-      'assets/images/kitten-corporate.png',
-      'assets/images/kitten-corporate.png',
-      'assets/images/kitten-corporate.png',
-      'assets/images/kitten-corporate.png',
-      'assets/images/kitten-corporate.png',
-      'assets/images/kitten-corporate.png',
-      'assets/images/kitten-corporate.png',
+      {
+        name: 'image 1',
+        createdAt: '12-2-2021',
+        imageUrl: './assets/images/kitten-dark.png',
+      },
+      {
+        name: 'image 2',
+        createdAt: '12-1-2021',
+        imageUrl: './assets/images/kitten-dark.png',
+      },
+      {
+        name: 'image 99',
+        createdAt: '12-3-2021',
+        imageUrl: './assets/images/kitten-dark.png',
+      },
+      {
+        name: 'image 40',
+        createdAt: '12-10-2021',
+        imageUrl: './assets/images/kitten-dark.png',
+      },
+      {
+        name: 'image 32',
+        createdAt: '12-1-2020',
+        imageUrl: './assets/images/kitten-dark.png',
+      },
+      {
+        name: 'image18',
+        createdAt: '11-1-2021',
+        imageUrl: './assets/images/kitten-dark.png',
+      },
     ];
     // this.imagesLength=this.images.length;
   }
-  ngOnInit() {
-    this.galleryOptions = [
-      {
-        width: '100%',
-        height: '400px',
-        thumbnailsColumns: 9,
-        // imageAnimation: NgxGalleryAnimation.Slide,
-      },
-      // max-width 800
-      {
-        breakpoint: 800,
-        width: '100%',
-        height: '600px',
-        imagePercent: 80,
-        thumbnailsSwipe: false,
-        thumbnailsPercent: 0,
-        thumbnailsMargin: 20,
-        thumbnailMargin: 20,
-      },
-      // max-width 400
-      {
-        breakpoint: 400,
-        preview: false,
-      },
-    ];
+  ngOnInit() {}
+  sortTableByDate() {
+    this.images.sort((val1, val2) => {
+      return <any>new Date(val2.createdAt) - <any>new Date(val1.createdAt);
+    });
   }
   oneChoosed() {
     this.chosenFilter = 1;

@@ -26,7 +26,7 @@ export const map_menu = [
   {
     title: 'Sensors Analysis',
     icon: { icon: 'search', pack: 'svg' },
-    link: 'analises',
+    link: 'analysis',
   },
   {
     title: 'Poi Managment',

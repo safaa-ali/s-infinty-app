@@ -82,8 +82,47 @@
         transform: translateY(-19%);
       }
     }
+    nb-icon.active {
+      color: #3e65ee !important;
+    }
   }
   nb-icon {
     cursor: pointer;
+  }
+  .table {
+    width: 100% !important;
+    th {
+      text-align: left;
+    }
+    td {
+      text-align: left;
+      position: relative;
+      img {
+        width: 30px;
+        height: 30px;
+        margin-right: 8px;
+      }
+      nb-icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 10px;
+      }
+    }
+  }
+  .smallChosen{
+    flex-basis: 150px;
+    ::ng-deep{
+      .img-container{
+        img{
+          max-height: 110px !important;
+        }
+         nb-icon{
+           top: 7px;
+           right:7px;
+           padding: 0;
+         }
+      }
+    }
   }
 }
