@@ -47,13 +47,14 @@ export class MapComponent implements OnInit {
       closeButton: false,
       className: 'popupCustom',
     };
-
   }
   ngOnInit() {
     this.getLocations();
   }
   locateStations(map: L.Map) {
      this.addMarker(51, 0.22);
+     this.addMarker(55, 0.5);
+     this.addMarker(2, 10);
   }
   getLocations() {
     this._ProjectsService.getStations(this.projectId).subscribe((res) => {

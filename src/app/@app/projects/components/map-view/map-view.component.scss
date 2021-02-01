@@ -30,7 +30,6 @@
   }
 }
 .sideBar {
-  // height: 100vh;
   .toggle {
     color: #3e65ee;
     cursor: pointer;
@@ -70,13 +69,13 @@
     }
   }
   .projects-container {
-    padding: 10px;
+    padding: 10px 10px;
     overflow-y: scroll;
     margin-top: 30px;
-    height: calc(100vh - 220px);
-    @media only screen and (max-width: 997px) {
-      height: calc(100vh - 320px);
-      margin-top: 100px !important;
+    height: calc(100vh - 300px);
+    @media only screen and (max-width: 1100px) {
+      height: calc(100vh - 386px);
+      margin-top: 10px !important;
     }
   }
   .fixedParts {
@@ -98,30 +97,16 @@
   }
   .Expand {
     width: 600px;
+    @media only screen and (max-width: 800px) {
+    width: 300px;
+    }
     background-color: white;
   }
   .Collapse {
     width: 60px;
-    // height: 100vh;
     background-color: white;
   }
 }
-// ngx-map {
-//   .map1 {
-//     left: 60px;
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     bottom: 0;
-//   }
-//   .map2 {
-//     left: 600px;
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     bottom: 0;
-//   }
-// }
 .map1 {
   left: 60px;
   position: absolute;
@@ -131,6 +116,9 @@
 }
 .map2 {
   left: 600px;
+  @media only screen and (max-width: 800px) {
+    left: 300px;
+  }
   position: absolute;
   top: 0;
   right: 0;
@@ -141,5 +129,10 @@
     @media only screen and (max-width: 1100px) {
       min-height: 300px !important;
     }
+  }
+}
+.adjustMargin{
+  @media only screen and (max-width:1150px){
+    margin-top: 12px !important;
   }
 }
