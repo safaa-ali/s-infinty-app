@@ -7,16 +7,18 @@ export const routes: Routes = [
     path: 'pages',
     loadChildren: () => import('./pages/pages.module')
       .then(m => m.PagesModule),
+    canLoad: [AuthGuard],
   },
   {
     path: 'auth', loadChildren: () => import('./@app/auth/auth.module')
-    .then(m => m.AuthModule),
+      .then(m => m.AuthModule),
+    canLoad: [AuthGuard],
   },
 
   {
     path: 'projects', loadChildren: () => import('./@app/projects/projects.module')
-    .then(m => m.ProjectsModule),
-    // canActivate: [AuthGuard],
+      .then(m => m.ProjectsModule),
+    canLoad: [AuthGuard],
   },
   {
     path: 'projects/:projectId/assets/:assetId',
@@ -24,7 +26,7 @@ export const routes: Routes = [
       import('./@app/map-features/map-features.module').then(
         (m) => m.MapFeaturesModule,
       ),
-    // canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
   },
   // {
   //   path: 'charts', loadChildren: () => import('./@app/charts/charts.module')
