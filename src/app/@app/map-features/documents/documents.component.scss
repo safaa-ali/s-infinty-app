@@ -54,21 +54,21 @@
       color: #3e65ee !important;
     }
   }
-  .smallChosen{
+  .smallChosen {
     flex-basis: 10%;
-    ::ng-deep{
-      nb-card{
-        h1{
+    ::ng-deep {
+      nb-card {
+        h1 {
           font-size: 16px;
           line-height: 16px;
         }
-        p{
-          margin-bottom:0!important;
+        p {
+          margin-bottom: 0 !important;
         }
-        img{
+        img {
           max-height: 108px !important;
         }
-        nb-card-footer{
+        nb-card-footer {
           padding-top: 16px !important;
           padding-bottom: 5px !important;
         }

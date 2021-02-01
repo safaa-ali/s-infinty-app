@@ -110,18 +110,18 @@
       }
     }
   }
-  .smallChosen{
+  .smallChosen {
     flex-basis: 150px;
-    ::ng-deep{
-      .img-container{
-        img{
+    ::ng-deep {
+      .img-container {
+        img {
           max-height: 110px !important;
         }
-         nb-icon{
-           top: 7px;
-           right:7px;
-           padding: 0;
-         }
+        nb-icon {
+          top: 7px;
+          right: 7px;
+          padding: 0;
+        }
       }
     }
   }
