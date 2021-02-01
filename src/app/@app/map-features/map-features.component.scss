@@ -106,3 +106,23 @@
     }
   }
 }
+.menu-sidebar ::ng-deep .scrollable {
+  nb-menu {
+    ul.menu-items {
+      .menu-item {
+        a {
+          &.active {
+            background-color: red !important;
+            .menu-title,
+            .menu-icon {
+              color: #fff;
+            }
+            .menu-icon {
+              color: green;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -96,8 +96,6 @@ export class DocumentsComponent implements OnInit {
     });
   }
   getDocuments() {
-    // console.log(localStorage.getItem('satellizer_token'));
-
     this._mapFeature
       .getAssetFiles(this.assetId, 'document')
       .subscribe((res) => {

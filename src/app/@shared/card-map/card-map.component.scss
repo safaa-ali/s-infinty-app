@@ -4,8 +4,7 @@ nb-card {
   box-shadow: 0 5px 5px #00000040;
   cursor: pointer;
   &:hover {
-    border: 4px lightgrey solid;
-    background-color: whitesmoke;
+    border-right: 6px #f98341 solid;
   }
   .body {
     @media screen and (max-width: 900px) {
@@ -61,6 +60,5 @@ nb-card {
   }
 }
 .active {
-  border: 4px lightgrey solid;
-  background-color: whitesmoke;
+  border-right: 6px #f98341 solid;
 }
