@@ -1,6 +1,7 @@
 import { ThemeModule } from './../../@theme/theme.module';
 // import { GalleryModule } from 'ng-gallery';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+
 import {
   NbMenuModule,
   NbCardModule,
@@ -11,6 +12,8 @@ import {
   NbFormFieldModule,
   NbSidebarModule,
 } from '@nebular/theme';
+import { NgxEchartsModule } from 'ngx-echarts';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from 'app/@shared/shared.module';
@@ -21,9 +24,11 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { ImagesComponent } from './components/images/images.component';
 import { AnalysisComponent } from './components/analysis/analysis.component';
+import { BarChartComponent } from './components/bar-chart/bar-chart.component';
+import { LineChartComponent } from './components/line-chart/line-chart.component';
 
 @NgModule({
-  declarations: [MapFeaturesComponent, DocumentsComponent, ImagesComponent, AnalysisComponent],
+  declarations: [MapFeaturesComponent, DocumentsComponent, ImagesComponent, AnalysisComponent, BarChartComponent, LineChartComponent],
   imports: [
     CommonModule,
     MapFeaturesRoutingModule,
@@ -40,6 +45,10 @@ import { AnalysisComponent } from './components/analysis/analysis.component';
     NgxChartsModule,
     NbSidebarModule.forRoot(),
     // GalleryModule.withConfig({}),
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts'),
+    }),
+
   ],
 
 })

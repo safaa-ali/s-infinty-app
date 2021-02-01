@@ -39,3 +39,21 @@
     }
   }
 }
+
+
+ngx-echarts-bar,
+ngx-echarts-multiple-xaxis,
+ngx-echarts-graph {
+  display: block;
+  height: nb-theme(card-height-medium);
+  width: 100%;
+}
+
+::ng-deep .echart {
+  // height: 100% !important;
+  height: nb-theme(card-height-medium);
+  width: 100%;
+  @media (max-width: 767px) {
+    height: nb-theme(card-height-small);
+  }
+}
