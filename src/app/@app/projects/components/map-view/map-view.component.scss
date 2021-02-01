@@ -28,6 +28,28 @@
     nb-layout-column {
     padding: 0 !important;
   }
+  .nb-theme-default
+      nb-layout.mapview
+      .layout
+      .layout-container
+      .content
+      .columns
+      nb-layout-column {
+        padding: 0 !important;
+        background-color: white !important;
+    }
+  @media (max-width: 991.98px) {
+    .nb-theme-default
+      nb-layout.mapview
+      .layout
+      .layout-container
+      .content
+      .columns
+      nb-layout-column {
+        padding: 0 !important;
+        background-color: white !important;
+    }
+  }
 }
 .sideBar {
   .toggle {
@@ -98,7 +120,7 @@
   .Expand {
     width: 600px;
     @media only screen and (max-width: 800px) {
-    width: 300px;
+      width: 300px;
     }
     background-color: white;
   }
@@ -131,8 +153,8 @@
     }
   }
 }
-.adjustMargin{
-  @media only screen and (max-width:1150px){
+.adjustMargin {
+  @media only screen and (max-width: 1150px) {
     margin-top: 12px !important;
   }
 }
