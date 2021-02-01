@@ -9,20 +9,27 @@ import { HttpConnectionService } from './http-connection.service';
   providedIn: 'root',
 })
 export class AuthService {
-  observeData() {
-    // throw new Error('Method not implemented.');
-
-  }
 
   private _currentUserSubject: BehaviorSubject<User> = new BehaviorSubject(null);
   public currentUser: Observable<User> = this._currentUserSubject.asObservable();
+
   constructor(
     private _httpConnectionService: HttpConnectionService,
     private router: Router,
-  ) { }
+  ) {
+    const userData = localStorage.getItem('AuthorizationData');
+    if (userData) {
+      this._currentUserSubject.next(JSON.parse(userData));
+    }
+  }
 
   public get currentUserValue(): User {
     return this._currentUserSubject.value;
+  }
+
+  public set currentUserValue(NewValue) {
+    localStorage.setItem('classroomID', JSON.stringify(NewValue));
+    this._currentUserSubject.next(NewValue);
   }
 
 
@@ -35,7 +42,6 @@ export class AuthService {
         this._currentUserSubject.next(user ? user.data : user);
         return user;
       }));
-
   }
 
 

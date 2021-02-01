@@ -14,13 +14,15 @@ export class AuthGuard implements CanLoad {
 
   canLoad(
     route: Route,
-    segments: UrlSegment[]): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    segments: UrlSegment[],
+  ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const currentUser = this._authService.currentUserValue;
     if (currentUser) {
+      if (segments[0].path === 'auth') this.router.navigate(['projects']);
+
       // logged in so return true
       return true;
     }
-
 
     this.router.navigate(['auth/login'], { queryParams: { returnUrl: route.path } });
     return false;
