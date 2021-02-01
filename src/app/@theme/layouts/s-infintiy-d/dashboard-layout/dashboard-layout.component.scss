@@ -106,9 +106,7 @@ nb-layout nb-layout-column {
 }
 
 ::ng-deep {
-
   .nb-theme-default nb-sidebar.compacted {
-
     width: 3.5rem;
 
     .expandedItem {
@@ -139,7 +137,6 @@ nb-layout nb-layout-column {
     }
   }
 }
-
 
 @media only screen and (max-width: 900px) {
   nb-sidebar.sidebar {
