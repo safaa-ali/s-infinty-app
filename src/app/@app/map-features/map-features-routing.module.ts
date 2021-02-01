@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ImagesComponent } from './components/images/images.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { MapFeaturesComponent } from './map-features.component';
-
+import { VideosComponent } from './components/videos/videos.component';
 const routes: Routes = [
   {
     path: '', component: MapFeaturesComponent,
@@ -14,6 +14,9 @@ const routes: Routes = [
       },
       {
         path: 'images', component: ImagesComponent,
+      },
+      {
+        path: 'videos', component: VideosComponent,
       },
       {
         path: 'analysis', component: AnalysisComponent,

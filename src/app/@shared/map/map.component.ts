@@ -2,8 +2,6 @@ import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { ProjectsService } from 'app/@app/projects/projects.service';
 import * as L from 'leaflet';
 import { icon, Layer, marker } from 'leaflet';
-import { Router } from '@angular/router';
-
 @Component({
   selector: 'ngx-map',
   templateUrl: './map.component.html',
@@ -17,21 +15,19 @@ export class MapComponent implements OnInit {
   stationsLocations: [];
   mapTile = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
     maxZoom: 23,
-    minZoom: 19,
+    minZoom: 12,
     subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
   });
   map: L.Map;
-  loadMap: boolean = false;
-  markers: Layer[] = [];
+  Layers: Layer[] = [this.mapTile];
   options = {
-    layers: [this.mapTile],
-    zoom: 16,
-    center: L.latLng([51, 0.22]),
+    layers: this.Layers,
+    zoom: 12,
+    center: L.latLng([47.6183869, 12.9821816]),
   };
-  constructor(
-    private router: Router,
-    private _ProjectsService: ProjectsService,
-  ) {
+  loadMap: boolean = false;
+  // markers: Layer[] = [];
+  constructor(private _ProjectsService: ProjectsService) {
     this.bodyPopup = `
     <div class="icon"><img src='./assets/images/doc.svg' id="doc"></div>
     <div class="icon"><img src='./assets/images/hand.svg' id="hand"></div>
@@ -51,35 +47,32 @@ export class MapComponent implements OnInit {
   ngOnInit() {
     this.getLocations();
   }
-  locateStations(map: L.Map) {
-     this.addMarker(51, 0.22);
-     this.addMarker(55, 0.5);
-     this.addMarker(2, 10);
-  }
+  locateStations(map: L.Map) {}
   getLocations() {
     this._ProjectsService.getStations(this.projectId).subscribe((res) => {
       this.stationsLocations = res.data.items.filter(
         (item) => item.assetType === 'stationary',
       );
-      // this.addMarkers();
+      this.addMarkers();
+      // this.Layers.push(this.addMarker(47.6183869, 12.9821816));
       this.loadMap = true;
+      // console.log(this.Layers);
     });
   }
 
   addMarkers() {
-    // console.log(this.stationsLocations.length);
-
     for (let i = 0; i < this.stationsLocations.length; i++) {
-      // console.log(this.stationsLocations[i]['latitude']);
-      this.addMarker(
-        this.stationsLocations[i]['latitude'],
-        this.stationsLocations[i]['longitude'],
+      this.Layers.push(
+        this.addMarker(
+          this.stationsLocations[i]['longitude'],
+          this.stationsLocations[i]['latitude'],
+        ),
       );
-      // console.log(this.markers.length);
     }
+    this.options.layers = this.Layers;
   }
   addMarker(lat, long) {
-    const newMarker = marker([lat, long], {
+    const newmarker = marker([lat, long], {
       icon: icon({
         iconSize: [25, 41],
         iconAnchor: [13, 41],
@@ -102,6 +95,6 @@ export class MapComponent implements OnInit {
           this.mapAsset.emit('videos');
         });
       });
-    this.markers.push(newMarker);
+    return newmarker;
   }
 }

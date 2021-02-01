@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'ngx-image-card',
@@ -13,6 +13,7 @@ export class ImageCardComponent implements OnInit {
     { title: 'Download' },
     { title: 'Delete' },
   ];
+  @Input()imageData: any;
   constructor() { }
 
   ngOnInit(): void {

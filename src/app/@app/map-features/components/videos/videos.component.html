@@ -1,0 +1,90 @@
+<div class="videos px-5 pt-5">
+    <div class="row justify-content-between">
+      <div class="col-md-9 row">
+        <div class="col-md-7">
+          <ngx-search></ngx-search>
+        </div>
+      </div>
+      <div class="col-md-3 rightIcons d-flex justify-content-end">
+        <img src="assets/images/alert.svg" alt="" />
+        <img src="assets/images/meti.svg" alt="" />
+      </div>
+    </div>
+    <div class="d-flex justify-content-between controls">
+      <p>Album Name - <span> {{videos.length}} videos </span></p>
+      <div class="d-flex">
+        <div class="d-flex">
+          <button class="">
+            <nb-icon icon="plus-outline" class="ml-1"></nb-icon
+            ><span>Add Video</span>
+          </button>
+          <button class="">
+            <nb-icon icon="list-outline" class="ml-1"></nb-icon
+            ><span>Select</span>
+          </button>
+        </div>
+        <div class="d-flex number ml-5">
+          <nb-icon
+            icon="toggle"
+            [class.active]="this.chosenFilter == 1"
+            pack="svg"
+            (click)="oneChoosed()"
+          ></nb-icon>
+          <nb-icon
+            icon="four"
+            [class.active]="this.chosenFilter == 4"
+            pack="svg"
+            (click)="fourChoosed()"
+          ></nb-icon>
+          <nb-icon
+            icon="nine"
+            [class.active]="this.chosenFilter == 9"
+            pack="svg"
+            (click)="nineChoosed()"
+          ></nb-icon>
+        </div>
+      </div>
+    </div>
+  
+    <div
+      *ngIf="this.chosenFilter == 4"
+      class="row justify-content-center"
+    >
+      <div *ngFor="let video of videos" class="col-md-3 p-2">
+        <ngx-video-card [videoData]="video"></ngx-video-card>
+      </div>
+    </div>
+    <div *ngIf="this.chosenFilter == 1">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Created At</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let video of this.videos">
+            <td><img [src]="video.url" />{{ video.name }}</td>
+            <td>{{ adjustDate(video.createdAt) }}</td>
+            <td>
+              <nb-icon
+                icon="more-horizontal-outline"
+                pack="eva"
+                [nbContextMenu]="videoItems"
+                [nbContextMenuPlacement]="'bottom'"
+              ></nb-icon>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      *ngIf="this.chosenFilter == 9"
+      class="row justify-content-start flex-wrap"
+    >
+      <div *ngFor="let video of videos" class="smallChosen p-2">
+        <ngx-video-card [videoData]='video'></ngx-video-card>
+      </div>
+    </div>
+  </div>

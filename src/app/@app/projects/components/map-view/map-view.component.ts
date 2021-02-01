@@ -17,8 +17,6 @@ export class MapViewComponent implements OnInit {
   projectId: number;
   assetId: number = 51;
   constructor(
-    private sidebarService: NbSidebarService,
-    private datePipe: DatePipe,
     private route: ActivatedRoute,
     private _ProjectsService: ProjectsService,
     private router: Router,
@@ -31,13 +29,11 @@ export class MapViewComponent implements OnInit {
     this.getProjectData();
   }
   toggleCompact() {
-    //  this.sidebarService.toggle(true, 'map-sidebar');
     this.compacted = !this.compacted;
   }
   getProjectData() {
     this._ProjectsService.getProjects().subscribe((res) => {
       this.ProjectsData = res.data.items;
-      // console.log(this.ProjectsData);
     });
   }
   mapFeatures(e) {

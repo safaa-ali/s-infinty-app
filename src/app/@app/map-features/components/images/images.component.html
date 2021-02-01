@@ -11,7 +11,7 @@
     </div>
   </div>
   <div class="d-flex justify-content-between controls">
-    <p>Album Name - <span> 17 photos </span></p>
+    <p>Album Name - <span> {{images.length}} photos </span></p>
     <div class="d-flex">
       <div class="d-flex">
         <button class="">
@@ -51,7 +51,7 @@
     class="imagesSection row justify-content-center"
   >
     <div *ngFor="let image of images" class="col-md-3 p-2">
-      <ngx-image-card></ngx-image-card>
+      <ngx-image-card [imageData]="image"></ngx-image-card>
     </div>
   </div>
   <div *ngIf="this.chosenFilter == 1">
@@ -65,8 +65,8 @@
       </thead>
       <tbody>
         <tr *ngFor="let image of this.images">
-          <td><img [src]="image.imageUrl" />{{ image.name }}</td>
-          <td>{{ image.createdAt }}</td>
+          <td><img [src]="image.url" />{{ image.name }}</td>
+          <td>{{ adjustDate(image.createdAt) }}</td>
           <td>
             <nb-icon
               icon="more-horizontal-outline"
@@ -84,55 +84,7 @@
     class="row justify-content-start flex-wrap"
   >
     <div *ngFor="let image of images" class="smallChosen p-2">
-      <ngx-image-card></ngx-image-card>
+      <ngx-image-card [imageData]='image'></ngx-image-card>
     </div>
   </div>
-  <!-- <div *ngIf="this.chosenFilter == 9" class="row justify-content-center">
-    <div *ngFor="let image of images" class="p-2">
-      <div class="row">
-        <div class="col-md-6">
-          <ngx-image-card></ngx-image-card>
-        </div>
-        <div class="col-md-3">
-          <ngx-image-card></ngx-image-card>
-        </div>
-        <div class="col-md-3">
-          <img [src]="image" alt="" class="img-fluid" />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-9">
-          <div class="row">
-            <div class="col-md-3">
-              <img [src]="image" alt="" class="img-fluid" />
-            </div>
-            <div class="col-md-6">
-              <img [src]="image" alt="" class="img-fluid" />
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-3">
-              <img [src]="image" alt="" class="img-fluid" />
-            </div>
-            <div class="col-md-3">
-              <img [src]="image" alt="" class="img-fluid" />
-            </div>
-            <div class="col-md-3">
-              <img [src]="image" alt="" class="img-fluid" />
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <img [src]="image" alt="" class="img-fluid" />
-        </div>
-      </div>
-    </div>
-  </div> -->
 </div>
-<!-- <div class="imagesSection">
-    <ngx-gallery
-      [options]="galleryOptions"
-      [images]="galleryImages"
-      class="ngx-gallery"
-    ></ngx-gallery>
-  </div> -->

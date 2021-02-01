@@ -1,29 +1,32 @@
-import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { DatePipe } from '@angular/common';
 import { MapFeaturesService } from '../../map-features.service';
 @Component({
-  selector: 'ngx-images',
-  templateUrl: './images.component.html',
-  styleUrls: ['./images.component.scss'],
+  selector: 'ngx-videos',
+  templateUrl: './videos.component.html',
+  styleUrls: ['./videos.component.scss'],
 })
-export class ImagesComponent implements OnInit {
-  images: any;
+export class VideosComponent implements OnInit {
+  videos: any;
   chosenFilter: number = 4;
   projectId: any;
   assetId: any;
-  imageItems = [
+  videoItems = [
     { title: 'Rename' },
     { title: 'Share' },
     { title: 'Download' },
     { title: 'Delete' },
   ];
-  constructor(private _mapFeature: MapFeaturesService, private datePipe: DatePipe) {
+  constructor(
+    private _mapFeature: MapFeaturesService,
+    private datePipe: DatePipe,
+  ) {
     this.projectId = localStorage.getItem('currentProjectId');
     this.assetId = localStorage.getItem('currentAssetId');
-    this.images = [];
+    this.videos = [];
   }
   ngOnInit() {
-    this.getImages();
+    this.getVideos();
     this.sortTableByDate();
   }
   adjustDate(dateString) {
@@ -31,17 +34,15 @@ export class ImagesComponent implements OnInit {
     return this.datePipe.transform(dateParsed, 'MM-dd-yyyy');
   }
   sortTableByDate() {
-    this.images.sort((val1, val2) => {
+    this.videos.sort((val1, val2) => {
       return val2.createdAt - val1.createdAt;
     });
   }
-  getImages() {
-    this._mapFeature
-      .getAssetFiles(this.assetId, 'image')
-      .subscribe((res) => {
-        this.images = res.data.items;
-        // console.log(this.images);
-      });
+  getVideos() {
+    this._mapFeature.getAssetFiles(this.assetId, 'video').subscribe((res) => {
+      this.videos = res.data.items;
+      // console.log(this.videos);
+    });
   }
   oneChoosed() {
     this.chosenFilter = 1;

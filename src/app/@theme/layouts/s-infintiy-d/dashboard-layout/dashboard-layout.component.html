@@ -1,7 +1,6 @@
 <nb-layout windowMode>
   <nb-layout-header>
     <ngx-header></ngx-header>
-    <!-- <ng-content select='projectsHead'></ng-content> -->
   </nb-layout-header>
   <nb-sidebar
     class="menu-sidebar sidebar"
@@ -14,20 +13,12 @@
       <p>
         <a class="sidebar-toggle" (click)="toggleSidebar()">
           <img src="assets/images/images/infinity.svg" alt="" />
-          <!-- <nb-icon icon="menu" class="menu-bar-icon compactedIcon"></nb-icon> -->
         </a>
       </p>
-      <!-- <p class="title expandedItem">Menu</p> -->
     </div>
-
     <ng-content select="nb-menu"></ng-content>
   </nb-sidebar>
-
   <nb-layout-column>
     <ng-content select="router-outlet"></ng-content>
   </nb-layout-column>
-
-  <!-- <nb-layout-footer fixed>
-    <ngx-footer></ngx-footer>
-  </nb-layout-footer> -->
 </nb-layout>

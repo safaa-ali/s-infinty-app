@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MapFeaturesService } from '../map-features.service';
-
+import { DatePipe } from '@angular/common';
 @Component({
   selector: 'ngx-documents',
   templateUrl: './documents.component.html',
@@ -11,77 +11,14 @@ export class DocumentsComponent implements OnInit {
   assetId: any;
   chosenFilter: number = 4;
   documentsData: any;
-  items = [
-    // { icon: { icon: "more-horizontal-outline", pack: "eva" } },
-    { title: 'Rename' },
-    { title: 'Share' },
-    { title: 'Download' },
-  ];
-  constructor(private _mapFeature: MapFeaturesService) {
+  items = [{ title: 'Rename' }, { title: 'Share' }, { title: 'Download' }];
+  constructor(
+    private _mapFeature: MapFeaturesService,
+    private datePipe: DatePipe,
+  ) {
     this.projectId = localStorage.getItem('currentProjectId');
     this.assetId = localStorage.getItem('currentAssetId');
-    this.documentsData = [
-      {
-        name: 'Document1',
-        description: 'document description',
-        createdAt: '12-2-2021',
-        imageUrl: './assets/images/kitten-dark.png',
-      },
-      {
-        name: 'Document2',
-        description: 'document description',
-        createdAt: '12-1-2021',
-        imageUrl: './assets/images/kitten-dark.png',
-      },
-      {
-        name: 'Document2',
-        description: 'document description',
-        createdAt: '12-3-2021',
-        imageUrl: './assets/images/kitten-dark.png',
-      },
-      {
-        name: 'Document5',
-        description: 'document description',
-        createdAt: '12-10-2021',
-        imageUrl: './assets/images/kitten-dark.png',
-      },
-      {
-        name: 'Document7',
-        description: 'document description',
-        createdAt: '12-10-2021',
-        imageUrl: './assets/images/kitten-dark.png',
-      },
-      {
-        name: 'Document8',
-        description: 'document description',
-        createdAt: '12-10-2021',
-        imageUrl: './assets/images/kitten-dark.png',
-      },
-      {
-        name: 'Document6',
-        description: 'document description',
-        createdAt: '12-1-2020',
-        imageUrl: './assets/images/kitten-dark.png',
-      },
-      {
-        name: 'Document6',
-        description: 'document description',
-        createdAt: '12-1-2020',
-        imageUrl: './assets/images/kitten-dark.png',
-      },
-      {
-        name: 'Document6',
-        description: 'document description',
-        createdAt: '12-1-2020',
-        imageUrl: './assets/images/kitten-dark.png',
-      },
-      {
-        name: 'Document7',
-        description: 'document description',
-        createdAt: '11-1-2021',
-        imageUrl: './assets/images/kitten-dark.png',
-      },
-    ];
+    this.documentsData = [];
   }
   convertToDate(dateString) {
     return typeof new Date(dateString);
@@ -90,16 +27,20 @@ export class DocumentsComponent implements OnInit {
     this.getDocuments();
     this.sortTableByDate();
   }
+  adjustDate(dateString) {
+    const dateParsed = dateString.split('T')[0];
+    return this.datePipe.transform(dateParsed, 'MM-dd-yyyy');
+  }
   sortTableByDate() {
     this.documentsData.sort((val1, val2) => {
-      return <any>new Date(val2.createdAt) - <any>new Date(val1.createdAt);
+      return val2.createdAt - val1.createdAt;
     });
   }
   getDocuments() {
     this._mapFeature
       .getAssetFiles(this.assetId, 'document')
       .subscribe((res) => {
-        // console.log(res);
+        this.documentsData = res.data.items;
       });
   }
   fourChoosed() {

@@ -108,7 +108,12 @@ nb-layout nb-layout-column {
 ::ng-deep {
   .nb-theme-default nb-sidebar.compacted {
     width: 3.5rem;
-
+      .menu-item {
+        width: 100% !important;
+      }
+      .menu-item-collapse {
+        width: 100% !important;
+      }
     .expandedItem {
       display: none;
     }

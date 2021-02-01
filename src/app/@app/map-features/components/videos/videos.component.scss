@@ -1,0 +1,129 @@
+::ng-deep {
+    .nb-theme-default [nbInput].status-basic {
+      background: #f2f5ff !important;
+    }
+    .nb-theme-default
+      nb-layout
+      .layout
+      .layout-container
+      .content
+      .columns
+      nb-layout-column {
+      background-color: white !important;
+    }
+  }
+  .videos {
+    .add-item {
+      background: #f2f5ff;
+      color: #a8a7a7;
+      text-transform: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+      border-radius: 20px;
+      nb-icon {
+        color: #a8a7a7;
+        position: relative;
+        top: -2px;
+      }
+    }
+    .rightIcons img {
+      &:nth-child(1) {
+        border-style: none;
+        width: 30px;
+        height: 30px;
+        padding: 4px;
+        border-radius: 50%;
+        border: 2px solid #a8a7a7;
+        margin-right: 14px;
+      }
+      &:nth-child(2) {
+        transform: translateY(-25%);
+        width: 60px;
+        height: 60px;
+      }
+    }
+    .controls {
+      margin-top: 70px;
+      p {
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 28px;
+        color: #504e4e;
+        span {
+          font-size: 18px;
+          font-weight: 300;
+          color: #a8a7a7;
+        }
+      }
+      button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        position: relative;
+        transform: translateY(-25%);
+        span {
+          position: relative;
+          color: #a8a7a7;
+          font-weight: 600 !important;
+          font-size: 18px;
+        }
+        nb-icon {
+          color: #a8a7a7;
+        }
+      }
+    }
+    .number {
+      nb-icon {
+        color: #adadad;
+        font-size: 1.5rem;
+        margin-left: 1rem;
+        &:nth-child(1) {
+          font-size: 2.6rem;
+          position: relative;
+          transform: translateY(-19%);
+        }
+      }
+      nb-icon.active {
+        color: #3e65ee !important;
+      }
+    }
+    nb-icon {
+      cursor: pointer;
+    }
+    .table {
+      width: 100% !important;
+      th {
+        text-align: left;
+      }
+      td {
+        text-align: left;
+        position: relative;
+        img {
+          width: 30px;
+          height: 30px;
+          margin-right: 8px;
+        }
+        nb-icon {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 10px;
+        }
+      }
+    }
+    .smallChosen {
+      flex-basis: 150px;
+      ::ng-deep {
+        .video-container {
+          video {
+            max-height: 110px !important;
+          }
+          nb-icon {
+            top: 7px;
+            right: 7px;
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+  
