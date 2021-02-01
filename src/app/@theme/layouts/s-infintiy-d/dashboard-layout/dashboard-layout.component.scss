@@ -1,16 +1,23 @@
+nb-sidebar.sidebar {
+  height: 100vh;
+  overflow: hidden;
+  background-color: #3e65ee;
+  z-index: 55555555555;
+  // width: 11rem;
+}
+
 nb-layout nb-layout-column {
   background-color: #ebebeb;
   overflow-x: hidden;
 }
 
 .menu-sidebar ::ng-deep .scrollable {
+  overflow: hidden;
   .colappase-img-infinty {
     width: 50px;
     margin-top: 40px;
     margin-left: 33%;
   }
-  background-color: #3e65ee;
-
   overflow: hidden;
 
   padding: 0;
@@ -21,11 +28,14 @@ nb-layout nb-layout-column {
 
       .menu-item {
         border-bottom: 0;
+        transition: 0.4s ease-in-out;
+        width: 100%;
         a {
           text-transform: capitalize;
           font-size: 20px !important;
           font-weight: 400;
           line-height: 25px;
+          border-left: solid 0 transparent;
           background-color: transparent;
           padding-left: 0;
           svg {
@@ -34,8 +44,6 @@ nb-layout nb-layout-column {
 
           &.active {
             background-color: #c9c9c957;
-            border-left: solid 0 transparent;
-
             span {
               margin-left: 20px;
             }
@@ -54,7 +62,7 @@ nb-layout nb-layout-column {
             .menu-icon {
               filter: grayscale(1);
             }
-            border-left: solid 0 transparent;
+            border-left: none;
             background-color: transparent;
             padding-left: 0;
           }
@@ -73,6 +81,7 @@ nb-layout nb-layout-column {
     }
   }
 }
+
 .compactedItem {
   display: none;
 }
