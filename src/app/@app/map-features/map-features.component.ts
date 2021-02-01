@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NbMenuItem } from '@nebular/theme';
+import { NbMenuItem, NbSidebarService } from '@nebular/theme';
 import { map_menu } from './map-menu';
 
 @Component({
@@ -10,7 +10,9 @@ import { map_menu } from './map-menu';
 })
 export class MapFeaturesComponent implements OnInit {
   menu: NbMenuItem[];
-  constructor(private activateroute: ActivatedRoute) {
+  constructor(
+    private activateroute: ActivatedRoute,
+    ) {
     // if (!localStorage.getItem('foo')) {
     //   localStorage.setItem('foo', 'no reload');
     //   window.location.reload();
@@ -25,5 +27,6 @@ export class MapFeaturesComponent implements OnInit {
       // console.log(params['assetId']);
     });
   }
-  mapMenu = map_menu;
+  Menu = map_menu;
+
 }

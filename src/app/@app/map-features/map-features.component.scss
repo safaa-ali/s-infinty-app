@@ -58,13 +58,51 @@
     }
   }
 }
-::ng-deep.nb-theme-default .features {
+::ng-deep .nb-theme-default .features {
   nb-sidebar.compacted {
+    background-color: #3e65ee;
     .menu-item {
       width: 100% !important;
+
+      .menu-item-collapse {
+        width: 100% !important;
+      }
     }
-    .menu-item-collapse {
-      width: 100% !important;
+    .scrollable nb-menu ul.menu-items {
+      .menu-item {
+        a:not(.active) {
+          background-color: #fff !important;
+          padding: 20px;
+          box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+          z-index: 999999999999999999999999999999;
+          padding-left: 0;
+          transition: 0.4s ease-in-out;
+          transform: translate(14px, 20px);
+          border-radius: 6px;
+          .menu-icon {
+            // filter: none;
+            filter: none;
+            color: #fc9d2e;
+            font-size: 26px !important;
+          }
+          svg {
+            top: 26px;
+            color: #fc9d2e;
+          }
+          span {
+            margin-left: 20px;
+          }
+
+          &:not(.active) {
+            .menu-icon {
+              filter: grayscale(1);
+            }
+            border-left: none;
+            background-color: transparent;
+            padding-left: 0;
+          }
+        }
+      }
     }
   }
 }
