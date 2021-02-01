@@ -1,22 +1,21 @@
 .video-container {
+  height: 180px;
+  border-radius: 16px;
+  video {
     height: 180px;
+    width: 100% !important;
     border-radius: 16px;
-    video {
-      height: 180px;
-      width: 100% !important;
-      border-radius: 16px;
-    }
-    position: relative;
-    nb-icon {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      color: #c6c6c6;
-      padding: 4px;
-      font-size: 1.5rem;
-      box-sizing: content-box;
-      border-radius: 50%;
-      background-color: white;
-    }
   }
-  
+  position: relative;
+  nb-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #c6c6c6;
+    padding: 4px;
+    font-size: 1.5rem;
+    box-sizing: content-box;
+    border-radius: 50%;
+    background-color: white;
+  }
+}
