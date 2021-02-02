@@ -28,8 +28,8 @@
   .rightIcons img {
     &:nth-child(1) {
       border-style: none;
-      width: 30px;
-      height: 30px;
+      width: 25px;
+      height: 25px;
       padding: 4px;
       border-radius: 50%;
       border: 2px solid #a8a7a7;
@@ -37,8 +37,8 @@
     }
     &:nth-child(2) {
       transform: translateY(-25%);
-      width: 60px;
-      height: 60px;
+      width: 45px;
+      height: 45px;
     }
   }
   .controls {
@@ -97,9 +97,10 @@
     td {
       text-align: left;
       position: relative;
-      img {
+      video{
         width: 30px;
         height: 30px;
+        display: inline;
         margin-right: 8px;
       }
       nb-icon {

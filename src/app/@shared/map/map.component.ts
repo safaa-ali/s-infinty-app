@@ -9,7 +9,8 @@ import { icon, Layer, marker } from 'leaflet';
 })
 export class MapComponent implements OnInit {
   @Input() projectId: number;
-  @Output() mapAsset = new EventEmitter<string>();
+  @Output() mapAsset = new EventEmitter<any>();
+  // @Output() outputId = new EventEmitter<number>();
   bodyPopup: any;
   optionsPopup: any;
   stationsLocations: [];
@@ -47,16 +48,13 @@ export class MapComponent implements OnInit {
   ngOnInit() {
     this.getLocations();
   }
-  locateStations(map: L.Map) {}
   getLocations() {
     this._ProjectsService.getStations(this.projectId).subscribe((res) => {
       this.stationsLocations = res.data.items.filter(
         (item) => item.assetType === 'stationary',
       );
       this.addMarkers();
-      // this.Layers.push(this.addMarker(47.6183869, 12.9821816));
       this.loadMap = true;
-      // console.log(this.Layers);
     });
   }
 
@@ -66,12 +64,13 @@ export class MapComponent implements OnInit {
         this.addMarker(
           this.stationsLocations[i]['longitude'],
           this.stationsLocations[i]['latitude'],
+          this.stationsLocations[i]['id'],
         ),
       );
     }
     this.options.layers = this.Layers;
   }
-  addMarker(lat, long) {
+  addMarker(lat, long, id) {
     const newmarker = marker([lat, long], {
       icon: icon({
         iconSize: [25, 41],
@@ -84,15 +83,15 @@ export class MapComponent implements OnInit {
       .bindPopup(this.bodyPopup, this.optionsPopup)
       .on('popupopen', (e) => {
         document.querySelector('#doc').addEventListener('click', () => {
-          this.mapAsset.emit('documents');
+          this.mapAsset.emit({'type': 'documents', 'id': id});
         });
         document.querySelector('#img').addEventListener('click', () => {
           e;
-          this.mapAsset.emit('images');
+          this.mapAsset.emit({'type': 'images', 'id': id});
         });
         document.querySelector('#video').addEventListener('click', () => {
           e;
-          this.mapAsset.emit('videos');
+          this.mapAsset.emit({'type': 'videos', 'id': id});
         });
       });
     return newmarker;

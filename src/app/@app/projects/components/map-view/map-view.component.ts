@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NbSidebarService } from '@nebular/theme';
-import { AuthService } from 'app/@core/utils/service/auth.service';
-import { DatePipe } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProjectsService } from '../../projects.service';
-import { windowWhen } from 'rxjs/operators';
 @Component({
   selector: 'ngx-map-view',
   templateUrl: './map-view.component.html',
@@ -15,7 +11,6 @@ export class MapViewComponent implements OnInit {
   ProjectsData: any;
   sub: any;
   projectId: number;
-  assetId: number = 51;
   constructor(
     private route: ActivatedRoute,
     private _ProjectsService: ProjectsService,
@@ -38,7 +33,7 @@ export class MapViewComponent implements OnInit {
   }
   mapFeatures(e) {
     this.router.navigate([
-      `projects/${this.projectId}/assets/${this.assetId}/${e}`,
+      `projects/${this.projectId}/assets/${e['id']}/${e['type']}`,
     ]);
   }
   isActive(id) {
