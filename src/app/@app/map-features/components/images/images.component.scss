@@ -20,7 +20,7 @@
   }
 }
 .images {
-  @media screen and(max-width:440px){
+  @media screen and(max-width:440px) {
     padding-left: 25px !important;
     padding-right: 25px !important;
   }
@@ -71,9 +71,9 @@
       color: #504e4e;
       position: relative;
       top: -2px;
-      @media screen and(max-width:440px){
-       font-size: 20px;
-       line-height: 20px;
+      @media screen and(max-width:440px) {
+        font-size: 20px;
+        line-height: 20px;
       }
       span {
         vertical-align: top;
