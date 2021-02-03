@@ -95,6 +95,14 @@ nb-layout nb-layout-column {
   }
 }
 ::ng-deep {
+  .nb-theme-default
+    nb-layout
+    .layout
+    .layout-container
+    nb-sidebar
+    .main-container-fixed {
+    top: 0;
+  }
   .nb-theme-default nb-sidebar.compacted {
     nb-menu .menu-item a.active::before {
       background-color: transparent;

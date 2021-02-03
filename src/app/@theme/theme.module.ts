@@ -43,6 +43,7 @@ import { COSMIC_THEME } from './styles/theme.cosmic';
 import { CORPORATE_THEME } from './styles/theme.corporate';
 import { DARK_THEME } from './styles/theme.dark';
 import { DashboardLayoutComponent } from './layouts/s-infintiy-d/dashboard-layout/dashboard-layout.component';
+import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 
 const NB_MODULES = [
   NbLayoutModule,
@@ -68,6 +69,7 @@ const COMPONENTS = [
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
   DashboardLayoutComponent,
+  BreadcrumbsComponent,
 ];
 const PIPES = [
   CapitalizePipe,
@@ -80,7 +82,7 @@ const PIPES = [
 @NgModule({
   imports: [CommonModule, ...NB_MODULES, LeafletModule],
   exports: [CommonModule, ...PIPES, ...COMPONENTS],
-  declarations: [...COMPONENTS, ...PIPES, DashboardLayoutComponent],
+  declarations: [...COMPONENTS, ...PIPES, DashboardLayoutComponent, BreadcrumbsComponent],
 })
 export class ThemeModule {
   static forRoot(): ModuleWithProviders<ThemeModule> {
