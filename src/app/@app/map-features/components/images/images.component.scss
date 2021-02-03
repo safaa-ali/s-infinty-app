@@ -1,4 +1,10 @@
 ::ng-deep {
+  .nb-theme-default
+    .images
+    .nb-form-field-control-with-suffix
+    [nbInput].size-medium {
+    height: 45px;
+  }
   .nb-theme-default [nbInput].status-basic {
     background: #f2f5ff !important;
   }
@@ -10,9 +16,14 @@
     .columns
     nb-layout-column {
     background-color: white !important;
+    padding-top: 0;
   }
 }
 .images {
+  @media screen and(max-width:440px){
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+  }
   .add-item {
     background: #f2f5ff;
     color: #a8a7a7;
@@ -36,19 +47,36 @@
       margin-right: 14px;
     }
     &:nth-child(2) {
-      transform: translateY(-25%);
+      // transform: translateY(-25%);
       width: 45px;
       height: 45px;
     }
   }
   .controls {
     margin-top: 70px;
+    .d-flex {
+      &:nth-child(2) {
+        @media screen and (max-width: 768px) {
+          justify-content: space-between !important;
+        }
+      }
+    }
+    @media screen and (max-width: 768px) {
+      display: block !important;
+    }
     p {
       font-weight: 600;
       font-size: 28px;
       line-height: 28px;
       color: #504e4e;
+      position: relative;
+      top: -2px;
+      @media screen and(max-width:440px){
+       font-size: 20px;
+       line-height: 20px;
+      }
       span {
+        vertical-align: top;
         font-size: 18px;
         font-weight: 300;
         color: #a8a7a7;
@@ -63,8 +91,8 @@
       span {
         position: relative;
         color: #a8a7a7;
+        font-size: 14px;
         font-weight: 600 !important;
-        font-size: 18px;
       }
       nb-icon {
         color: #a8a7a7;
@@ -74,10 +102,10 @@
   .number {
     nb-icon {
       color: #adadad;
-      font-size: 1.5rem;
-      margin-left: 1rem;
+      font-size: 1.2rem;
+      margin-left: 0.75rem;
       &:nth-child(1) {
-        font-size: 2.6rem;
+        font-size: 2rem;
         position: relative;
         transform: translateY(-19%);
       }

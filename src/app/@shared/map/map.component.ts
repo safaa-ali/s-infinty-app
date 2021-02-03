@@ -34,7 +34,7 @@ export class MapComponent implements OnInit {
     <div class="icon"><img src='./assets/images/hand.svg' id="hand"></div>
     <div class="icon"><img src='./assets/images/cube.svg' id="3dmodel"></div>
     <div class="icon"><img src='./assets/images/x.svg' id="charts"></div>
-    <div class="icon"><img src='./assets/images/img.svg' id="img"></div>
+    <div class="icon"><img src='./assets/images/image.svg' id="img"></div>
     <div class="icon"><img src='./assets/images/search.svg' id="search"></div>
     <div class="icon"><img src='./assets/images/video.svg' id="video"></div>
     `;

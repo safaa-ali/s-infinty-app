@@ -29,6 +29,7 @@ export class MapViewComponent implements OnInit {
   getProjectData() {
     this._ProjectsService.getProjects().subscribe((res) => {
       this.ProjectsData = res.data.items;
+      // console.log(this.ProjectsData.length);
     });
   }
   mapFeatures(e) {
