@@ -10,7 +10,6 @@ import { icon, Layer, marker } from 'leaflet';
 export class MapComponent implements OnInit {
   @Input() projectId: number;
   @Output() mapAsset = new EventEmitter<any>();
-  // @Output() outputId = new EventEmitter<number>();
   bodyPopup: any;
   optionsPopup: any;
   stationsLocations: [];
@@ -27,7 +26,6 @@ export class MapComponent implements OnInit {
     center: L.latLng([47.6183869, 12.9821816]),
   };
   loadMap: boolean = false;
-  // markers: Layer[] = [];
   constructor(private _ProjectsService: ProjectsService) {
     this.bodyPopup = `
     <div class="icon"><img src='./assets/images/doc.svg' id="doc"></div>
@@ -45,7 +43,19 @@ export class MapComponent implements OnInit {
       className: 'popupCustom',
     };
   }
+  ngOnChanges(changes) {
+    changes;
+    this.loadMap = false;
+    this.Layers = [this.mapTile];
+    this.options = {
+      layers: this.Layers,
+      zoom: 12,
+      center: L.latLng([47.6183869, 12.9821816])};
+    this.getLocations();
+}
+
   ngOnInit() {
+    this.loadMap = false;
     this.getLocations();
   }
   getLocations() {
@@ -53,6 +63,7 @@ export class MapComponent implements OnInit {
       this.stationsLocations = res.data.items.filter(
         (item) => item.assetType === 'stationary',
       );
+      // console.log(this.stationsLocations);
       this.addMarkers();
       this.loadMap = true;
     });
