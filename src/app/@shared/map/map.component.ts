@@ -35,13 +35,13 @@ export class MapComponent implements OnInit, OnChanges {
   loadMap: boolean = false;
   constructor(private _ProjectsService: ProjectsService) {
     this.bodyPopup = `
-    <div class="icon"><img src='./assets/images/doc.svg' id="doc"></div>
-    <div class="icon"><img src='./assets/images/hand.svg' id="hand"></div>
-    <div class="icon"><img src='./assets/images/cube.svg' id="3dmodel"></div>
-    <div class="icon"><img src='./assets/images/x.svg' id="charts"></div>
-    <div class="icon"><img src='./assets/images/image.svg' id="img"></div>
-    <div class="icon"><img src='./assets/images/search.svg' id="search"></div>
-    <div class="icon"><img src='./assets/images/video.svg' id="video"></div>
+    <div class='icon'><img src='./assets/images/doc.svg' id='doc'></div>
+    <div class='icon'><img src='./assets/images/hand.svg' id='hand'></div>
+    <div class='icon'><img src='./assets/images/cube.svg' id='3dmodel'></div>
+    <div class='icon'><img src='./assets/images/x.svg' id='charts'></div>
+    <div class='icon'><img src='./assets/images/image.svg' id='img'></div>
+    <div class='icon'><img src='./assets/images/search.svg' id='search'></div>
+    <div class='icon'><img src='./assets/images/video.svg' id='video'></div>
     `;
     this.optionsPopup = {
       maxWidth: "400",
@@ -51,7 +51,7 @@ export class MapComponent implements OnInit, OnChanges {
     };
   }
   ngOnChanges(changes) {
-     changes;
+    changes;
     this.loadMap = false;
     this.Layers = [this.mapTile];
     this.options = {
