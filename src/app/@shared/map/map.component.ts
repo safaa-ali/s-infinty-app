@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output, OnChanges } from '@angular/core';
 import { ProjectsService } from 'app/@app/projects/projects.service';
 import * as L from 'leaflet';
 import { icon, Layer, marker } from 'leaflet';
@@ -7,7 +7,7 @@ import { icon, Layer, marker } from 'leaflet';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss'],
 })
-export class MapComponent implements OnInit {
+export class MapComponent implements OnInit,OnChanges {
   @Input() projectId: number;
   @Output() mapAsset = new EventEmitter<any>();
   bodyPopup: any;
