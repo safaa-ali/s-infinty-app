@@ -43,8 +43,8 @@ export class MapComponent implements OnInit,OnChanges {
       className: 'popupCustom',
     };
   }
-  ngOnChanges(changes) {
-    changes;
+  ngOnChanges() {
+    // changes;
     this.loadMap = false;
     this.Layers = [this.mapTile];
     this.options = {
