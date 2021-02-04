@@ -8,13 +8,10 @@ export class BreadcrumbsService {
   @Output() breadcrumbsChanged = new EventEmitter<Breadcrumb[]>();
   @Output() breadcrumbsClicked = new EventEmitter<Breadcrumb>();
   constructor() {}
-
   setBreadcrumbs(breadcrumbs: Breadcrumb[]) {
     this.breadcrumbs = breadcrumbs;
-    // console.log(breadcrumbs);
     this.breadcrumbsChanged.emit(this.breadcrumbs);
   }
-
   returnBreadcrumbs() {
     return this.breadcrumbs;
   }

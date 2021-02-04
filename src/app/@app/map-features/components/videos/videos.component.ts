@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { MapFeaturesService } from '../../map-features.service';
+import { BreadcrumbsService } from 'app/@core/utils/service/breadcrumbs.service';
 @Component({
   selector: 'ngx-videos',
   templateUrl: './videos.component.html',
@@ -11,6 +12,8 @@ export class VideosComponent implements OnInit {
   chosenFilter: number = 4;
   projectId: any;
   assetId: any;
+  projectName: string = '';
+  assetName: string = '';
   videoItems = [
     { title: 'Rename' },
     { title: 'Share' },
@@ -20,18 +23,43 @@ export class VideosComponent implements OnInit {
   constructor(
     private _mapFeature: MapFeaturesService,
     private datePipe: DatePipe,
+    private _breadcrumbService: BreadcrumbsService,
   ) {
     this.projectId = localStorage.getItem('currentProjectId');
     this.assetId = localStorage.getItem('currentAssetId');
+    this.projectName = localStorage.getItem('currentProjectName');
+    this.assetName = localStorage.getItem('currentAssetName');
     this.videos = [];
   }
   ngOnInit() {
+    this.setBreadCrumbs();
     this.getVideos();
     this.sortTableByDate();
   }
   adjustDate(dateString) {
     const dateParsed = dateString.split('T')[0];
     return this.datePipe.transform(dateParsed, 'MM-dd-yyyy');
+  }
+  setBreadCrumbs() {
+    const breadcrumbs = [
+      {
+        name: 'projects',
+        link: 'projects',
+      },
+      {
+        name: `${this.projectName}`,
+        link: `projects/${this.projectId}`,
+      },
+      {
+        name: `${this.assetName}`,
+        link: `projects/${this.projectId}/assets/${this.assetId}`,
+      },
+      {
+        name: 'videos',
+        link: 'null',
+      },
+    ];
+    this._breadcrumbService.setBreadcrumbs(breadcrumbs);
   }
   sortTableByDate() {
     this.videos.sort((val1, val2) => {
@@ -41,7 +69,6 @@ export class VideosComponent implements OnInit {
   getVideos() {
     this._mapFeature.getAssetFiles(this.assetId, 'video').subscribe((res) => {
       this.videos = res.data.items;
-      // console.log(this.videos);
     });
   }
   oneChoosed() {

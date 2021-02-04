@@ -1,13 +1,18 @@
 <div class="breadcrumbs-container">
-    <nav>
-      <ol class="breadcrumb">
-        <li *ngFor="let breadcrumb of breadcrumbs" class="breadcrumb-item text-uppercase"
-          routerLinkActive="breadcrumb-item--active">
-            <a *ngIf="breadcrumb.link" (click)="test()" routerLink="{{breadcrumb.link }}" routerLinkActive="breadcrumb-item--active " class="text-ellipsis">
-                {{ breadcrumb.name }}
-            </a>
-            <span *ngIf="!breadcrumb.link" class="text-ellipsis">{{breadcrumb.name }}</span>
-        </li>
-      </ol>
-    </nav>
-  </div>
+  <nav>
+    <ol class="breadcrumb">
+      <!-- <li class="breadcrumb-item">
+        <a routerLink="/">
+          <img src="assets/icons/home-crumbs.svg" alt="Home">
+        </a>
+      </li> -->
+      <li *ngFor="let breadcrumb of breadcrumbs" class="breadcrumb-item text-uppercase text-ellipsis"
+        routerLinkActive="breadcrumb-item--active">
+          <a *ngIf="breadcrumb.link" (click)="routeBreadcrumb(breadcrumb.link)" routerLinkActive="breadcrumb-item--active " class="text-ellipsis">
+              {{ breadcrumb.name }}
+          </a>
+          <span *ngIf="!breadcrumb.link" class="text-ellipsis">{{breadcrumb.name }}</span>
+      </li>
+    </ol>
+  </nav>
+</div>

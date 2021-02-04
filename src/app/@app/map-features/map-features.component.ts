@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NbMenuItem, NbSidebarService } from '@nebular/theme';
+import { ProjectsService } from '../projects/projects.service';
 import { map_menu } from './map-menu';
-
 @Component({
   selector: 'ngx-map-features',
   templateUrl: './map-features-component.html',
@@ -10,7 +10,10 @@ import { map_menu } from './map-menu';
 })
 export class MapFeaturesComponent implements OnInit {
   menu: NbMenuItem[];
-  constructor(private activateroute: ActivatedRoute) {
+  constructor(
+    private activateroute: ActivatedRoute,
+    private _projectService: ProjectsService,
+  ) {
     if (!localStorage.getItem('foo')) {
       localStorage.setItem('foo', 'no reload');
       window.location.reload();
@@ -22,10 +25,19 @@ export class MapFeaturesComponent implements OnInit {
     this.activateroute.params.subscribe((params) => {
       localStorage.setItem('currentProjectId', params['projectId']);
       localStorage.setItem('currentAssetId', params['assetId']);
-      // console.log(params['projectId']);
-      // console.log(params['assetId']);
+      this.getProjectName(params['projectId']);
+      this.getAssetName(params['assetId']);
+    });
+  }
+  getProjectName(id) {
+    this._projectService.showProject(id).subscribe((res) => {
+      localStorage.setItem('currentProjectName', `${res.data.name}`);
+    });
+  }
+  getAssetName(id) {
+    this._projectService.showAsset(id).subscribe((res) => {
+      localStorage.setItem('currentAssetName', `${res.data.name}`);
     });
   }
   Menu = map_menu;
-
 }

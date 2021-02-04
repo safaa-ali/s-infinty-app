@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MapFeaturesService } from '../map-features.service';
 import { DatePipe } from '@angular/common';
 import { GlobalService } from 'app/@core/utils/global.service';
+import { BreadcrumbsService } from 'app/@core/utils/service/breadcrumbs.service';
 @Component({
   selector: 'ngx-documents',
   templateUrl: './documents.component.html',
@@ -13,20 +14,47 @@ export class DocumentsComponent implements OnInit {
   chosenFilter: number = 4;
   documentsData: any;
   searchValue: string = '';
+  projectName: string = '';
+  assetName: string = '';
   items = [{ title: 'Rename' }, { title: 'Share' }, { title: 'Download' }];
   constructor(
     private _mapFeature: MapFeaturesService,
     private datePipe: DatePipe,
     private _globalService: GlobalService,
+    private _breadcrumbService: BreadcrumbsService,
   ) {
-    this.projectId = localStorage.getItem('currentProjectId');
-    this.assetId = localStorage.getItem('currentAssetId');
     this.documentsData = [];
   }
   convertToDate(dateString) {
     return typeof new Date(dateString);
   }
+  setBreadCrumbs() {
+    const breadcrumbs = [
+      {
+        name: 'projects',
+        link: 'projects',
+      },
+      {
+        name: `${this.projectName}`,
+        link: `projects/${this.projectId}`,
+      },
+      {
+        name: `${this.assetName}`,
+        link: `projects/${this.projectId}/assets/${this.assetId}`,
+      },
+      {
+        name: 'documents',
+        link: 'null',
+      },
+    ];
+    this._breadcrumbService.setBreadcrumbs(breadcrumbs);
+  }
   ngOnInit(): void {
+    this.projectId = localStorage.getItem('currentProjectId');
+    this.assetId = localStorage.getItem('currentAssetId');
+    this.projectName = localStorage.getItem('currentProjectName');
+    this.assetName = localStorage.getItem('currentAssetName');
+    this.setBreadCrumbs() ;
     this.getDocuments();
     this.sortTableByDate();
   }
