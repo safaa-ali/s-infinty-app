@@ -61,7 +61,7 @@
   }
   .nb-theme-default nb-layout.window-mode .layout nb-layout-header {
     background: #f3f3f3;
-    z-index: 33;
+    z-index: inherit;
   }
   // .nb-theme-default nb-layout.window-mode .layout nb-layout-header nav{
   //       margin: 0 auto;

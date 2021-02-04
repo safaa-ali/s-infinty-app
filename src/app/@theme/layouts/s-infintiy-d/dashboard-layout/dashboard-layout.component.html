@@ -1,7 +1,6 @@
 <nb-layout windowMode>
   <nb-layout-header>
     <ngx-header></ngx-header>
-    <!-- <ng-content select='projectsHead'></ng-content> -->
   </nb-layout-header>
   <nb-sidebar
     class="menu-sidebar sidebar"
@@ -12,8 +11,13 @@
   >
     <div class="menu-item-collapse">
       <p>
-        <a class="sidebar-toggle" (click)="toggleSidebar()">
           <img src="assets/images/images/infinity.svg" alt="" />
+      </p>
+    </div>
+    <div class="menu-item-collapse">
+      <p>
+        <a class="sidebar-toggle" (click)="toggleSidebar()">
+          <nb-icon icon="menu" class="menu-bar-icon compactedIcon"></nb-icon>
         </a>
       </p>
     </div>

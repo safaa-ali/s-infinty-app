@@ -3,7 +3,7 @@
     display: none;
   }
   .features .menu-sidebar .scrollable nb-menu ul.menu-items .menu-item a svg {
-    width: 30px !important;
+    width: 26px !important;
   }
   .nb-theme-default
     .features
@@ -22,10 +22,15 @@
           left: 100% !important;
           transform: translateX(-50%);
         }
+        .menu-bar-icon {
+          font-size: 30px;
+          position: relative;
+          top: 0px !important;
+        }
       }
       .scrollable nb-menu ul.menu-items .menu-item {
         &:nth-child(1) {
-          margin-top: 100px !important;
+          margin-top: 20px !important;
           nb-icon {
             transform: translate(-50%, 10px);
           }
@@ -53,6 +58,10 @@
           left: 50%;
           top: -38px;
           transform: translateX(-50%);
+
+        }
+        .menu-title{
+          font-size: 16px !important;
         }
       }
     }
@@ -70,38 +79,38 @@
     }
     .scrollable nb-menu ul.menu-items {
       .menu-item {
-        a:not(.active) {
-          background-color: #fff !important;
-          padding: 20px;
-          box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
-          z-index: 999999999999999999999999999999;
-          padding-left: 0;
-          transition: 0.4s ease-in-out;
-          transform: translate(14px, 20px);
-          border-radius: 6px;
-          .menu-icon {
-            // filter: none;
-            filter: none;
-            color: #fc9d2e;
-            font-size: 26px !important;
-          }
-          svg {
-            top: 26px;
-            color: #fc9d2e;
-          }
-          span {
-            margin-left: 20px;
-          }
+        // a:not(.active) {
+        //   background-color: #fff !important;
+        //   padding: 20px;
+        //   box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+        //   z-index: 999999999999999999999999999999;
+        //   padding-left: 0;
+        //   transition: 0.4s ease-in-out;
+        //   transform: translate(14px, 20px);
+        //   border-radius: 6px;
+        //   .menu-icon {
+        //     // filter: none;
+        //     filter: none;
+        //     color: #fc9d2e;
+        //     font-size: 26px !important;
+        //   }
+        //   svg {
+        //     top: 26px;
+        //     color: #fc9d2e;
+        //   }
+        //   span {
+        //     margin-left: 20px;
+        //   }
 
-          &:not(.active) {
-            .menu-icon {
-              filter: grayscale(1);
-            }
-            border-left: none;
-            background-color: transparent;
-            padding-left: 0;
-          }
-        }
+        //   &:not(.active) {
+        //     .menu-icon {
+        //       filter: grayscale(1);
+        //     }
+        //     border-left: none;
+        //     background-color: transparent;
+        //     padding-left: 0;
+        //   }
+        // }
       }
     }
   }
@@ -109,20 +118,20 @@
 .menu-sidebar ::ng-deep .scrollable {
   nb-menu {
     ul.menu-items {
-      .menu-item {
-        a {
-          &.active {
-            background-color: red !important;
-            .menu-title,
-            .menu-icon {
-              color: #fff;
-            }
-            .menu-icon {
-              color: green;
-            }
-          }
-        }
-      }
+      // .menu-item {
+      //   a {
+      //     &.active {
+      //       background-color: red !important;
+      //       .menu-title,
+      //       .menu-icon {
+      //         color: #fff;
+      //       }
+      //       .menu-icon {
+      //         color: green;
+      //       }
+      //     }
+      //   }
+      // }
     }
   }
 }

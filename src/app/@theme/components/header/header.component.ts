@@ -34,7 +34,5 @@ export class HeaderComponent implements OnInit {
   items = [
     { title: 'Logout', icon: 'log-out', pack: 'eva' },
   ];
-  logout() {
-    this._authService.logout();
-  }
+
 }
