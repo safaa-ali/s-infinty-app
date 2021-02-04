@@ -24,5 +24,4 @@ export class ProjectCardComponent implements OnInit {
     this.router.navigate([`/projects/${this.projectitem.id}`]);
   }
 
-
 }
