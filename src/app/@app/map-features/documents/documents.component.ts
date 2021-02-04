@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MapFeaturesService } from '../map-features.service';
 import { DatePipe } from '@angular/common';
+import { GlobalService } from 'app/@core/utils/global.service';
 @Component({
   selector: 'ngx-documents',
   templateUrl: './documents.component.html',
@@ -11,10 +12,12 @@ export class DocumentsComponent implements OnInit {
   assetId: any;
   chosenFilter: number = 4;
   documentsData: any;
+  searchValue: string = '';
   items = [{ title: 'Rename' }, { title: 'Share' }, { title: 'Download' }];
   constructor(
     private _mapFeature: MapFeaturesService,
     private datePipe: DatePipe,
+    private _globalService: GlobalService,
   ) {
     this.projectId = localStorage.getItem('currentProjectId');
     this.assetId = localStorage.getItem('currentAssetId');
@@ -42,6 +45,17 @@ export class DocumentsComponent implements OnInit {
       .subscribe((res) => {
         this.documentsData = res.data.items;
       });
+  }
+  changed(type, value) {
+    if (type === 'search') {
+      this.searchValue = value;
+      this.resultSearch();
+    }
+  }
+  resultSearch() {
+    this._globalService.Search(this.searchValue, `assets/${this.assetId}/files?type=document`).subscribe((res) => {
+    this.documentsData = res.data.items;
+    });
   }
   fourChoosed() {
     this.chosenFilter = 4;

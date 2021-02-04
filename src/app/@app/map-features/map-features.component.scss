@@ -25,7 +25,7 @@
         .menu-bar-icon {
           font-size: 30px;
           position: relative;
-          top: 0px !important;
+          top: 0 !important;
         }
       }
       .scrollable nb-menu ul.menu-items .menu-item {
@@ -46,7 +46,7 @@
     .menu-title {
       font-size: 15px;
     }
-    padding-top: 0% !important;
+    padding-top: 0 !important;
     .menu-item {
       text-align: center !important;
       position: relative;
@@ -62,9 +62,8 @@
           left: 50%;
           top: -38px;
           transform: translateX(-50%);
-
         }
-        .menu-title{
+        .menu-title {
           font-size: 16px !important;
         }
       }

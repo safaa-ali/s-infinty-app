@@ -1,33 +1,40 @@
-<div class="px-5 documents">
-  <div
-    class="ml-auto rightIcons d-flex align-items-center py-2 justify-content-end"
-  >
-    <img src="assets/images/alert.svg" alt="" />
-    <img src="assets/images/meti.svg" alt="" />
-  </div>
-  <div class="horizontalLine"></div>
+<div class="px-5 mt-4 documents">
   <div class="row justify-content-between">
-    <div class="row col-md-8">
-      <div class="col-md-7 col-lg-7">
-        <ngx-search></ngx-search>
-      </div>
-      <div class="col-md-4 col-lg-3">
-        <button class="add-item">
-          <nb-icon icon="plus-outline"></nb-icon>Add Project
-        </button>
+    <div class="col-9 row">
+      <div class="col-sm-9 col-md-7">
+        <ngx-search (valueChanged)="changed('search', $event)"></ngx-search>
       </div>
     </div>
+    <div class="col-3 rightIcons d-flex justify-content-end align-items-center">
+      <img src="assets/images/alert.svg" alt="" />
+      <img src="assets/images/meti.svg" alt="" />
+    </div>
+  </div>
+  <div class="px-3 row justify-content-end">
     <div class="col-md-4 d-flex justify-content-end numberDocs">
-      <nb-icon icon="toggle" [class.active]="this.chosenFilter==1" pack="svg" (click)="oneChoosed()"></nb-icon>
-      <nb-icon icon="four" [class.active]="this.chosenFilter==4" pack="svg" (click)="fourChoosed()"></nb-icon>
+      <nb-icon
+        icon="toggle"
+        [class.active]="this.chosenFilter == 1"
+        pack="svg"
+        (click)="oneChoosed()"
+      ></nb-icon>
+      <nb-icon
+        icon="four"
+        [class.active]="this.chosenFilter == 4"
+        pack="svg"
+        (click)="fourChoosed()"
+      ></nb-icon>
     </div>
   </div>
   <div
     *ngIf="this.chosenFilter == 4"
-    class="mt-3 d-flex justify-content-between flex-wrap"
+    class="d-flex justify-content-start flex-wrap"
   >
     <div *ngFor="let doc of documentsData" class="col-md-3 p-2">
-      <ngx-document-card [documentData]="doc" [documentDate]="adjustDate(doc.createdAt)"></ngx-document-card>
+      <ngx-document-card
+        [documentData]="doc"
+        [documentDate]="adjustDate(doc.createdAt)"
+      ></ngx-document-card>
     </div>
   </div>
   <div *ngIf="this.chosenFilter == 1" class="w-100 text-center">
@@ -42,9 +49,9 @@
       </thead>
       <tbody>
         <tr *ngFor="let doc of documentsData">
-          <td><img src="assets/images/kitten-dark.png">{{doc.name}}</td>
-          <td>{{doc.description}}</td>
-          <td>{{adjustDate(doc.createdAt)}}</td>
+          <td><img src="assets/images/docImg.jpg" />{{ doc.name }}</td>
+          <td>{{ doc.description }}</td>
+          <td>{{ adjustDate(doc.createdAt) }}</td>
           <td>
             <nb-icon
               icon="more-horizontal-outline"

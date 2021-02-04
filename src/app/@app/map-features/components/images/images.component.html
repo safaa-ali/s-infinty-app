@@ -1,8 +1,8 @@
-<div class="px-5 pt-5 images">
+<div class="px-5 mt-4 images">
   <div class="row justify-content-between">
     <div class="col-9 row">
       <div class="col-sm-9 col-md-7">
-        <ngx-search></ngx-search>
+        <ngx-search (valueChanged)="changed('search', $event)"></ngx-search>
       </div>
     </div>
     <div class="col-3 rightIcons d-flex justify-content-end align-items-center">
@@ -48,7 +48,7 @@
 
   <div
     *ngIf="this.chosenFilter == 4"
-    class="imagesSection row justify-content-center"
+    class="imagesSection row justify-content-start"
   >
     <div *ngFor="let image of images" class="col-sm-6 col-md-3 p-2">
       <ngx-image-card [imageData]="image"></ngx-image-card>

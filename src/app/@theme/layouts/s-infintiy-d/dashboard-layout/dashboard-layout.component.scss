@@ -35,12 +35,11 @@ nb-sidebar.sidebar {
 nb-layout nb-layout-column {
   background-color: #ebebeb;
   overflow-x: hidden;
-
 }
 
 .menu-sidebar ::ng-deep .scrollable {
   overflow: hidden;
-overflow-y: hidden;
+  overflow-y: hidden;
   padding: 0;
   nb-menu {
     margin: 0;
@@ -105,8 +104,6 @@ overflow-y: hidden;
 }
 
 ::ng-deep {
-
-
   .nb-theme-default nb-sidebar.compacted {
     nb-menu .menu-item a.active::before {
       background-color: transparent;
@@ -142,13 +139,13 @@ overflow-y: hidden;
       width: 100%;
       background-color: white !important;
       border-radius: 8px;
-      transform: translate(10px ,-10px);
-      transition: .4s ease-in-out;
+      // transform: translate(10px, -10px);
+      transition: 0.4s ease-in-out;
       svg {
         position: relative;
         top: 4px;
         right: 6px;
-        color: #FC9D2E !important;
+        color: #fc9d2e !important;
       }
     }
     .menu-item {
@@ -161,5 +158,3 @@ overflow-y: hidden;
     }
   }
 }
-
-

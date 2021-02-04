@@ -8,32 +8,32 @@ import { Subject } from 'rxjs';
   styleUrls: ['./breadcrumbs.component.scss'],
 })
 export class BreadcrumbsComponent implements OnInit, OnDestroy, OnChanges {
-
   breadcrumbs: Breadcrumb[];
   userPictureOnly: boolean = false;
   user: any;
 
   private destroy$: Subject<void> = new Subject<void>();
 
-  constructor(private breadcrumbsService: BreadcrumbsService) {
+  constructor(private breadcrumbsService: BreadcrumbsService) {}
+  test() {
+    // console.log();
   }
-
   ngOnInit() {
     this.breadcrumbs = this.breadcrumbsService.returnBreadcrumbs();
     this.breadcrumbsService.breadcrumbsChanged.subscribe(
       (breadcrumbs: Breadcrumb[]) => {
         this.breadcrumbs = breadcrumbs;
+        // console.log(this.breadcrumbs);
       },
     );
   }
 
   ngOnChanges() {
-   this.breadcrumbs = this.breadcrumbsService.returnBreadcrumbs();
+    this.breadcrumbs = this.breadcrumbsService.returnBreadcrumbs();
   }
 
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();
   }
-
 }
