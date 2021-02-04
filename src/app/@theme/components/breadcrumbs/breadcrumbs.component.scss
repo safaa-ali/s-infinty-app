@@ -13,8 +13,12 @@
   .breadcrumb-item--active {
     color: #000;
   }
-  .breadcrumbs > li.active {
+  li a {
+    cursor: pointer;
+  }
+  .breadcrumbs li.active {
     color: green !important;
+    background-color: red !important;
   }
   .text-ellipsis {
     white-space: nowrap;
@@ -30,9 +34,9 @@
       font-weight: 400;
       font-size: 14px;
     }
-       color: blue;
+    color: blue;
     a {
-      color: #434343;
+      // color: yellow;
       text-decoration: none;
       font-weight: 400;
       img {
@@ -47,7 +51,7 @@
       }
     }
     &.active {
-               color:red;
+      color: red;
     }
   }
 }

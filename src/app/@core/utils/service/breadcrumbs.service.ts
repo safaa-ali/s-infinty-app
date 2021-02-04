@@ -11,6 +11,7 @@ export class BreadcrumbsService {
 
   setBreadcrumbs(breadcrumbs: Breadcrumb[]) {
     this.breadcrumbs = breadcrumbs;
+    // console.log(breadcrumbs);
     this.breadcrumbsChanged.emit(this.breadcrumbs);
   }
 

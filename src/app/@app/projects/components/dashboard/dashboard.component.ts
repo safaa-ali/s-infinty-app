@@ -7,6 +7,7 @@ import { EventEmitter } from '@angular/core';
 import { Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
+import { BreadcrumbsService } from 'app/@core/utils/service/breadcrumbs.service';
 
 @Component({
   selector: 'ngx-dashboard',
@@ -27,9 +28,11 @@ export class DashboardComponent implements OnInit {
     private _ProjectsService: ProjectsService,
     private _globalService: GlobalService,
     private datePipe: DatePipe,
+    private breadcrumbService: BreadcrumbsService,
   ) { }
 
   ngOnInit() {
+    this.setBreadCrumbs();
     this.getProjeData();
 
   }
@@ -51,7 +54,19 @@ export class DashboardComponent implements OnInit {
   addProject() {
     this.router.navigate(['projects/add']);
   }
-
+  setBreadCrumbs() {
+    const breadcrumbs = [
+      {
+        name: 'projects',
+        link: '/projects/',
+      },
+      {
+        name: 'dashboard',
+        link: 'null',
+      },
+    ];
+    this.breadcrumbService.setBreadcrumbs(breadcrumbs);
+  }
 
   resultSearch() {
     this._globalService.Search(this.searchValue, 'projects?organization_id=43').subscribe((res) => {
