@@ -8,7 +8,7 @@ nb-sidebar.sidebar {
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 17px;
-    width: 70%;
+    // width: 70%;
     position: relative;
     top: 25px;
     img {
@@ -49,7 +49,7 @@ nb-layout nb-layout-column {
       .menu-item {
         border-bottom: 0;
         // transition: 0.4s ease-in-out;
-        width: 70%;
+        // width: 70%;
         a {
           text-transform: capitalize;
           font-size: 20px !important;
@@ -104,6 +104,19 @@ nb-layout nb-layout-column {
 }
 
 ::ng-deep {
+  .menu-sidebar .scrollable {
+    background-color: #3e65ee;
+  }
+  .nb-theme-default nb-layout .layout .layout-container nb-sidebar.fixed,
+  .nb-theme-default
+    nb-layout
+    .layout
+    .layout-container
+    nb-sidebar
+    .main-container-fixed {
+    top: 0 !important;
+    // background-color: rebeccapurple !important;
+  }
   .nb-theme-default nb-sidebar.compacted {
     nb-menu .menu-item a.active::before {
       background-color: transparent;
@@ -139,8 +152,7 @@ nb-layout nb-layout-column {
       width: 100%;
       background-color: white !important;
       border-radius: 8px;
-      // transform: translate(10px, -10px);
-      transition: 0.4s ease-in-out;
+      // transition: 0.4s ease-in-out;
       svg {
         position: relative;
         top: 4px;
@@ -158,3 +170,4 @@ nb-layout nb-layout-column {
     }
   }
 }
+

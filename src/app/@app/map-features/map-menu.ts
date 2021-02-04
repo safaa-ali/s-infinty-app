@@ -4,6 +4,8 @@ export const map_menu: NbMenuItem[] = [
     title: 'Documents',
     icon: { icon: 'doc', pack: 'svg' },
     link: 'documents',
+    home: true,
+
   },
   {
     title: 'Image Gallery',

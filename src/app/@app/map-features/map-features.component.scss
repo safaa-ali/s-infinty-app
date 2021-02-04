@@ -5,6 +5,17 @@
   .features .menu-sidebar .scrollable nb-menu ul.menu-items .menu-item a svg {
     width: 26px !important;
   }
+  .features {
+    ul.menu-items {
+      .menu-item {
+        a {
+          &.active {
+            background-color: #c9c9c957;
+          }
+        }
+      }
+    }
+  }
   .nb-theme-default
     .features
     nb-layout
@@ -17,7 +28,7 @@
   .features {
     nb-sidebar.sidebar {
       .menu-item-collapse {
-        width: 3rem;
+        // width: 3rem;
         a.menu-icon {
           left: 100% !important;
           transform: translateX(-50%);
@@ -30,7 +41,7 @@
       }
       .scrollable nb-menu ul.menu-items .menu-item {
         &:nth-child(1) {
-          margin-top: 20px !important;
+          margin-top: 30px !important;
           nb-icon {
             transform: translate(-50%, 10px);
           }
@@ -118,26 +129,17 @@
     }
   }
 }
-.menu-sidebar ::ng-deep .scrollable {
+.features ::ng-deep .scrollable {
   nb-menu {
     ul.menu-items {
-      // .menu-item {
-      //   a {
-      //     &.active {
-      //       background-color: red !important;
-      //       .menu-title,
-      //       .menu-icon {
-      //         color: #fff;
-      //       }
-      //       .menu-icon {
-      //         color: green;
-      //       }
-      //     }
-      //   }
-      // }
+      .menu-item {
+        a {
+          &.active {
+            background-color: red !important;
+
+        }
+      }
     }
   }
 }
-::ng-deep.scrollable {
-  overflow: hidden !important;
 }
