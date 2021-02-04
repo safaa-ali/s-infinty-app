@@ -42,14 +42,14 @@
       border-radius: 50%;
       border: 2px solid #a8a7a7;
       margin-right: 14px;
-      @media screen and (max-width:470px){
+      @media screen and (max-width: 470px) {
         margin-right: 0;
       }
     }
     &:nth-child(2) {
       width: 45px;
       height: 45px;
-      @media screen and (max-width:470px){
+      @media screen and (max-width: 470px) {
         width: 35px;
         height: 35px;
       }
