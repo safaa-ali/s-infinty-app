@@ -28,15 +28,7 @@ export const routes: Routes = [
       ),
     canLoad: [AuthGuard],
   },
-  // {
-  //   path: 'charts', loadChildren: () => import('./@app/charts/charts.module')
-  //   .then(m => m.ChartsModule),
-  // },
-  // {
-  //   path: ':projectId/assets', loadChildren: () => import('./@app/map-features/map-features.module')
-  //   .then(m => m.MapFeaturesModule),
-  //   // canActivate: [AuthGuard],
-  // },
+
   { path: '', redirectTo: 'auth', pathMatch: 'full' },
   { path: '**', redirectTo: 'auth' },
 ];

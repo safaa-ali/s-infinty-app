@@ -23,25 +23,32 @@ nb-sidebar.sidebar {
       font-size: 20px;
       a {
         .menu-bar-icon {
-          font-size: 24px;
+          font-size: 30px;
+          position: relative;
+          top: 32px;
         }
       }
     }
   }
 }
+
 nb-layout nb-layout-column {
   background-color: #ebebeb;
   overflow-x: hidden;
 }
+
 .menu-sidebar ::ng-deep .scrollable {
   overflow: hidden;
+  overflow-y: hidden;
   padding: 0;
   nb-menu {
     margin: 0;
     ul.menu-items {
       padding-top: 20%;
+
       .menu-item {
         border-bottom: 0;
+        // transition: 0.4s ease-in-out;
         width: 70%;
         a {
           text-transform: capitalize;
@@ -53,6 +60,7 @@ nb-layout nb-layout-column {
           padding-left: 0;
           svg {
             margin-left: 10px;
+            color: #fff;
           }
 
           &.active {
@@ -89,20 +97,13 @@ nb-layout nb-layout-column {
       }
 
       .menu-title {
-        color: #c9c9c9;
+        color: #fff;
       }
     }
   }
 }
+
 ::ng-deep {
-  .nb-theme-default
-    nb-layout
-    .layout
-    .layout-container
-    nb-sidebar
-    .main-container-fixed {
-    top: 0;
-  }
   .nb-theme-default nb-sidebar.compacted {
     nb-menu .menu-item a.active::before {
       background-color: transparent;
@@ -113,6 +114,11 @@ nb-layout nb-layout-column {
     }
     .menu-item-collapse {
       width: 100% !important;
+      .menu-bar-icon {
+        margin-right: 15px;
+        position: relative;
+        top: 10px !important;
+      }
     }
     .expandedItem {
       display: none;
@@ -131,10 +137,15 @@ nb-layout nb-layout-column {
     .menu-item a.active {
       margin-top: 22px;
       width: 100%;
+      background-color: white !important;
+      border-radius: 8px;
+      // transform: translate(10px, -10px);
+      transition: 0.4s ease-in-out;
       svg {
         position: relative;
         top: 4px;
         right: 6px;
+        color: #fc9d2e !important;
       }
     }
     .menu-item {
@@ -145,10 +156,5 @@ nb-layout nb-layout-column {
     nb-sidebar.sidebar {
       width: 0;
     }
-  }
-}
-@media only screen and (max-width: 900px) {
-  nb-sidebar.sidebar {
-    width: 0;
   }
 }
