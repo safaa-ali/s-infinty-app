@@ -1,6 +1,5 @@
-import { Input } from '@angular/core';
-
-export const map_menu = [
+import { NbMenuItem } from '@nebular/theme';
+export const map_menu: NbMenuItem[] = [
   {
     title: 'Documents',
     icon: { icon: 'doc', pack: 'svg' },
@@ -14,14 +13,17 @@ export const map_menu = [
   {
     title: 'Video Gallery',
     icon: { icon: 'video', pack: 'svg' },
+    link: 'videos',
   },
   {
     title: 'Models',
     icon: { icon: 'cube', pack: 'svg' },
+    link: 'images',
   },
   {
     title: 'Point Cloud',
     icon: { icon: 'forge', pack: 'svg' },
+    link: 'images',
   },
   {
     title: 'Sensors Analysis',
@@ -31,5 +33,6 @@ export const map_menu = [
   {
     title: 'Poi Managment',
     icon: { icon: 'hand', pack: 'svg' },
+    link: 'images',
   },
 ];

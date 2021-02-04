@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Input } from '@angular/core';
+import { Input, Output, EventEmitter } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -14,6 +14,7 @@ export class CardMapComponent implements OnInit {
   @Input() imgUrl: string;
   @Input() cardData: object;
   @Input() isActive: boolean = false;
+  @Output() projectClicked = new EventEmitter<number>();
   items = [
     { title: 'IoT Monitoring' },
     { title: 'Data Analytics' },
@@ -33,7 +34,7 @@ export class CardMapComponent implements OnInit {
     }
   }
   routerFeatures() {
-    this.router.navigate([`/projects/${this.cardData['id']}`]);
+    this.projectClicked.emit(this.cardData['id']);
   }
   adjustDate(dateString) {
     const dateParsed = dateString.split('T')[0];

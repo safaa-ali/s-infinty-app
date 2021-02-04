@@ -1,7 +1,4 @@
 import { ThemeModule } from './../../@theme/theme.module';
-// import { GalleryModule } from 'ng-gallery';
-import { NgxGalleryModule } from '@kolkov/ngx-gallery';
-
 import {
   NbMenuModule,
   NbCardModule,
@@ -26,9 +23,18 @@ import { ImagesComponent } from './components/images/images.component';
 import { AnalysisComponent } from './components/analysis/analysis.component';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 import { LineChartComponent } from './components/line-chart/line-chart.component';
+import { VideosComponent } from './components/videos/videos.component';
 
 @NgModule({
-  declarations: [MapFeaturesComponent, DocumentsComponent, ImagesComponent, AnalysisComponent, BarChartComponent, LineChartComponent],
+  declarations: [
+    MapFeaturesComponent,
+    DocumentsComponent,
+    ImagesComponent,
+    AnalysisComponent,
+    BarChartComponent,
+    LineChartComponent,
+    VideosComponent,
+  ],
   imports: [
     CommonModule,
     MapFeaturesRoutingModule,
@@ -41,17 +47,11 @@ import { LineChartComponent } from './components/line-chart/line-chart.component
     NbContextMenuModule,
     NbFormFieldModule,
     SharedModule,
-    NgxGalleryModule,
     NgxChartsModule,
     NbSidebarModule.forRoot(),
-    // GalleryModule.withConfig({}),
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts'),
     }),
-
   ],
-
 })
-export class MapFeaturesModule {
-
-}
+export class MapFeaturesModule {}

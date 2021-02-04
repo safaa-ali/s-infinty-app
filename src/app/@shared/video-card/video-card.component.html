@@ -1,0 +1,12 @@
+<div class="video-container">
+    <video controls>
+        <source [src]="videoData.url">
+    </video>
+    <!-- <video [src]="videoData.url" alt=""> -->
+  <nb-icon
+    icon="more-horizontal-outline"
+    pack="eva"
+    [nbContextMenu]="videoItems"
+    [nbContextMenuPlacement]="'right'"
+  ></nb-icon>
+</div>

@@ -8,13 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DocumentCardComponent implements OnInit {
   items = [
-    // { icon: { icon: "more-horizontal-outline", pack: "eva" } },
     { title: 'Rename' },
     { title: 'Share' },
     { title: 'Download' },
   ];
-  @Input()documentData: any;
-  // @Input()imgUrl:string;
+  @Input() documentData: any;
+  @Input() documentDate: any;
   constructor() {}
   ngOnInit(): void {}
 }

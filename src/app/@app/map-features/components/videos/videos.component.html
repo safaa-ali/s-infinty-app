@@ -1,4 +1,4 @@
-<div class="px-5 pt-5 images">
+<div class="px-5 pt-5 videos">
   <div class="row justify-content-between">
     <div class="col-9 row">
       <div class="col-sm-9 col-md-7">
@@ -11,12 +11,14 @@
     </div>
   </div>
   <div class="d-flex justify-content-between controls">
-    <p>Album Name - <span> {{images.length}} photos </span></p>
+    <p>
+      Album Name - <span> {{ videos.length }} videos </span>
+    </p>
     <div class="d-flex">
       <div class="d-flex">
         <button class="">
           <nb-icon icon="plus-outline" class="ml-1"></nb-icon
-          ><span>Add Photo</span>
+          ><span>Add Video</span>
         </button>
         <button class="">
           <nb-icon icon="list-outline" class="ml-1"></nb-icon
@@ -46,32 +48,34 @@
     </div>
   </div>
 
-  <div
-    *ngIf="this.chosenFilter == 4"
-    class="imagesSection row justify-content-center"
-  >
-    <div *ngFor="let image of images" class="col-sm-6 col-md-3 p-2">
-      <ngx-image-card [imageData]="image"></ngx-image-card>
+  <div *ngIf="this.chosenFilter == 4" class="row justify-content-center">
+    <div *ngFor="let video of videos" class="col-md-3 p-2">
+      <ngx-video-card [videoData]="video"></ngx-video-card>
     </div>
   </div>
   <div *ngIf="this.chosenFilter == 1">
     <table class="table table-hover">
       <thead>
         <tr>
+          <th scope="col"></th>
           <th scope="col">Name</th>
           <th scope="col">Created At</th>
           <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let image of this.images">
-          <td><img [src]="image.url" />{{ image.name }}</td>
-          <td>{{ adjustDate(image.createdAt) }}</td>
+        <tr *ngFor="let video of this.videos">
+          <td>
+            <video>
+              <source [src]="video.url" /></video>
+          </td>
+          <td>{{ video.name }}</td>
+          <td>{{ adjustDate(video.createdAt) }}</td>
           <td>
             <nb-icon
               icon="more-horizontal-outline"
               pack="eva"
-              [nbContextMenu]="imageItems"
+              [nbContextMenu]="videoItems"
               [nbContextMenuPlacement]="'bottom'"
             ></nb-icon>
           </td>
@@ -83,8 +87,8 @@
     *ngIf="this.chosenFilter == 9"
     class="row justify-content-start flex-wrap"
   >
-    <div *ngFor="let image of images" class="smallChosen p-2">
-      <ngx-image-card [imageData]='image'></ngx-image-card>
+    <div *ngFor="let video of videos" class="smallChosen p-2">
+      <ngx-video-card [videoData]="video"></ngx-video-card>
     </div>
   </div>
 </div>

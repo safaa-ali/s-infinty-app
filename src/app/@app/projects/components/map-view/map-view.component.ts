@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NbSidebarService } from '@nebular/theme';
-import { AuthService } from 'app/@core/utils/service/auth.service';
-import { DatePipe } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
+import { GlobalService } from 'app/@core/utils/global.service';
 import { ProjectsService } from '../../projects.service';
-import { windowWhen } from 'rxjs/operators';
 @Component({
   selector: 'ngx-map-view',
   templateUrl: './map-view.component.html',
@@ -13,15 +10,14 @@ import { windowWhen } from 'rxjs/operators';
 export class MapViewComponent implements OnInit {
   compacted: boolean = true;
   ProjectsData: any;
+  searchValue: string = '';
   sub: any;
   projectId: number;
-  assetId: number = 51;
   constructor(
-    private sidebarService: NbSidebarService,
-    private datePipe: DatePipe,
     private route: ActivatedRoute,
     private _ProjectsService: ProjectsService,
     private router: Router,
+    private _globalService: GlobalService,
   ) {
     this.sub = this.route.params.subscribe((params) => {
       this.projectId = +params['projectId'];
@@ -31,19 +27,34 @@ export class MapViewComponent implements OnInit {
     this.getProjectData();
   }
   toggleCompact() {
-    //  this.sidebarService.toggle(true, 'map-sidebar');
     this.compacted = !this.compacted;
   }
   getProjectData() {
     this._ProjectsService.getProjects().subscribe((res) => {
       this.ProjectsData = res.data.items;
-      // console.log(this.ProjectsData);
+    });
+  }
+  changed(type, value) {
+    if (type === 'search') {
+      this.searchValue = value;
+      this.resultSearch();
+    }
+  }
+  resultSearch() {
+    this._globalService.Search(this.searchValue, 'projects?organization_id=43').subscribe((res) => {
+      this.ProjectsData = res.data.items;
     });
   }
   mapFeatures(e) {
     this.router.navigate([
-      `projects/${this.projectId}/assets/${this.assetId}/${e}`,
+      `projects/${this.projectId}/assets/${e['id']}/${e['type']}`,
     ]);
+  }
+  changeAssets(e) {
+    this.projectId = e;
+    this.router.navigate([`/projects/${this.projectId}`]);
+    // window.location.reload();
+    // console.log(this.projectId);
   }
   isActive(id) {
     if (id === this.projectId) {

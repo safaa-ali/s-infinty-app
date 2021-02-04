@@ -1,0 +1,53 @@
+// @import '~bootstrap/scss/mixins/breakpoints';
+// @import '~@nebular/theme/styles/global/breakpoints';
+// @import '@theme/styles/themes';
+.breadcrumbs-container {
+  padding-left: 18px;
+}
+.breadcrumb {
+  background-color: transparent;
+  padding: 0;
+  margin-bottom: 13px;
+  // margin-bottom: 0rem;
+
+  .breadcrumb-item--active {
+    color: #000;
+  }
+  .breadcrumbs > li.active {
+    color: green !important;
+  }
+  .text-ellipsis {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 15%;
+    text-transform: capitalize;
+  }
+  .breadcrumb-item {
+    font-size: 14px;
+    font-weight: 700;
+    span {
+      font-weight: 400;
+      font-size: 14px;
+    }
+       color: blue;
+    a {
+      color: #434343;
+      text-decoration: none;
+      font-weight: 400;
+      img {
+        vertical-align: baseline;
+        height: 16.65px;
+      }
+    }
+    @media (max-width: 575px) {
+      font-size: 12px;
+      img {
+        height: 14px !important;
+      }
+    }
+    &.active {
+               color:red;
+    }
+  }
+}

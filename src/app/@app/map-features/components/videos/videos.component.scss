@@ -1,11 +1,11 @@
 ::ng-deep {
   .nb-theme-default
-    .images
+    .videos
     .nb-form-field-control-with-suffix
     [nbInput].size-medium {
     height: 45px;
   }
-  .nb-theme-default [nbInput].status-basic {
+  .nb-theme-default .videos [nbInput].status-basic {
     background: #f2f5ff !important;
   }
   .nb-theme-default
@@ -16,10 +16,9 @@
     .columns
     nb-layout-column {
     background-color: white !important;
-    padding-top: 0;
   }
 }
-.images {
+.videos {
   @media screen and(max-width:440px) {
     padding-left: 25px !important;
     padding-right: 25px !important;
@@ -125,9 +124,10 @@
     td {
       text-align: left;
       position: relative;
-      img {
+      video {
         width: 30px;
         height: 30px;
+        display: inline;
         margin-right: 8px;
       }
       nb-icon {
@@ -141,8 +141,8 @@
   .smallChosen {
     flex-basis: 150px;
     ::ng-deep {
-      .img-container {
-        img {
+      .video-container {
+        video {
           max-height: 110px !important;
         }
         nb-icon {

@@ -35,7 +35,7 @@
             transform: translate(-50%, 10px);
           }
         }
-        min-height: calc((100vh - 300px) / 7);
+        min-height: calc((100vh - 230px) / 7);
         a.active.menu-icon svg {
           color: #fff !important;
         }
@@ -43,6 +43,9 @@
     }
   }
   .features .menu-sidebar .scrollable nb-menu ul.menu-items {
+    .menu-title {
+      font-size: 15px;
+    }
     padding-top: 0% !important;
     .menu-item {
       text-align: center !important;
@@ -52,6 +55,7 @@
         padding-right: 0 !important;
         svg {
           margin-left: 0 !important;
+          width: 22px !important;
         }
         .menu-icon {
           position: absolute;
@@ -134,4 +138,7 @@
       // }
     }
   }
+}
+::ng-deep.scrollable {
+  overflow: hidden !important;
 }

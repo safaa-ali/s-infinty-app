@@ -5,6 +5,9 @@
     background-color: #fff;
     box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
     padding: 12px;
+    @media screen and(max-width:993px) {
+      margin-bottom: 12px;
+    }
   }
 }
 
@@ -14,6 +17,9 @@
   }
   .nb-theme-default [nbInput].status-basic {
     background: #fff;
+    @media screen and(max-width:993px) {
+      margin-bottom: 12px;
+    }
   }
   .nb-theme-default [nbButton].appearance-filled.status-basic {
     background-color: #fff;

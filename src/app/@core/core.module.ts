@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { NbAuthModule, NbDummyAuthStrategy } from '@nebular/auth';
 import { NbSecurityModule, NbRoleProvider } from '@nebular/security';
 import { of as observableOf } from 'rxjs';
-
 import { throwIfAlreadyLoaded } from './module-import-guard';
 import { AnalyticsService, SeoService } from './utils';
 import { UserData } from './data/users';
@@ -11,7 +10,6 @@ import { UserService } from './mock/users.service';
 import { MockDataModule } from './mock/mock-data.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './utils/auth.interceptor';
-
 const socialLinks = [
   {
     url: 'https://github.com/akveo/nebular',
