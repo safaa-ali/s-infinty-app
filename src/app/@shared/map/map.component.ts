@@ -112,6 +112,10 @@ export class MapComponent implements OnInit, OnChanges {
           e;
           this.mapAsset.emit({ type: 'videos', id: id });
         });
+        document.querySelector('#search').addEventListener('click', () => {
+          e;
+          this.mapAsset.emit({ type: 'analysis', id: id });
+        });
       });
     return newmarker;
   }

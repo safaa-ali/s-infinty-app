@@ -3,7 +3,7 @@
   <div class="row justify-content-between">
     <div class="col-9 row">
       <div class="col-sm-9 col-md-7">
-        <ngx-search></ngx-search>
+        <ngx-search (valueChanged)="changed('search', $event)"></ngx-search>
       </div>
     </div>
     <div class="col-3 rightIcons d-flex justify-content-end align-items-center">
@@ -49,12 +49,12 @@
     </div>
   </div>
 
-  <div *ngIf="this.chosenFilter == 4" class="row justify-content-center">
+  <div *ngIf="this.chosenFilter == 4 && this.dataLoaded" class="row justify-content-center">
     <div *ngFor="let video of videos" class="col-md-3 p-2">
       <ngx-video-card [videoData]="video"></ngx-video-card>
     </div>
   </div>
-  <div *ngIf="this.chosenFilter == 1">
+  <div *ngIf="this.chosenFilter == 1 && this.dataLoaded">
     <table class="table table-hover">
       <thead>
         <tr>
@@ -85,7 +85,7 @@
     </table>
   </div>
   <div
-    *ngIf="this.chosenFilter == 9"
+    *ngIf="this.chosenFilter == 9 && this.dataLoaded"
     class="row justify-content-start flex-wrap"
   >
     <div *ngFor="let video of videos" class="smallChosen p-2">

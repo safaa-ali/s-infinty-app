@@ -1,4 +1,7 @@
 ::ng-deep {
+  .nb-theme-default nb-layout .layout .layout-container .content .columns nb-layout-column{
+    padding-top: 0;
+  }
   .nb-theme-default .features nb-layout.window-mode .layout nb-layout-header {
     display: none;
   }

@@ -28,17 +28,29 @@ export class ImagesComponent implements OnInit {
     private datePipe: DatePipe,
     private _globalService: GlobalService,
     private _breadcrumbService: BreadcrumbsService,
+    private _projectService:ProjectsService,
   ) {
     this.projectId = localStorage.getItem('currentProjectId');
     this.assetId = localStorage.getItem('currentAssetId');
-    this.projectName = localStorage.getItem('currentProjectName');
-    this.assetName = localStorage.getItem('currentAssetName');
+    this.getProjectName(this.projectId);
+    this.getAssetName(this.assetId);
     this.images = [];
   }
   ngOnInit() {
-    this.setBreadCrumbs();
     this.getImages();
     this.sortTableByDate();
+  }
+  getProjectName(id) {
+    this._projectService.showProject(id).subscribe((res) => {
+      this.projectName=res.data.name;
+      this.setBreadCrumbs();
+    });
+  }
+  getAssetName(id) {
+    this._projectService.showAsset(id).subscribe((res) => {
+      this.assetName=res.data.name;
+      this.setBreadCrumbs();
+    });
   }
   setBreadCrumbs() {
     const breadcrumbs = [
@@ -86,7 +98,6 @@ export class ImagesComponent implements OnInit {
       .Search(this.searchValue, `assets/${this.assetId}/files?type=image`)
       .subscribe((res) => {
         this.images = res.data.items;
-        // console.log(this.images);
       });
   }
   oneChoosed() {
