@@ -1,7 +1,7 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { NbSidebarService } from '@nebular/theme';
 import { LayoutService } from 'app/@core/utils/layout.service';
-
 @Component({
   selector: 'ngx-dashboard-layout',
   templateUrl: './dashboard-layout.component.html',
@@ -12,6 +12,7 @@ export class DashboardLayoutComponent implements OnInit {
   constructor (
     private sidebarService: NbSidebarService,
     private layoutService: LayoutService,
+    private router: Router,
 
   ) { }
 
@@ -26,5 +27,8 @@ export class DashboardLayoutComponent implements OnInit {
   toggleCompact() {
     this.sidebarService.toggle(true, 'right');
 
+  }
+  logoRoute() {
+    this.router.navigate(['/projects']);
   }
 }

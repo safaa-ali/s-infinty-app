@@ -146,8 +146,7 @@ nb-layout nb-layout-column {
       width: 100%;
       background-color: white !important;
       border-radius: 8px;
-      transform: translate(10px, -10px);
-      transition: 0.4s ease-in-out;
+      // transition: 0.4s ease-in-out;
       svg {
         position: relative;
         top: 4px;
@@ -165,3 +164,4 @@ nb-layout nb-layout-column {
     }
   }
 }
+

@@ -19,8 +19,8 @@ export class LoginComponent implements OnInit {
     private _authService: AuthService,
   ) {
     this.loginForm = this.fb.group({
-      username: new FormControl('admin', [Validators.required, Validators.pattern('[a-z]{3,12}')]),
-      password: new FormControl(123456, [Validators.required, Validators.pattern('[1-9]{6,12}')]),
+      username: new FormControl('', [Validators.required, Validators.pattern('[a-z]{3,12}')]),
+      password: new FormControl(null, [Validators.required, Validators.pattern('[1-9]{6,12}')]),
 
     });
   }
