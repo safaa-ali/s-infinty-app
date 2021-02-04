@@ -8,7 +8,6 @@ nb-sidebar.sidebar {
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 17px;
-    // width: 70%;
     position: relative;
     top: 25px;
     img {
@@ -36,7 +35,6 @@ nb-layout nb-layout-column {
   background-color: #ebebeb;
   overflow-x: hidden;
 }
-
 .menu-sidebar ::ng-deep .scrollable {
   overflow: hidden;
   overflow-y: hidden;
@@ -45,11 +43,8 @@ nb-layout nb-layout-column {
     margin: 0;
     ul.menu-items {
       padding-top: 20%;
-
       .menu-item {
         border-bottom: 0;
-        // transition: 0.4s ease-in-out;
-        // width: 70%;
         a {
           text-transform: capitalize;
           font-size: 20px !important;
@@ -115,7 +110,6 @@ nb-layout nb-layout-column {
     nb-sidebar
     .main-container-fixed {
     top: 0 !important;
-    // background-color: rebeccapurple !important;
   }
   .nb-theme-default nb-sidebar.compacted {
     nb-menu .menu-item a.active::before {

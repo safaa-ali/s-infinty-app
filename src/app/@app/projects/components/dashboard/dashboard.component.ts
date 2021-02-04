@@ -1,8 +1,7 @@
 import { GlobalService } from './../../../../@core/utils/global.service';
 import { ProjectsService } from './../../projects.service';
 import { Router } from '@angular/router';
-import { ElementRef, Input } from '@angular/core';
-import { ViewChild } from '@angular/core';
+import { Input } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
@@ -20,21 +19,15 @@ export class DashboardComponent implements OnInit {
   @Output() valueChanged = new EventEmitter<string>();
   searchValue: string = '';
   @Input() placeholderText: string;
-  private searchDelay;
-  private delayTime = 1000;
-
-  constructor (
+  constructor(
     private router: Router,
     private _ProjectsService: ProjectsService,
     private _globalService: GlobalService,
     private datePipe: DatePipe,
-    private breadcrumbService: BreadcrumbsService,
-  ) { }
+  ) {}
 
   ngOnInit() {
-    this.setBreadCrumbs();
     this.getProjeData();
-
   }
 
   changed(type, value) {
@@ -42,42 +35,25 @@ export class DashboardComponent implements OnInit {
       this.searchValue = value;
       this.resultSearch();
     }
-
   }
 
   getProjeData() {
-    this._ProjectsService.getProjects().subscribe(res => {
+    this._ProjectsService.getProjects().subscribe((res) => {
       this.ProjeData = res;
-
     });
   }
   addProject() {
     this.router.navigate(['projects/add']);
   }
-  setBreadCrumbs() {
-    const breadcrumbs = [
-      {
-        name: 'projects',
-        link: '/projects/',
-      },
-      {
-        name: 'dashboard',
-        link: 'null',
-      },
-    ];
-    this.breadcrumbService.setBreadcrumbs(breadcrumbs);
-  }
-
   resultSearch() {
-    this._globalService.Search(this.searchValue, 'projects?organization_id=43').subscribe((res) => {
-
-      this.ProjeData = res;
-    });
+    this._globalService
+      .Search(this.searchValue, 'projects?organization_id=43')
+      .subscribe((res) => {
+        this.ProjeData = res;
+      });
   }
   adjustDate(dateString) {
     const dateParsed = dateString.split('T')[0];
     return this.datePipe.transform(dateParsed, 'MM-dd-yyyy');
   }
 }
-
-

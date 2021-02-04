@@ -40,7 +40,6 @@
   }
 }
 
-
 ngx-echarts-bar,
 ngx-echarts-multiple-xaxis,
 ngx-echarts-graph {
@@ -49,11 +48,23 @@ ngx-echarts-graph {
   width: 100%;
 }
 
-::ng-deep .echart {
+::ng-deep {
+  .nb-theme-default
+    nb-layout
+    .layout
+    .layout-container
+    .content
+    .columns
+    nb-layout-column {
+    background-color: white !important;
+    padding-top: 0;
+  }
   // height: 100% !important;
-  height: nb-theme(card-height-medium);
-  width: 100%;
-  @media (max-width: 767px) {
-    height: nb-theme(card-height-small);
+  .echart {
+    height: nb-theme(card-height-medium);
+    width: 100%;
+    @media (max-width: 767px) {
+      height: nb-theme(card-height-small);
+    }
   }
 }
