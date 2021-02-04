@@ -23,7 +23,7 @@ export class DocumentsComponent implements OnInit {
     private datePipe: DatePipe,
     private _globalService: GlobalService,
     private _breadcrumbService: BreadcrumbsService,
-    private _projectService:ProjectsService,
+    private _projectService: ProjectsService,
   ) {
     this.documentsData = [];
   }
@@ -32,13 +32,13 @@ export class DocumentsComponent implements OnInit {
   }
   getProjectName(id) {
     this._projectService.showProject(id).subscribe((res) => {
-      this.projectName=res.data.name;
+      this.projectName = res.data.name;
       this.setBreadCrumbs();
     });
   }
   getAssetName(id) {
     this._projectService.showAsset(id).subscribe((res) => {
-      this.assetName=res.data.name;
+      this.assetName = res.data.name;
       this.setBreadCrumbs() ;
     });
   }

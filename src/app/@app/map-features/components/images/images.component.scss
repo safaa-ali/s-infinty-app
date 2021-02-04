@@ -21,8 +21,8 @@
 }
 .images {
   @media screen and(max-width:440px) {
-    padding-left: 25px !important;
-    padding-right: 25px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
   }
   .add-item {
     background: #f2f5ff;
@@ -45,11 +45,17 @@
       border-radius: 50%;
       border: 2px solid #a8a7a7;
       margin-right: 14px;
+      @media screen and (max-width: 470px) {
+        margin-right: 0;
+      }
     }
     &:nth-child(2) {
-      // transform: translateY(-25%);
       width: 45px;
       height: 45px;
+      @media screen and (max-width: 470px) {
+        width: 35px;
+        height: 35px;
+      }
     }
   }
   .controls {
@@ -155,13 +161,18 @@
     flex-basis: 150px;
     ::ng-deep {
       .img-container {
+        height: 130px;
         img {
-          max-height: 110px !important;
+          max-height: 100px !important;
+        }
+        P {
+          margin-top: 3px;
         }
         nb-icon {
           top: 7px;
           right: 7px;
           padding: 0;
+          font-size: 1.2rem;
         }
       }
     }

@@ -1,15 +1,16 @@
 .video-container {
-  height: 180px;
+  height: 200px;
   border-radius: 16px;
+  background-color: whitesmoke;
   video {
-    height: 180px;
+    height: 200px;
     width: 100% !important;
     border-radius: 16px;
   }
   position: relative;
   nb-icon {
     position: absolute;
-    top: 20px;
+    top: 15px;
     right: 20px;
     color: #c6c6c6;
     padding: 4px;
@@ -17,5 +18,11 @@
     box-sizing: content-box;
     border-radius: 50%;
     background-color: white;
+  }
+  p{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
   }
 }

@@ -6,14 +6,14 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./image-card.component.scss'],
 })
 export class ImageCardComponent implements OnInit {
-  imageItems = [
+  @Input()imageData: any;
+  imageitems = [
     // { icon: { icon: "more-horizontal-outline", pack: "eva" } },
     { title: 'Rename' },
     { title: 'Share' },
     { title: 'Download' },
     { title: 'Delete' },
   ];
-  @Input()imageData: any;
   constructor() { }
 
   ngOnInit(): void {
