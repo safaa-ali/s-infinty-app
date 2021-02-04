@@ -52,6 +52,8 @@
       position: relative;
       margin-bottom: 20px;
       a {
+        // position: relative;
+        // left: -2px;
         padding-right: 0 !important;
         svg {
           margin-left: 0 !important;
@@ -75,7 +77,10 @@
     background-color: #3e65ee;
     .menu-item {
       width: 100% !important;
-
+      // a{
+      //   position: relative;
+      //   left:0px;
+      // }
       .menu-item-collapse {
         width: 100% !important;
       }
