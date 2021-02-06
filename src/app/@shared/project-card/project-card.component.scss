@@ -5,7 +5,7 @@ nb-card {
   text-transform: capitalize;
   cursor: pointer;
   .project-background {
-    background-image: url('../../../assets/images/assetBG.png');
+    background-image: url("../../../assets/images/assetBG.png");
     height: 130px;
     // width: 94%;
     width: 90%;
@@ -14,7 +14,7 @@ nb-card {
     // margin-left: 9px;
   }
   nb-card-header {
-    padding: 1rem 0rem 1rem 0.5rem;
+    padding: 1rem 0 1rem 0.5rem;
     .overflow-ellipsis {
       color: #fff;
       span {
@@ -33,7 +33,7 @@ nb-card {
 
   nb-card-footer {
     //
-    p{
+    p {
       margin: 0;
     }
     padding-bottom: 4px;
