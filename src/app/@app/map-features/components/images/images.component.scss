@@ -49,7 +49,8 @@
     }
   }
   .controls {
-    margin-top: 70px;
+    margin-top: 30px;
+    margin-bottom: 5px;
     .d-flex {
       &:nth-child(2) {
         @media screen and (max-width: 768px) {
@@ -161,6 +162,7 @@
         }
         p {
           margin-top: 3px;
+          font-size: 13px;
         }
         nb-icon {
           top: 7px;

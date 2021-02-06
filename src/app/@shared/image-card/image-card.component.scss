@@ -12,19 +12,19 @@
   position: relative;
   nb-icon {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    color: #c6c6c6;
-    padding: 4px;
+    top: 12px;
+    right: 15px;
+    color: grey;
+    padding: 2px;
     font-size: 1.5rem;
     box-sizing: content-box;
     border-radius: 50%;
     background-color: white;
   }
   p {
-     margin: 13px 0;
-     position: absolute;
-     left: 50%;
-     transform: translateX(-50%);
+    margin: 13px 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }

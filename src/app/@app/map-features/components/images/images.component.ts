@@ -4,6 +4,9 @@ import { ProjectsService } from 'app/@app/projects/projects.service';
 import { GlobalService } from 'app/@core/utils/global.service';
 import { BreadcrumbsService } from 'app/@core/utils/service/breadcrumbs.service';
 import { MapFeaturesService } from '../../map-features.service';
+import { NbMenuService } from '@nebular/theme';
+import { AuthService } from 'app/@core/utils/auth.service';
+import { map } from 'rxjs/operators';
 @Component({
   selector: 'ngx-images',
   templateUrl: './images.component.html',
@@ -17,18 +20,22 @@ export class ImagesComponent implements OnInit {
   assetName: string;
   assetId: any;
   searchValue: string = '';
+  dataLoaded: boolean = false;
   imageItems = [
     { title: 'Rename' },
     { title: 'Share' },
     { title: 'Download' },
     { title: 'Delete' },
   ];
+  logoutitems = [{ title: 'Logout', icon: 'log-out', pack: 'eva' }];
   constructor(
     private _mapFeature: MapFeaturesService,
     private datePipe: DatePipe,
     private _globalService: GlobalService,
     private _breadcrumbService: BreadcrumbsService,
     private _projectService: ProjectsService,
+    private nbMenuService: NbMenuService,
+    private _authService: AuthService,
   ) {
     this.projectId = localStorage.getItem('currentProjectId');
     this.assetId = localStorage.getItem('currentAssetId');
@@ -37,6 +44,14 @@ export class ImagesComponent implements OnInit {
     this.images = [];
   }
   ngOnInit() {
+    this.nbMenuService
+      .onItemClick()
+      .pipe(map(({ item: { title } }) => title))
+      .subscribe((title) => {
+        if (title === 'Logout') {
+          this._authService.logout();
+        }
+      });
     this.getImages();
     this.sortTableByDate();
   }
@@ -85,6 +100,7 @@ export class ImagesComponent implements OnInit {
   getImages() {
     this._mapFeature.getAssetFiles(this.assetId, 'image').subscribe((res) => {
       this.images = res.data.items;
+      this.dataLoaded = true;
     });
   }
   changed(type, value) {

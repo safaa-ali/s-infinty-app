@@ -1,7 +1,7 @@
-<nb-card [class.active]='getClass()' (click)='routerFeatures()'>
+<nb-card [class.active]='getClass()'>
   <nb-card-body>
     <div class="d-flex body justify-content-between align-items-end">
-      <div class="d-flex projectContent align-items-end h-100">
+      <div (click)='routerFeatures()' class="d-flex projectContent align-items-end h-100">
         <img [src]="this.imgUrl" alt="" />
         <div>
           <h1>{{this.cardData['name']}}</h1>
@@ -22,7 +22,7 @@
             [nbContextMenuPlacement]="'right'"
           ></nb-icon>
         </div>
-        <span>{{adjustDate(this.cardData['createdAt'])}}</span>
+        <span (click)='routerFeatures()'>{{adjustDate(this.cardData['createdAt'])}}</span>
       </div>
     </div>
   </nb-card-body>

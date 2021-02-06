@@ -1,27 +1,36 @@
-<div class="px-5 mt-3 images">
-  <ngx-breadcrumbs></ngx-breadcrumbs>
+<div
+  *ngIf="this.projectName != undefined && this.assetName != undefined"
+  class="px-5 mt-2 images"
+>
+  <div class="d-flex justify-content-between align-items-center">
+    <ngx-breadcrumbs></ngx-breadcrumbs>
+    <div class="rightIcons d-flex justify-content-end align-items-center">
+      <img src="assets/images/alert.svg" alt="" />
+      <img src="assets/images/meti.svg" [nbContextMenu]="logoutitems" alt="" />
+    </div>
+  </div>
   <div class="mt-4 row justify-content-between">
     <div class="col-9 row">
       <div class="col-sm-9 col-md-7">
         <ngx-search (valueChanged)="changed('search', $event)"></ngx-search>
       </div>
     </div>
-    <div class="col-3 rightIcons d-flex justify-content-end align-items-center">
+    <!-- <div class="col-3 rightIcons d-flex justify-content-end align-items-center">
       <img src="assets/images/alert.svg" alt="" />
       <img src="assets/images/meti.svg" alt="" />
-    </div>
+    </div> -->
   </div>
-  <div class="d-flex justify-content-between controls">
-    <p>Album Name - <span> {{images.length}} photos </span></p>
+  <div *ngIf="dataLoaded" class="d-flex justify-content-between controls">
+    <p>
+      All Images - <span> {{ images.length }} photos </span>
+    </p>
     <div class="d-flex">
       <div class="d-flex">
         <button class="">
-          <nb-icon icon="plus-outline"></nb-icon
-          ><span>Add Photo</span>
+          <nb-icon icon="plus-outline"></nb-icon><span>Add Photo</span>
         </button>
         <button class="">
-          <nb-icon icon="list-outline"></nb-icon
-          ><span>Select</span>
+          <nb-icon icon="list-outline"></nb-icon><span>Select</span>
         </button>
       </div>
       <div class="d-flex number ml-5">
@@ -48,14 +57,14 @@
   </div>
 
   <div
-    *ngIf="this.chosenFilter == 4"
-    class="imagesSection row justify-content-start"
+    *ngIf="this.chosenFilter == 4 && dataLoaded"
+    class="imagesSection row justify-content-center"
   >
-    <div *ngFor="let image of images" class="col-md-6 col-lg-3 p-2">
+    <div *ngFor="let image of images" class="col-md-6 col-lg-3 p-2 mb-2">
       <ngx-image-card [imageData]="image"></ngx-image-card>
     </div>
   </div>
-  <div *ngIf="this.chosenFilter == 1">
+  <div *ngIf="this.chosenFilter == 1 && dataLoaded">
     <table class="table table-hover">
       <thead>
         <tr>
@@ -81,11 +90,11 @@
     </table>
   </div>
   <div
-    *ngIf="this.chosenFilter == 9"
+    *ngIf="this.chosenFilter == 9 && dataLoaded"
     class="row justify-content-start flex-wrap"
   >
     <div *ngFor="let image of images" class="smallChosen p-2">
-      <ngx-image-card [imageData]='image'></ngx-image-card>
+      <ngx-image-card [imageData]="image"></ngx-image-card>
     </div>
   </div>
 </div>
