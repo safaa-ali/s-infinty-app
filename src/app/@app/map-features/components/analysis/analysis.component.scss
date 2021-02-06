@@ -48,17 +48,7 @@ ngx-echarts-graph {
   width: 100%;
 }
 
-::ng-deep {
-  .nb-theme-default
-    nb-layout
-    .layout
-    .layout-container
-    .content
-    .columns
-    nb-layout-column {
-    background-color: white !important;
-    padding-top: 0;
-  }
+::ng-deep {\
   .nb-theme-default
   .documents
   .nb-form-field-control-with-suffix

@@ -1,8 +1,8 @@
-<nb-card [ngClass]="{'active': active}" (click)="active=!active">
-
+<nb-card>
   <div class="project-background">
     <nb-card-header class="row mx-0 justify-content-between">
-      <span class="overflow-ellipsis" >{{createdAt}}
+      <span (click)="routeMap()" class="overflow-ellipsis"
+        >{{ createdAt }}
         <span></span>
       </span>
       <nb-icon
@@ -16,14 +16,12 @@
       </nb-icon>
     </nb-card-header>
   </div>
-
-
-  <nb-card-footer>
-      <h5 class="project-name" (click)="routeMap()">{{ projectitem.name }}</h5>
-      <p class="project-description">{{ projectitem.description }}</p>
-      <div class="footer-link">
-        <p  class="project-location">location</p>
-        <nb-icon icon="file-text" pack="eva" class="folder-icon"> </nb-icon>
-      </div>
+  <nb-card-footer (click)="routeMap()">
+    <h5 class="project-name">{{ projectitem.name }}</h5>
+    <p class="project-description">{{ projectitem.description }}</p>
+    <div class="footer-link">
+      <p class="project-location">location</p>
+      <nb-icon icon="file-text" pack="eva" class="folder-icon"> </nb-icon>
+    </div>
   </nb-card-footer>
 </nb-card>

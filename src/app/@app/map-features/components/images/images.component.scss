@@ -8,16 +8,6 @@
   .nb-theme-default [nbInput].status-basic {
     background: #f2f5ff !important;
   }
-  .nb-theme-default
-    nb-layout
-    .layout
-    .layout-container
-    .content
-    .columns
-    nb-layout-column {
-    background-color: white !important;
-    padding-top: 0;
-  }
 }
 .images {
   @media screen and(max-width:440px) {
@@ -89,6 +79,7 @@
       }
     }
     button {
+      vertical-align: center;
       background-color: transparent;
       border: none;
       outline: none;
@@ -102,6 +93,9 @@
       }
       nb-icon {
         color: #a8a7a7;
+        position: relative;
+        top: 2px;
+        margin-right: 3px;
       }
     }
   }

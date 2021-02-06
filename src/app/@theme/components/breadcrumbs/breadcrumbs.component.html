@@ -6,12 +6,12 @@
           <img src="assets/icons/home-crumbs.svg" alt="Home">
         </a>
       </li> -->
-      <li *ngFor="let breadcrumb of breadcrumbs" class="breadcrumb-item text-uppercase text-ellipsis"
+      <li *ngFor="let breadcrumb of breadcrumbs" class="breadcrumb-item text-uppercase"
         routerLinkActive="breadcrumb-item--active">
           <a *ngIf="breadcrumb.link" (click)="routeBreadcrumb(breadcrumb.link)" routerLinkActive="breadcrumb-item--active " class="text-ellipsis">
               {{ breadcrumb.name }}
           </a>
-          <span *ngIf="!breadcrumb.link" class="text-ellipsis">{{breadcrumb.name }}</span>
+          <span *ngIf="!breadcrumb.link">{{breadcrumb.name }}</span>
       </li>
     </ol>
   </nav>

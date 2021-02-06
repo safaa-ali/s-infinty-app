@@ -1,9 +1,10 @@
 .img-container {
   height: 200px;
   border-radius: 16px;
-  background-color: whitesmoke;
+  background-color: white;
+  box-shadow: 0 3px 6px 0 rgba(32, 33, 36, 0.28);
   img {
-    height: 160px;
+    height: 150px;
     width: 100% !important;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
@@ -21,6 +22,9 @@
     background-color: white;
   }
   p {
-    margin: 7px 10px;
+     margin: 13px 0;
+     position: absolute;
+     left: 50%;
+     transform: translateX(-50%);
   }
 }

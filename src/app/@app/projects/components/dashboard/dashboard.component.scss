@@ -1,5 +1,5 @@
 .container {
-  padding-top: 30px;
+  // padding-top: 30px;
   input,
   button {
     background-color: #fff;
@@ -12,6 +12,16 @@
 }
 
 ::ng-deep {
+  .nb-theme-default
+    nb-layout
+    .layout
+    .layout-container
+    .content
+    .columns
+    nb-layout-column {
+    padding: 0 !important;
+    background-color: #EBEBEB;
+  }
   span.custom-checkbox {
     margin: 10px 0;
   }

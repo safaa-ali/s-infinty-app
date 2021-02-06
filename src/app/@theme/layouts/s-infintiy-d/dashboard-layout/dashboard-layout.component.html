@@ -8,6 +8,7 @@
     start
     id="nb-sidebar"
   >
+   <div class="d-flex justify-content-between px-3 topIcons">
     <div class="menu-item-collapse">
       <p>
           <img (click)="logoRoute()"  src="assets/images/images/infinity.svg" alt="" />
@@ -20,6 +21,7 @@
         </a>
       </p>
     </div>
+   </div>
     <ng-content select="nb-menu"></ng-content>
   </nb-sidebar>
   <nb-layout-column>

@@ -6,12 +6,15 @@ nb-card {
   cursor: pointer;
   .project-background {
     background-image: url('../../../assets/images/assetBG.png');
-    height: 160px;
-    width: 94%;
+    height: 130px;
+    // width: 94%;
+    width: 90%;
+    margin: auto;
     margin-top: 10px;
-    margin-left: 9px;
+    // margin-left: 9px;
   }
   nb-card-header {
+    padding: 1rem 0rem 1rem 0.5rem;
     .overflow-ellipsis {
       color: #fff;
       span {
@@ -29,19 +32,30 @@ nb-card {
   }
 
   nb-card-footer {
+    //
+    p{
+      margin: 0;
+    }
+    padding-bottom: 4px;
+    //
     .project-name {
       font-family: Roboto;
       font-size: 18px;
       font-style: normal;
-      font-weight: 500;
+      font-style: 700;
+      // font-weight: 500;
       letter-spacing: 0;
       text-align: left;
       color: #898989;
       line-height: 1;
     }
     .project-description {
-      font-weight: 400;
+      // font-weight: 400;
       color: #898989;
+      //
+      font-size: 14px;
+      font-weight: 600;
+      //
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -51,6 +65,7 @@ nb-card {
       display: flex;
       justify-content: space-between;
       .project-location {
+        font-size: 12px;
         color: #898989;
         font-weight: 300;
         position: relative;
@@ -66,44 +81,45 @@ nb-card {
       );
       font-size: 30px;
       color: #fff;
-      width: 36px;
+      // width: 36px;
+      width: 25px;
       height: auto;
     }
   }
-  &.active {
-    background-color: #4a70f8;
-    transition: 0.4s ease-in-out;
-    color: #fff;
-    transform: translate(-10px, 2%);
-    box-shadow: 12px 16px 5px rgb(226, 223, 223);
-    nb-icon {
-      color: #fff;
-    }
-    nb-card-footer {
-      .footer-link .project-location {
-        color: #fff;
-        position: relative;
-        top: 6px;
-      }
-      .project-description {
-        color: #fff;
-      }
-      .project-name {
-        color: #fff;
-      }
-      nb-icon.folder-icon {
-        background: radial-gradient(
-          50.43% 50.46% at 50.43% 49.54%,
-          #ebff00 0%,
-          rgba(255, 246, 30, 0.07) 100%
-        );
-        font-size: 30px;
-        color: #fff;
-        width: 36px;
-        height: auto;
-      }
-    }
-  }
+  // &.active {
+  //   background-color: #4a70f8;
+  //   transition: 0.4s ease-in-out;
+  //   color: #fff;
+  //   transform: translate(-10px, 2%);
+  //   box-shadow: 12px 16px 5px rgb(226, 223, 223);
+  //   nb-icon {
+  //     color: #fff;
+  //   }
+  //   nb-card-footer {
+  //     .footer-link .project-location {
+  //       color: #fff;
+  //       position: relative;
+  //       top: 6px;
+  //     }
+  //     .project-description {
+  //       color: #fff;
+  //     }
+  //     .project-name {
+  //       color: #fff;
+  //     }
+  //     nb-icon.folder-icon {
+  //       background: radial-gradient(
+  //         50.43% 50.46% at 50.43% 49.54%,
+  //         #ebff00 0%,
+  //         rgba(255, 246, 30, 0.07) 100%
+  //       );
+  //       font-size: 30px;
+  //       color: #fff;
+  //       width: 36px;
+  //       height: auto;
+  //     }
+  //   }
+  // }
 }
 
 ::ng-deep {

@@ -12,6 +12,7 @@ export class MapViewComponent implements OnInit {
   ProjectsData: any;
   searchValue: string = '';
   sub: any;
+  mapLoad: boolean = false;
   projectId: number;
   constructor(
     private route: ActivatedRoute,
@@ -49,6 +50,9 @@ export class MapViewComponent implements OnInit {
     this.router.navigate([
       `projects/${this.projectId}/assets/${e['id']}/${e['type']}`,
     ]);
+  }
+  mapLoaded(e) {
+    this.mapLoad = true;
   }
   changeAssets(e) {
     this.projectId = e;
