@@ -22,7 +22,7 @@
     margin-right: 14px;
   }
   &:nth-child(2) {
-    transform: translateY(-25%);
+    // transform: translateY(-25%);
     width: 45px;
     height: 45px;
   }
@@ -48,7 +48,7 @@ ngx-echarts-graph {
   width: 100%;
 }
 
-::ng-deep {\
+::ng-deep {
   .nb-theme-default
   .documents
   .nb-form-field-control-with-suffix
