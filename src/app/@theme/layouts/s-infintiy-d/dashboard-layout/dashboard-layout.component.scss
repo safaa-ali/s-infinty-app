@@ -7,9 +7,7 @@ nb-sidebar.sidebar {
     list-style: none;
     display: flex;
     justify-content: space-evenly;
-    // margin-bottom: 17px;
-    // position: relative;
-    // top: 25px;
+
     img {
       &:nth-child(1) {
         width: 30px;
@@ -36,7 +34,9 @@ nb-sidebar.sidebar {
 nb-layout nb-layout-column {
   background-color: #ebebeb;
   overflow-x: hidden;
+
 }
+
 .menu-sidebar ::ng-deep .scrollable {
   overflow: hidden;
   overflow-y: hidden;
@@ -57,7 +57,7 @@ nb-layout nb-layout-column {
           background-color: transparent;
           padding-left: 0;
           svg {
-            margin-left: 10px;
+            margin-left: 8px;
             color: #fff;
           }
 
