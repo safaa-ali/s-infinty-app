@@ -1,7 +1,170 @@
+// .documents {
+//   @media screen and(max-width:540px) {
+//     padding-left: 12px !important;
+//     padding-right: 12px !important;
+//   }
+//   nb-icon {
+//     cursor: pointer;
+//   }
+//   .horizontalLine {
+//     margin-bottom: 50px;
+//     width: 100%;
+//     height: 4px;
+//     background-color: #dbdbdb;
+//   }
+//   .documentsCards {
+//     margin-top: 62px;
+//   }
+//   .add-item {
+//     @media screen and(max-width:768px) {
+//       margin-top: 12px;
+//     }
+//     background: white;
+//     color: #a8a7a7;
+//     text-transform: none;
+//     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+//     border-radius: 20px;
+//     margin-bottom: 0;
+//     width: 80%;
+//     nb-icon {
+//       color: #a8a7a7;
+//       position: relative;
+//       top: -2px;
+//       margin-right: 3px;
+//     }
+//   }
+//   .rightIcons img {
+//     &:nth-child(1) {
+//       border-style: none;
+//       width: 25px;
+//       height: 25px;
+//       padding: 4px;
+//       border-radius: 50%;
+//       border: 2px solid #a8a7a7;
+//       margin-right: 14px;
+//       @media screen and (max-width: 470px) {
+//         margin-right: 0;
+//       }
+//     }
+//     &:nth-child(2) {
+//       width: 45px;
+//       height: 45px;
+//       @media screen and (max-width: 470px) {
+//         width: 35px;
+//         height: 35px;
+//       }
+//     }
+//   }
+//   .numberDocs {
+//     margin-top: 50px;
+//     nb-icon {
+//       font-size: 1.2rem;
+//       color: #9e9e9e;
+//       &:nth-child(1) {
+//         font-size: 2rem;
+//         position: relative;
+//         transform: translateY(-21%);
+//         margin-right: 10px;
+//       }
+//     }
+//     nb-icon.active {
+//       color: #3e65ee !important;
+//     }
+//   }
+//   .smallChosen {
+//     flex-basis: 10%;
+//     ::ng-deep {
+//       nb-card {
+//         h1 {
+//           font-size: 16px;
+//           line-height: 16px;
+//         }
+//         p {
+//           margin-bottom: 0 !important;
+//         }
+//         img {
+//           max-height: 108px !important;
+//         }
+//         nb-card-footer {
+//           padding-top: 16px !important;
+//           padding-bottom: 5px !important;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// ::ng-deep {
+//   .nb-theme-default.documents [nbInput].status-basic {
+//     background: #f2f5ff !important;
+//   }
+//   .nb-theme-default
+//     .documents
+//     .nb-form-field-control-with-suffix
+//     [nbInput].size-medium {
+//     height: 45px;
+//   }
+//   .nb-theme-default
+//     nb-layout
+//     .layout
+//     .layout-container
+//     .content
+//     .columns
+//     nb-layout-column {
+//     background-color: white !important;
+//     padding: 0;
+//   }
+//   .table {
+//     th {
+//       text-align: left;
+//       border-top: none;
+//       @media screen and(max-width:420px) {
+//         font-size: 13px;
+//       }
+//     }
+//     td {
+//       text-align: left;
+//       position: relative;
+//       @media screen and(max-width:427px) {
+//         font-size: 12px;
+//         padding: 0.75rem 0.25rem;
+//       }
+//       img {
+//         width: 30px;
+//         height: 30px;
+//         margin-right: 8px;
+//         @media screen and(max-width:427px) {
+//           width: 20px;
+//           height: 20px;
+//           margin-right: 4px;
+//         }
+//       }
+//       nb-icon {
+//         position: absolute;
+//         top: 50%;
+//         transform: translateY(-50%);
+//         right: 10px;
+//       }
+//     }
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
 .documents {
   @media screen and(max-width:540px) {
-    padding-left: 25px !important;
-    padding-right: 25px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
   }
   nb-icon {
     cursor: pointer;
@@ -42,21 +205,29 @@
       border-radius: 50%;
       border: 2px solid #a8a7a7;
       margin-right: 14px;
+      @media screen and (max-width: 470px) {
+        margin-right: 0;
+      }
     }
     &:nth-child(2) {
       width: 45px;
       height: 45px;
+      @media screen and (max-width: 470px) {
+        width: 35px;
+        height: 35px;
+      }
     }
   }
   .numberDocs {
-    margin-top: 50px;
+    // margin-top: 50px;
+    // margin-bottom: 50px;
     nb-icon {
       font-size: 1.2rem;
       color: #9e9e9e;
       &:nth-child(1) {
         font-size: 2rem;
-        position: relative;
-        transform: translateY(-21%);
+        // position: relative;
+        // transform: translateY(-21%);
         margin-right: 10px;
       }
     }
@@ -96,16 +267,6 @@
     .nb-form-field-control-with-suffix
     [nbInput].size-medium {
     height: 45px;
-  }
-  .nb-theme-default
-    nb-layout
-    .layout
-    .layout-container
-    .content
-    .columns
-    nb-layout-column {
-    background-color: white !important;
-    padding: 0;
   }
   .table {
     th {

@@ -1,29 +1,32 @@
-<div class="px-5 mt-4 videos">
-  <ngx-breadcrumbs></ngx-breadcrumbs>
-  <div class="row justify-content-between">
-    <div class="col-9 row">
-      <div class="col-sm-9 col-md-7">
-        <ngx-search></ngx-search>
-      </div>
-    </div>
-    <div class="col-3 rightIcons d-flex justify-content-end align-items-center">
+<div
+  *ngIf="this.projectName != undefined && this.assetName != undefined"
+  class="px-5 mt-2 videos"
+>
+  <div class="d-flex justify-content-between align-items-center">
+    <ngx-breadcrumbs></ngx-breadcrumbs>
+    <div class="rightIcons d-flex justify-content-end align-items-center">
       <img src="assets/images/alert.svg" alt="" />
-      <img src="assets/images/meti.svg" alt="" />
+      <img src="assets/images/meti.svg" [nbContextMenu]="logoutitems" alt="" />
     </div>
   </div>
-  <div class="d-flex justify-content-between controls">
+  <div class="mt-4 row justify-content-between">
+    <div class="col-9 row">
+      <div class="col-sm-9 col-md-7">
+        <ngx-search (valueChanged)="changed('search', $event)"></ngx-search>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="this.dataLoaded" class="d-flex justify-content-between controls">
     <p>
-      Album Name - <span> {{ videos.length }} videos </span>
+      All Videos - <span> {{ videos.length }} videos </span>
     </p>
     <div class="d-flex">
       <div class="d-flex">
         <button class="">
-          <nb-icon icon="plus-outline" class="ml-1"></nb-icon
-          ><span>Add Video</span>
+          <nb-icon icon="plus-outline"></nb-icon><span>Add Video</span>
         </button>
         <button class="">
-          <nb-icon icon="list-outline" class="ml-1"></nb-icon
-          ><span>Select</span>
+          <nb-icon icon="list-outline"></nb-icon><span>Select</span>
         </button>
       </div>
       <div class="d-flex number ml-5">
@@ -48,17 +51,18 @@
       </div>
     </div>
   </div>
-
-  <div *ngIf="this.chosenFilter == 4" class="row justify-content-center">
+  <div
+    *ngIf="this.chosenFilter == 4 && this.dataLoaded"
+    class="row justify-content-center"
+  >
     <div *ngFor="let video of videos" class="col-md-3 p-2">
       <ngx-video-card [videoData]="video"></ngx-video-card>
     </div>
   </div>
-  <div *ngIf="this.chosenFilter == 1">
+  <div *ngIf="this.chosenFilter == 1 && this.dataLoaded">
     <table class="table table-hover">
       <thead>
         <tr>
-          <th scope="col"></th>
           <th scope="col">Name</th>
           <th scope="col">Created At</th>
           <th scope="col"></th>
@@ -66,10 +70,11 @@
       </thead>
       <tbody>
         <tr *ngFor="let video of this.videos">
-          <td>
+          <!-- <td>
             <video>
-              <source [src]="video.url" /></video>
-          </td>
+              <source [src]="video.url" />
+            </video>
+          </td> -->
           <td>{{ video.name }}</td>
           <td>{{ adjustDate(video.createdAt) }}</td>
           <td>
@@ -85,7 +90,7 @@
     </table>
   </div>
   <div
-    *ngIf="this.chosenFilter == 9"
+    *ngIf="this.chosenFilter == 9 && this.dataLoaded"
     class="row justify-content-start flex-wrap"
   >
     <div *ngFor="let video of videos" class="smallChosen p-2">

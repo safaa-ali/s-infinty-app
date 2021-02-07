@@ -1,9 +1,9 @@
-<div class="container">
-  <div class="row mb-4">
-    <div class="col-lg-6">
+<div class="container px-2">
+  <div class="row mb-4 mt-4">
+    <div class="col-lg-4">
       <ngx-search (valueChanged)="changed('search', $event)"></ngx-search>
     </div>
-    <div class="col-lg-3">
+    <div class="col-lg-2">
       <input
         type="text"
         placeholder="Filters"
@@ -13,13 +13,13 @@
         fullWidth
       />
     </div>
-    <div class="col-lg-3">
+    <div class="col-lg-2">
       <button nbButton size="medium" fullWidth shape="round">
         Add Project
       </button>
     </div>
   </div>
-  <div class="row card-section">
+  <div class="mt-5 row card-section">
     <div
       class="col-lg-3 col-md-6 col-sm-12"
       *ngFor="let item of ProjeData?.data?.items"

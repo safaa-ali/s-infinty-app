@@ -8,10 +8,11 @@ import { ProjectsService } from '../../projects.service';
   styleUrls: ['./map-view.component.scss'],
 })
 export class MapViewComponent implements OnInit {
-  compacted: boolean = true;
+  compacted: boolean = false;
   ProjectsData: any;
   searchValue: string = '';
   sub: any;
+  mapLoad: boolean = false;
   projectId: number;
   constructor(
     private route: ActivatedRoute,
@@ -49,6 +50,9 @@ export class MapViewComponent implements OnInit {
     this.router.navigate([
       `projects/${this.projectId}/assets/${e['id']}/${e['type']}`,
     ]);
+  }
+  mapLoaded(e) {
+    this.mapLoad = true;
   }
   changeAssets(e) {
     this.projectId = e;

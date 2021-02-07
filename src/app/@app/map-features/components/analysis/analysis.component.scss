@@ -1,5 +1,5 @@
 .add-item {
-  background: #f2f5ff;
+  background: white;
   color: #a8a7a7;
   text-transform: none;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
@@ -22,7 +22,7 @@
     margin-right: 14px;
   }
   &:nth-child(2) {
-    transform: translateY(-25%);
+    // transform: translateY(-25%);
     width: 45px;
     height: 45px;
   }
@@ -50,15 +50,11 @@ ngx-echarts-graph {
 
 ::ng-deep {
   .nb-theme-default
-    nb-layout
-    .layout
-    .layout-container
-    .content
-    .columns
-    nb-layout-column {
-    background-color: white !important;
-    padding-top: 0;
-  }
+  .documents
+  .nb-form-field-control-with-suffix
+  [nbInput].size-medium {
+  height: 45px;
+}
   // height: 100% !important;
   .echart {
     height: nb-theme(card-height-medium);

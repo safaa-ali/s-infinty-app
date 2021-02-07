@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
- .logo-container {
+  .logo-container {
     display: flex;
     align-items: center;
     width: calc(#{nb-theme(sidebar-width)} - #{nb-theme(header-padding)});
@@ -24,10 +24,20 @@
     display: flex;
     align-items: center;
     width: auto;
+    //
+    span {
+      font-weight: 700;
+      font-size: 18px;
+    }
+    //
     img.logout-img {
+      //
       width: 40px;
+      height: 40px;
+      //
       margin-left: 10px;
       cursor: pointer;
+      border-radius: 50% !important;
     }
   }
 

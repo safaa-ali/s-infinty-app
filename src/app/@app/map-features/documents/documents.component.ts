@@ -3,6 +3,10 @@ import { MapFeaturesService } from '../map-features.service';
 import { DatePipe } from '@angular/common';
 import { GlobalService } from 'app/@core/utils/global.service';
 import { BreadcrumbsService } from 'app/@core/utils/service/breadcrumbs.service';
+import { ProjectsService } from 'app/@app/projects/projects.service';
+import { NbMenuService } from '@nebular/theme';
+import { AuthService } from 'app/@core/utils/auth.service';
+import { map } from 'rxjs/operators';
 @Component({
   selector: 'ngx-documents',
   templateUrl: './documents.component.html',
@@ -17,16 +21,32 @@ export class DocumentsComponent implements OnInit {
   projectName: string = '';
   assetName: string = '';
   items = [{ title: 'Rename' }, { title: 'Share' }, { title: 'Download' }];
+  logoutitems = [{ title: 'Logout', icon: 'log-out', pack: 'eva' }];
   constructor(
     private _mapFeature: MapFeaturesService,
     private datePipe: DatePipe,
     private _globalService: GlobalService,
     private _breadcrumbService: BreadcrumbsService,
+    private _projectService: ProjectsService,
+    private nbMenuService: NbMenuService,
+    private _authService: AuthService,
   ) {
     this.documentsData = [];
   }
   convertToDate(dateString) {
     return typeof new Date(dateString);
+  }
+  getProjectName(id) {
+    this._projectService.showProject(id).subscribe((res) => {
+      this.projectName = res.data.name;
+      this.setBreadCrumbs();
+    });
+  }
+  getAssetName(id) {
+    this._projectService.showAsset(id).subscribe((res) => {
+      this.assetName = res.data.name;
+      this.setBreadCrumbs();
+    });
   }
   setBreadCrumbs() {
     const breadcrumbs = [
@@ -50,13 +70,22 @@ export class DocumentsComponent implements OnInit {
     this._breadcrumbService.setBreadcrumbs(breadcrumbs);
   }
   ngOnInit(): void {
+    this.nbMenuService
+      .onItemClick()
+      .pipe(map(({ item: { title } }) => title))
+      .subscribe((title) => {
+        if (title === 'Logout') {
+          this._authService.logout();
+        }
+      });
     this.projectId = localStorage.getItem('currentProjectId');
+    this.getProjectName(this.projectId);
     this.assetId = localStorage.getItem('currentAssetId');
-    this.projectName = localStorage.getItem('currentProjectName');
-    this.assetName = localStorage.getItem('currentAssetName');
-    this.setBreadCrumbs() ;
+    this.getAssetName(this.assetId);
+    // this.assetName = localStorage.getItem('currentAssetName');
     this.getDocuments();
     this.sortTableByDate();
+    // console.log(this.assetName);
   }
   adjustDate(dateString) {
     const dateParsed = dateString.split('T')[0];
@@ -81,9 +110,11 @@ export class DocumentsComponent implements OnInit {
     }
   }
   resultSearch() {
-    this._globalService.Search(this.searchValue, `assets/${this.assetId}/files?type=document`).subscribe((res) => {
-    this.documentsData = res.data.items;
-    });
+    this._globalService
+      .Search(this.searchValue, `assets/${this.assetId}/files?type=document`)
+      .subscribe((res) => {
+        this.documentsData = res.data.items;
+      });
   }
   fourChoosed() {
     this.chosenFilter = 4;

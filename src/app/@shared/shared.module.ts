@@ -19,6 +19,7 @@ import { AnlalysisCardComponent } from './anlalysis-card/anlalysis-card.componen
 import { ImageCardComponent } from './image-card/image-card.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { VideoCardComponent } from './video-card/video-card.component';
+import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 // const COMPONENTS = [
 //   ProjectCardComponent
 // ]
@@ -34,6 +35,7 @@ ReactiveFormsModule;
     AnlalysisCardComponent,
     ImageCardComponent,
     VideoCardComponent,
+    ComingSoonComponent,
   ],
   imports: [
     CommonModule,
@@ -56,6 +58,7 @@ ReactiveFormsModule;
     DocumentCardComponent,
     ImageCardComponent,
     VideoCardComponent,
+    ComingSoonComponent,
   ],
   entryComponents: [
     ProjectCardComponent,
@@ -67,6 +70,7 @@ ReactiveFormsModule;
     DocumentCardComponent,
     ImageCardComponent,
     VideoCardComponent,
+    ComingSoonComponent,
   ],
 })
 export class SharedModule {}

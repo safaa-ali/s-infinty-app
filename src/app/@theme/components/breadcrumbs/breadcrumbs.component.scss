@@ -2,7 +2,7 @@
 // @import '~@nebular/theme/styles/global/breakpoints';
 // @import '@theme/styles/themes';
 .breadcrumbs-container {
-  padding-left: 18px;
+  padding-left: 10px;
 }
 .breadcrumb {
   background-color: transparent;
@@ -28,17 +28,19 @@
     text-transform: capitalize;
   }
   .breadcrumb-item {
-    font-size: 14px;
-    font-weight: 700;
     span {
       font-weight: 400;
       font-size: 14px;
     }
-    color: blue;
+    color: #9c9998;
+    &:nth-last-child(1) {
+      color: #c2bfbe;
+      font-weight: 300 !important;
+    }
     a {
-      // color: yellow;
       text-decoration: none;
-      font-weight: 400;
+      font-size: 14px;
+      font-weight: 600;
       img {
         vertical-align: baseline;
         height: 16.65px;

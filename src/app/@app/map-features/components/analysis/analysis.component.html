@@ -1,33 +1,41 @@
-<div class="px-5 mt-4 documents">
-  <ngx-breadcrumbs></ngx-breadcrumbs>
-  <div class="row justify-content-between">
+<div
+  *ngIf="this.projectName != undefined && this.assetName != undefined"
+  class="px-5 mt-2 documents"
+>
+  <!-- <ngx-breadcrumbs></ngx-breadcrumbs> -->
+  <div class="d-flex justify-content-between align-items-center">
+    <ngx-breadcrumbs></ngx-breadcrumbs>
+    <div class="rightIcons d-flex justify-content-end align-items-center">
+      <img src="assets/images/alert.svg" alt="" />
+      <img src="assets/images/meti.svg" [nbContextMenu]="logoutitems" alt="" />
+    </div>
+  </div>
+  <div class="mt-4 mb-4 row justify-content-between">
     <div class="col-md-9 row">
       <div class="col-md-6">
         <ngx-search></ngx-search>
       </div>
-      <div class="col-md-3">
+      <!-- <div class="col-md-3">
         <button class="add-item">
           <nb-icon icon="plus-outline"></nb-icon>Add Project
         </button>
-      </div>
+      </div> -->
     </div>
-    <div class="col-md-3 rightIcons d-flex justify-content-end">
+    <!-- <div class="col-md-3 rightIcons d-flex justify-content-end">
       <img src="assets/images/alert.svg" alt="" />
       <img src="assets/images/meti.svg" alt="" />
-    </div>
+    </div> -->
   </div>
 
-  <div class="row pt-4">
-        <div class="col-12">
-          <nb-card class="charts-background">
-            <nb-card-body>
-              <div class="line">
-                <ngx-line-chart></ngx-line-chart>
-
-              </div>
-            </nb-card-body>
-          </nb-card>
-        </div>
-
-      </div>
+  <div class="row pt-2">
+    <div class="col-12">
+      <nb-card class="charts-background">
+        <nb-card-body>
+          <div class="line">
+            <ngx-line-chart></ngx-line-chart>
+          </div>
+        </nb-card-body>
+      </nb-card>
     </div>
+  </div>
+</div>

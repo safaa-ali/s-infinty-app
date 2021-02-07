@@ -1,28 +1,20 @@
 <nb-layout class="mapview">
   <nb-layout-column>
-    <div class="sideBar">
+    <div *ngIf="this.mapLoad" class="sideBar">
       <div *ngIf="this.compacted == false" class="Expand">
-        <div class="px-3">
-          <div class="fixedParts">
-            <div class="header d-flex justify-content-start align-items-center">
-              <!-- <img src="" alt="" /> -->
-              <h6>MEEG</h6>
-              <div class="text-right ml-auto">
-                <nb-icon
-                  class="toggle"
-                  icon="menu-outline"
-                  pack="eva"
-                  (click)="toggleCompact()"
-                ></nb-icon>
-              </div>
+        <div class="fixedParts">
+          <div class="header d-flex justify-content-start align-items-center">
+            <nb-icon icon="logo" class="logoIcon" pack="svg"></nb-icon>
+            <h6>MEEG</h6>
+            <div class="text-right ml-auto">
+              <nb-icon class="toggle" icon="menu-outline" pack="eva" (click)="toggleCompact()"></nb-icon>
             </div>
-            <div class="row mx-0 pt-4 pb-1">
-              <div class="col-xl-6">
-                <ngx-search
-                  (valueChanged)="changed('search', $event)"
-                ></ngx-search>
-              </div>
-              <div class="col-xl-3 px-2 adjustMargin">
+          </div>
+          <div class="row mx-0 pt-4 pb-1">
+            <div class="col-xl-12 px-0">
+              <ngx-search (valueChanged)="changed('search', $event)"></ngx-search>
+            </div>
+            <!-- <div class="col-xl-3 px-2 adjustMargin">
                 <button class="add-item">
                   <nb-icon icon="funnel-outline"></nb-icon>Filters
                 </button>
@@ -31,40 +23,25 @@
                 <button class="add-item">
                   <nb-icon icon="plus-outline"></nb-icon>Add Project
                 </button>
-              </div>
-            </div>
-            <div class="d-flex texts mb-3 px-2">
-              <span>{{ this.ProjectsData.length }} Results</span>
-              <span>in Progress</span>
-            </div>
+              </div> -->
           </div>
-          <div class="projects-container py-3">
-            <div *ngFor="let project of this.ProjectsData">
-              <ngx-card-map
-                [cardData]="project"
-                (projectClicked)="changeAssets($event)"
-                [imgUrl]="project.imageUrl"
-                [isActive]="isActive(project.id)"
-              ></ngx-card-map>
-            </div>
+          <div class="d-flex texts mb-3">
+            <span>{{ this.ProjectsData?.length }} Results</span>
+          </div>
+        </div>
+        <div class="projects-container py-3">
+          <div *ngFor="let project of this.ProjectsData">
+            <ngx-card-map [cardData]="project" (projectClicked)="changeAssets($event)" [imgUrl]="project.imageUrl"
+              [isActive]="isActive(project.id)"></ngx-card-map>
           </div>
         </div>
       </div>
       <div *ngIf="this.compacted == true" class="Collapse text-center">
-        <nb-icon
-          class="toggle"
-          icon="menu-outline"
-          pack="eva"
-          (click)="toggleCompact()"
-        ></nb-icon>
+        <nb-icon class="toggle" icon="menu-outline" pack="eva" (click)="toggleCompact()"></nb-icon>
       </div>
     </div>
-    <ngx-map
-      [projectId]="this.projectId"
-      (mapAsset)="mapFeatures($event)"
-      [class.map1]="compacted"
-      [class.map2]="!compacted"
-    ></ngx-map>
+    <ngx-map [projectId]="this.projectId" (mapAsset)="mapFeatures($event)" (loadedMap)="mapLoaded($event)"
+      [class.map1]="compacted" [class.map2]="!compacted"></ngx-map>
   </nb-layout-column>
 
   <!-- <nb-layout-column>

@@ -12,8 +12,10 @@ export class BreadcrumbsComponent implements OnInit, OnDestroy, OnChanges {
   breadcrumbs: Breadcrumb[];
   routeTo: string = '';
   private destroy$: Subject<void> = new Subject<void>();
-
-  constructor(private breadcrumbsService: BreadcrumbsService, private router: Router) {}
+  constructor(
+    private breadcrumbsService: BreadcrumbsService,
+    private router: Router,
+  ) {}
   routeBreadcrumb(routeTo) {
     // console.log(routeTo);
     this.router.navigate([`${routeTo}`]);
@@ -27,11 +29,9 @@ export class BreadcrumbsComponent implements OnInit, OnDestroy, OnChanges {
       },
     );
   }
-
   ngOnChanges() {
     this.breadcrumbs = this.breadcrumbsService.returnBreadcrumbs();
   }
-
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();

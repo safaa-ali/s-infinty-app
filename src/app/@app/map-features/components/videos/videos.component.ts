@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { MapFeaturesService } from '../../map-features.service';
 import { BreadcrumbsService } from 'app/@core/utils/service/breadcrumbs.service';
+import { ProjectsService } from 'app/@app/projects/projects.service';
+import { GlobalService } from 'app/@core/utils/global.service';
+import { NbMenuService } from '@nebular/theme';
+import { AuthService } from 'app/@core/utils/auth.service';
+import { map } from 'rxjs/operators';
 @Component({
   selector: 'ngx-videos',
   templateUrl: './videos.component.html',
@@ -14,31 +19,57 @@ export class VideosComponent implements OnInit {
   assetId: any;
   projectName: string = '';
   assetName: string = '';
+  dataLoaded: boolean = false;
+  searchValue: string = '';
   videoItems = [
     { title: 'Rename' },
     { title: 'Share' },
     { title: 'Download' },
     { title: 'Delete' },
   ];
+  logoutitems = [{ title: 'Logout', icon: 'log-out', pack: 'eva' }];
   constructor(
     private _mapFeature: MapFeaturesService,
     private datePipe: DatePipe,
     private _breadcrumbService: BreadcrumbsService,
+    private _projectService: ProjectsService,
+    private _globalService: GlobalService,
+    private nbMenuService: NbMenuService,
+    private _authService: AuthService,
   ) {
     this.projectId = localStorage.getItem('currentProjectId');
     this.assetId = localStorage.getItem('currentAssetId');
-    this.projectName = localStorage.getItem('currentProjectName');
-    this.assetName = localStorage.getItem('currentAssetName');
+    this.getProjectName(this.projectId);
+    this.getAssetName(this.assetId);
     this.videos = [];
   }
   ngOnInit() {
-    this.setBreadCrumbs();
+    this.nbMenuService
+      .onItemClick()
+      .pipe(map(({ item: { title } }) => title))
+      .subscribe((title) => {
+        if (title === 'Logout') {
+          this._authService.logout();
+        }
+      });
     this.getVideos();
     this.sortTableByDate();
   }
   adjustDate(dateString) {
     const dateParsed = dateString.split('T')[0];
     return this.datePipe.transform(dateParsed, 'MM-dd-yyyy');
+  }
+  getProjectName(id) {
+    this._projectService.showProject(id).subscribe((res) => {
+      this.projectName = res.data.name;
+      this.setBreadCrumbs();
+    });
+  }
+  getAssetName(id) {
+    this._projectService.showAsset(id).subscribe((res) => {
+      this.assetName = res.data.name;
+      this.setBreadCrumbs();
+    });
   }
   setBreadCrumbs() {
     const breadcrumbs = [
@@ -69,7 +100,21 @@ export class VideosComponent implements OnInit {
   getVideos() {
     this._mapFeature.getAssetFiles(this.assetId, 'video').subscribe((res) => {
       this.videos = res.data.items;
+      this.dataLoaded = true;
     });
+  }
+  changed(type, value) {
+    if (type === 'search') {
+      this.searchValue = value;
+      this.resultSearch();
+    }
+  }
+  resultSearch() {
+    this._globalService
+      .Search(this.searchValue, `assets/${this.assetId}/files?type=video`)
+      .subscribe((res) => {
+        this.videos = res.data.items;
+      });
   }
   oneChoosed() {
     this.chosenFilter = 1;

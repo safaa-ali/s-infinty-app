@@ -1,7 +1,8 @@
 <div class="video-container">
-    <video controls>
+    <video controls preload="none" >
         <source [src]="videoData.url">
     </video>
+    <p>{{videoData.name}}</p>
     <!-- <video [src]="videoData.url" alt=""> -->
   <nb-icon
     icon="more-horizontal-outline"

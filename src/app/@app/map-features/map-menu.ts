@@ -20,12 +20,12 @@ export const map_menu: NbMenuItem[] = [
   {
     title: 'Models',
     icon: { icon: 'cube', pack: 'svg' },
-    link: 'images',
+    link: 'models',
   },
   {
     title: 'Point Cloud',
     icon: { icon: 'forge', pack: 'svg' },
-    link: 'images',
+    link: 'point-cloud',
   },
   {
     title: 'Sensors Analysis',
@@ -35,6 +35,6 @@ export const map_menu: NbMenuItem[] = [
   {
     title: 'Poi Managment',
     icon: { icon: 'hand', pack: 'svg' },
-    link: 'images',
+    link: 'POI',
   },
 ];

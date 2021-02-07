@@ -22,20 +22,22 @@ export class CardMapComponent implements OnInit {
     { title: 'Point Cloud' },
     { title: 'Project Management' },
   ];
-  constructor(private router: Router, private datePipe: DatePipe) {}
+  constructor(private router: Router, private datePipe: DatePipe) { }
 
-  ngOnInit() {}
-  toggleMenu() {
+  ngOnInit() { }
+  toggleMenu(event) {
     this.toggle = !this.toggle;
   }
   getClass() {
     if (this.isActive) {
-     return 'active';
+      return 'active';
     }
   }
-  routerFeatures() {
+  routerFeatures(event) {
+    if (event.composedPath().map(el => el.nodeName).includes('NB-ICON')) return;
     this.projectClicked.emit(this.cardData['id']);
   }
+
   adjustDate(dateString) {
     const dateParsed = dateString.split('T')[0];
     return this.datePipe.transform(dateParsed, 'MM-dd-yyyy');

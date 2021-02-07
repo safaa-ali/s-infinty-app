@@ -24,6 +24,9 @@ import { AnalysisComponent } from './components/analysis/analysis.component';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 import { LineChartComponent } from './components/line-chart/line-chart.component';
 import { VideosComponent } from './components/videos/videos.component';
+import { ModelsComponent } from './components/models/models.component';
+import { PointCloudComponent } from './components/point-cloud/point-cloud.component';
+import { POIComponent } from './components/poi/poi.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,9 @@ import { VideosComponent } from './components/videos/videos.component';
     BarChartComponent,
     LineChartComponent,
     VideosComponent,
+    ModelsComponent,
+    PointCloudComponent,
+    POIComponent,
   ],
   imports: [
     CommonModule,

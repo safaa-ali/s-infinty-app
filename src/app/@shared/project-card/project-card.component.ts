@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 export class ProjectCardComponent implements OnInit {
   description = 'Project Description';
   constructor (private router: Router) { }
-  active = false;
+  // active = false;
   @Input() projectitem;
   @Input() createdAt ;
 

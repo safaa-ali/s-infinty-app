@@ -7,13 +7,15 @@ nb-sidebar.sidebar {
     list-style: none;
     display: flex;
     justify-content: space-evenly;
-    margin-bottom: 17px;
-    position: relative;
-    top: 25px;
+    // margin-bottom: 17px;
+    // position: relative;
+    // top: 25px;
     img {
       &:nth-child(1) {
         width: 30px;
-        transform: translateY(10px);
+        position: relative;
+        top: 38px;
+        // transform: translateY(10px);
       }
     }
     p {
@@ -22,7 +24,7 @@ nb-sidebar.sidebar {
       font-size: 20px;
       a {
         .menu-bar-icon {
-          font-size: 30px;
+          font-size: 32px;
           position: relative;
           top: 32px;
         }
@@ -40,7 +42,8 @@ nb-layout nb-layout-column {
   overflow-y: hidden;
   padding: 0;
   nb-menu {
-    margin: 0;
+    margin: auto;
+    margin-top: 40px;
     ul.menu-items {
       padding-top: 20%;
       .menu-item {
@@ -115,6 +118,9 @@ nb-layout nb-layout-column {
     nb-menu .menu-item a.active::before {
       background-color: transparent;
     }
+    .topIcons {
+      display: block !important;
+    }
     width: 3.5rem;
     .menu-item {
       width: 100% !important;
@@ -122,9 +128,10 @@ nb-layout nb-layout-column {
     .menu-item-collapse {
       width: 100% !important;
       .menu-bar-icon {
-        margin-right: 15px;
+        font-size: 28px !important;
         position: relative;
-        top: 10px !important;
+        top: 40px !important;
+        right: 8px;
       }
     }
     .expandedItem {
@@ -146,7 +153,6 @@ nb-layout nb-layout-column {
       width: 100%;
       background-color: white !important;
       border-radius: 8px;
-      // transition: 0.4s ease-in-out;
       svg {
         position: relative;
         top: 4px;
@@ -158,10 +164,4 @@ nb-layout nb-layout-column {
       width: 100%;
     }
   }
-  @media only screen and (max-width: 900px) {
-    nb-sidebar.sidebar {
-      width: 0;
-    }
-  }
 }
-

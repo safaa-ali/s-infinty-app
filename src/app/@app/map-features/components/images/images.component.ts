@@ -4,6 +4,9 @@ import { ProjectsService } from 'app/@app/projects/projects.service';
 import { GlobalService } from 'app/@core/utils/global.service';
 import { BreadcrumbsService } from 'app/@core/utils/service/breadcrumbs.service';
 import { MapFeaturesService } from '../../map-features.service';
+import { NbMenuService } from '@nebular/theme';
+import { AuthService } from 'app/@core/utils/auth.service';
+import { map } from 'rxjs/operators';
 @Component({
   selector: 'ngx-images',
   templateUrl: './images.component.html',
@@ -17,28 +20,52 @@ export class ImagesComponent implements OnInit {
   assetName: string;
   assetId: any;
   searchValue: string = '';
+  dataLoaded: boolean = false;
   imageItems = [
     { title: 'Rename' },
     { title: 'Share' },
     { title: 'Download' },
     { title: 'Delete' },
   ];
+  logoutitems = [{ title: 'Logout', icon: 'log-out', pack: 'eva' }];
   constructor(
     private _mapFeature: MapFeaturesService,
     private datePipe: DatePipe,
     private _globalService: GlobalService,
     private _breadcrumbService: BreadcrumbsService,
+    private _projectService: ProjectsService,
+    private nbMenuService: NbMenuService,
+    private _authService: AuthService,
   ) {
     this.projectId = localStorage.getItem('currentProjectId');
     this.assetId = localStorage.getItem('currentAssetId');
-    this.projectName = localStorage.getItem('currentProjectName');
-    this.assetName = localStorage.getItem('currentAssetName');
+    this.getProjectName(this.projectId);
+    this.getAssetName(this.assetId);
     this.images = [];
   }
   ngOnInit() {
-    this.setBreadCrumbs();
+    this.nbMenuService
+      .onItemClick()
+      .pipe(map(({ item: { title } }) => title))
+      .subscribe((title) => {
+        if (title === 'Logout') {
+          this._authService.logout();
+        }
+      });
     this.getImages();
     this.sortTableByDate();
+  }
+  getProjectName(id) {
+    this._projectService.showProject(id).subscribe((res) => {
+      this.projectName = res.data.name;
+      this.setBreadCrumbs();
+    });
+  }
+  getAssetName(id) {
+    this._projectService.showAsset(id).subscribe((res) => {
+      this.assetName = res.data.name;
+      this.setBreadCrumbs();
+    });
   }
   setBreadCrumbs() {
     const breadcrumbs = [
@@ -73,6 +100,7 @@ export class ImagesComponent implements OnInit {
   getImages() {
     this._mapFeature.getAssetFiles(this.assetId, 'image').subscribe((res) => {
       this.images = res.data.items;
+      this.dataLoaded = true;
     });
   }
   changed(type, value) {
@@ -86,7 +114,6 @@ export class ImagesComponent implements OnInit {
       .Search(this.searchValue, `assets/${this.assetId}/files?type=image`)
       .subscribe((res) => {
         this.images = res.data.items;
-        // console.log(this.images);
       });
   }
   oneChoosed() {

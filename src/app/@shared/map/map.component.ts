@@ -17,6 +17,7 @@ import { icon, Layer, marker } from 'leaflet';
 export class MapComponent implements OnInit, OnChanges {
   @Input() projectId: number;
   @Output() mapAsset = new EventEmitter<any>();
+  @Output() loadedMap = new EventEmitter<boolean>();
   bodyPopup: any;
   optionsPopup: any;
   stationsLocations: [];
@@ -36,11 +37,11 @@ export class MapComponent implements OnInit, OnChanges {
   constructor(private _ProjectsService: ProjectsService) {
     this.bodyPopup = `
     <div class='icon'><img src='./assets/images/doc.svg' id='doc'></div>
-    <div class='icon'><img src='./assets/images/hand.svg' id='hand'></div>
-    <div class='icon'><img src='./assets/images/cube.svg' id='3dmodel'></div>
-    <div class='icon'><img src='./assets/images/x.svg' id='charts'></div>
+    <div class='icon'><img src='./assets/images/hand.svg' id='poi'></div>
+    <div class='icon'><img src='./assets/images/cube.svg' id='model'></div>
+    <div class='icon'><img src='./assets/images/x.svg' id='cloud'></div>
     <div class='icon'><img src='./assets/images/image.svg' id='img'></div>
-    <div class='icon'><img src='./assets/images/search.svg' id='search'></div>
+    <div class='icon'><img src='./assets/images/search.svg' id='analysis'></div>
     <div class='icon'><img src='./assets/images/video.svg' id='video'></div>
     `;
     this.optionsPopup = {
@@ -74,6 +75,7 @@ export class MapComponent implements OnInit, OnChanges {
       // console.log(this.stationsLocations);
       this.addMarkers();
       this.loadMap = true;
+      this.loadedMap.emit(true);
     });
   }
 
@@ -111,6 +113,22 @@ export class MapComponent implements OnInit, OnChanges {
         document.querySelector('#video').addEventListener('click', () => {
           e;
           this.mapAsset.emit({ type: 'videos', id: id });
+        });
+        document.querySelector('#analysis').addEventListener('click', () => {
+          e;
+          this.mapAsset.emit({ type: 'analysis', id: id });
+        });
+        document.querySelector('#poi').addEventListener('click', () => {
+          e;
+          this.mapAsset.emit({ type: 'POI', id: id });
+        });
+        document.querySelector('#model').addEventListener('click', () => {
+          e;
+          this.mapAsset.emit({ type: 'models', id: id });
+        });
+        document.querySelector('#cloud').addEventListener('click', () => {
+          e;
+          this.mapAsset.emit({ type: 'point-cloud', id: id });
         });
       });
     return newmarker;

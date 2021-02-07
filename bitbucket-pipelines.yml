@@ -15,7 +15,7 @@ pipelines:
           - node -v
           - npm -v
           - npm i
-          - npm run build:dev
+          - npm run build:$BITBUCKET_BRANCH
           - cd dist
           - pipe: atlassian/aws-s3-deploy:0.3.5
             variables:

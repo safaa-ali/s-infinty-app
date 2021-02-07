@@ -1,0 +1,23 @@
+.content {
+  h1 {
+    line-height: 4rem;
+    font-size: 4rem;
+    margin: 0;
+    color: #9c9998;
+    text-align: center;
+    @media screen and (max-width: 690px) {
+      font-size: 3rem;
+      line-height: 3rem;
+    }
+  }
+  p {
+    color: #9c9998;
+    font-size: 1.1rem;
+    line-height: 1rem;
+    margin-top: 30px;
+  }
+  hr {
+    border-top-color: #9c9998;
+    border-top-width: 5px;
+  }
+}

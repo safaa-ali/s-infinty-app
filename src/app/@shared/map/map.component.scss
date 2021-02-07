@@ -9,8 +9,8 @@
     filter: hue-rotate(35deg) !important;
   }
   .icon img {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
   }
   .leaflet-control-container {
     position: absolute;
@@ -22,8 +22,8 @@
   }
   .leaflet-popup-content-wrapper {
     background-color: rgba(250, 250, 250, 0.31);
-    width: 170px;
-    height: 170px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
   }
   .popupCustom {
@@ -51,7 +51,7 @@
       }
       &:nth-child(5) {
         top: 22px;
-        left: 33px;
+        left: 31px;
       }
       &:nth-child(6) {
         bottom: 10px;
