@@ -1,7 +1,7 @@
-<nb-card [class.active]='getClass()'>
+<nb-card [class.active]='getClass()' (click)='routerFeatures($event)'>
   <nb-card-body>
     <div class="d-flex body justify-content-between align-items-end">
-      <div (click)='routerFeatures()' class="d-flex projectContent align-items-end h-100">
+      <div class="d-flex projectContent align-items-end h-100">
         <img [src]="this.imgUrl" alt="" />
         <div>
           <h1>{{this.cardData['name']}}</h1>
@@ -13,16 +13,9 @@
         </div>
       </div>
       <div class="rightPart d-flex align-items-end h-100 text-right">
-        <div>
-          <nb-icon
-            icon="more-horizontal-outline"
-            pack="eva"
-            (click)="toggleMenu()"
-            [nbContextMenu]="items"
-            [nbContextMenuPlacement]="'right'"
-          ></nb-icon>
-        </div>
-        <span (click)='routerFeatures()'>{{adjustDate(this.cardData['createdAt'])}}</span>
+        <nb-icon icon="more-horizontal-outline" pack="eva" (click)="toggleMenu($event)" [nbContextMenu]="items"
+          [nbContextMenuPlacement]="'right'"></nb-icon>
+        <span>{{adjustDate(this.cardData['createdAt'])}}</span>
       </div>
     </div>
   </nb-card-body>

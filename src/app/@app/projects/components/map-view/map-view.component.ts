@@ -8,7 +8,7 @@ import { ProjectsService } from '../../projects.service';
   styleUrls: ['./map-view.component.scss'],
 })
 export class MapViewComponent implements OnInit {
-  compacted: boolean = true;
+  compacted: boolean = false;
   ProjectsData: any;
   searchValue: string = '';
   sub: any;
