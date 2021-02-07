@@ -12,7 +12,6 @@ export const routes: Routes = [
   {
     path: 'auth', loadChildren: () => import('./@app/auth/auth.module')
       .then(m => m.AuthModule),
-  //  canLoad: [AuthGuard],
   },
 
   {

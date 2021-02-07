@@ -2,7 +2,7 @@
   <nb-layout-column>
     <div *ngIf="this.mapLoad" class="sideBar">
       <div *ngIf="this.compacted == false" class="Expand">
-        <div class="fixedParts">
+        <div class="fixedParts px-3">
           <div class="header d-flex justify-content-start align-items-center">
             <nb-icon icon="logo" class="logoIcon" pack="svg"></nb-icon>
             <h6>MEEG</h6>
@@ -29,7 +29,7 @@
             <span>{{ this.ProjectsData?.length }} Results</span>
           </div>
         </div>
-        <div class="projects-container py-3">
+        <div class="projects-container py-3 px-3">
           <div *ngFor="let project of this.ProjectsData">
             <ngx-card-map [cardData]="project" (projectClicked)="changeAssets($event)" [imgUrl]="project.imageUrl"
               [isActive]="isActive(project.id)"></ngx-card-map>
